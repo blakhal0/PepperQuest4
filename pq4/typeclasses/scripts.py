@@ -173,7 +173,7 @@ class cod(DefaultScript):
 		self.interval = 20
 		self.persistent = True
 	def at_repeat(self):
-		phrases = ["Bawk Bawk", "BAWWWWWK", "Bawwwk ba-GAWWWWWWWWK", "*Chicken of Doom clucks in an evil tone*", "Baaawwwk bawk-bawwk, cluck", "YOUR SOUL WILL BE-GAWWWWWK MINE!", "Cluck you! Pathetic mortal! BAWGAWWWK"]
+		phrases = ["I'm here to en'hen'ce your experience. BAWWWKAAWKAWKAWKAWK!", "Have I beaked your interest? BAWWWWK!!!", "The cluck is ticking...bok...bok...bok", "Don't make me flock you in the nose...", "How about a sneak beak of your demise? *evil bawks*", "Bawk Bawk", "BAWWWWWK", "Bawwwk ba-GAWWWWWWWWK", "*Chicken of Doom clucks in an evil tone*", "Baaawwwk bawk-bawwk, cluck", "YOUR SOUL WILL BE-GAWWWWWK MINE!", "Cluck you! Pathetic mortal! BAWGAWWWK"]
 		target = search_object(self.obj.location)
 		if not target:
 			return
@@ -212,7 +212,7 @@ class cod(DefaultScript):
 					return
 			else:
 				chickenwarcry = random.choice(phrases)
-				target[0].msg("|/%s|/" % (chickenwarcry))
+				target[0].msg("|/|mChicken of Doom|n says: %s|/" % (chickenwarcry))
 				return
 
 class armorscript(DefaultScript):

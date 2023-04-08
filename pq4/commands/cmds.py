@@ -1710,7 +1710,7 @@ class worldmagic(default_cmds.MuxCommand):
 						else:
 							possibleplaces = ', '.join(self.caller.db.locations).title()
 							answer = yield("|/Where to?|/%s" % (possibleplaces))
-							if answer.lower() not in self.caller.db.locations:
+							if answer.lower() not in (places.lower() for places in self.caller.db.locations):
 								self.caller.msg("|/You do not know that location.")
 								return
 							else:

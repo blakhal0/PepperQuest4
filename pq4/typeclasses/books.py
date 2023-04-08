@@ -1,16 +1,6 @@
 from evennia import DefaultObject
 
-class nodropbook(DefaultObject):
-	name = ""
-	def at_object_creation(self):
-		self.tags.add("readable", category="isreadable")
-		self.tags.add("single", category="isreadable")
-		self.db.story = "Book Contents"
-		self.locks.add("drop:false()")
-		self.db.desc = "It's a book, you might want to try and Read it."
-
 class nogetbook(DefaultObject):
-	name = ""
 	def at_object_creation(self):
 		self.tags.add("readable", category="isreadable")
 		self.tags.add("single", category="isreadable")

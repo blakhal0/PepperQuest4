@@ -58,6 +58,6 @@ class carvercity:
 	name = "carver city"
 	location = "#9457"
 
-class lumakesiislands:
-	name = "lumakesi islands"
+class lumakesiisland:
+	name = "lumakesi island"
 	location = "#9533"

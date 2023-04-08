@@ -1138,7 +1138,7 @@ class gardenoftheancients(vroom):
 
 class celestialarchive(vroom):
 	def at_object_creation(self):
-		self.db.desc = "As you enter the library, you are struck by the grandeur and majesty of the place. The walls are lined with row after row of towering bookcases, each filled with countless volumes, scrolls, and tomes on a wide range of subjects.|/The air is heavy with the scent of old parchment and leather bindings, and the gentle rustling of pages turning echoes throughout the halls.|/The room is illuminated by the soft glow of mystical candles that hang from the ceiling, crowd wall sconces, and stand tall on candle holders on the tables.|/Throughout the library, there are alcoves and niches filled with ancient artifacts and mystical relics, each with their own story and significance. There are also private study rooms where scholars and researchers can work undisturbed, surrounded by the accumulated knowledge of the ages."
+		self.db.desc = "The walls are lined with row after row of towering bookcases, each filled with countless volumes, scrolls, and tomes on a wide range of subjects.|/The air is heavy with the scent of old parchment and leather bindings, and the gentle rustling of pages turning echoes throughout the halls.|/The room is illuminated by the soft glow of mystical candles that are hanging from the ceiling, in wall sconces, and in candle holders on the tables.|/Throughout the library, there are alcoves and niches filled with ancient artifacts and mystical relics, each with their own story and significance."
 		self.db.fight = "no"
 
 class crossroadisland(vroom):
