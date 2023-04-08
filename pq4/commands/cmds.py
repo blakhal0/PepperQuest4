@@ -2,6 +2,7 @@ from evennia import default_cmds, InterruptCommand, search_object, search_tag, u
 import random
 from random import randint
 from evennia.utils import interactive
+from evennia.utils.logger import log_file
 from evennia.prototypes.spawner import spawn
 from evennia.utils.evmenu import EvMenu
 import string
@@ -20,13 +21,7 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		listone = []
-		servers = {'Server1':{'Names':['Server1.name.com', '192.168.0.1']}, 'Server2':{'Names':['Server2.name.com', '192.168.0.2']}}
-		self.caller.msg(" ".join(servers.keys()))
-		for i in servers.keys():
-			for x in servers[i]['Names']:
-				listone.append(x)
-		self.caller.msg(listone)
+		log_file("Test", filename="1test.log")
 		
 
 class journalentry(default_cmds.MuxCommand):

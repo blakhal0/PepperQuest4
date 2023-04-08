@@ -21,6 +21,7 @@ Create a new Global Script
 '''
 
 from evennia import DefaultScript, search_object, search_tag
+from evennia.utils.logger import log_file
 import random
 from random import randint
 
@@ -190,7 +191,7 @@ class cod(DefaultScript):
 						return
 					else:
 						target[0].msg("|rThe Doom Egg hatches, you die instantly... from DOOM!!!!!!|n")
-						target[0].db.hp == 0
+						target[0].db.hp = 0
 				else:
 					damage = randint(1,15)
 					target[0].db.hp -= int(damage)
@@ -205,6 +206,7 @@ class cod(DefaultScript):
 					target[0].move_to(results[0], quiet=True, move_hooks=False)
 					chicken = search_object("Chicken of Doom")
 					respawn = search_object(random.choice(chicken[0].db.spawnlocations))
+					log_file("Chicken moved to %s" % str(respawn[0]), filename="chicken.log")
 					chicken[0].move_to(respawn[0], quiet=True, move_hooks=False)
 					target[0].msg("|/The Chicken of Doom wipes its blood covered beak on your armor, crows in victory, takes a last peck at your eyeball, and vanishes.|/You no longer hold the Chicken of Doom.")
 					return
