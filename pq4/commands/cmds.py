@@ -21,8 +21,26 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		log_file("Test", filename="1test.log")
-		
+		chicken = search_object("Chicken of Doom")
+		self.caller.msg(chicken[0].location.key)
+		self.caller.msg(chicken[0].location.dbid)
+
+class sethp(default_cmds.MuxCommand):
+	key = "sethp"
+	def func(self):
+		hp = self.args.strip()
+		if not hp.isnumeric():
+			self.caller.msg("You can't see it, but I'm giving you a disapproving look.")
+			return
+		if int(hp) > self.caller.db.maxhp:
+			self.caller.msg("Hey now, that's more than your max hp. keep it reasonable.")
+			return
+		if int(hp) <= 0:
+			self.caller.msg("Suicide isn't the answer.")
+			return
+		self.caller.db.hp = int(hp)
+		self.caller.msg("|/|gHP set to %d|n" % int(hp))
+		return
 
 class journalentry(default_cmds.MuxCommand):
 	key = "addmonster"
