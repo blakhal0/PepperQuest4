@@ -460,7 +460,7 @@ class titanophion:
 	drop = "n"
 	dropitem = ""
 	god = "yes"
-	successmsg = "|/The Titan Ophion bends to a knee and bows his head before you.|/|mTitan|n says: Never before have I witnessed such strength and perseverance. My throne is yours.|/The crowd erupts, shaking the very arena like an earthquake.|/|mAnnouncer|n says: A SIGHT FOR THE AGES!! WE HAVE A NEW TITAN OF THE ARENA!!!! CONGRATULATIONS!|/Please see the Host to collect your reward."
+	successmsg = "|/The Titan Ophion bends to a knee and bows their head before you.|/|mTitan|n says: Never before have I witnessed such strength and perseverance. My throne is yours.|/The crowd erupts, shaking the very arena like an earthquake.|/|mAnnouncer|n says: A SIGHT FOR THE AGES!! WE HAVE A NEW TITAN OF THE ARENA!!!! CONGRATULATIONS!|/Please see the Host to collect your reward."
 	tagstoadd = ["titan"]
 	tagstoremove = ["arena7"]
 	itemstoremove = []
