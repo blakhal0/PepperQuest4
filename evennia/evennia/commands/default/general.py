@@ -544,6 +544,7 @@ class CmdDrop(COMMAND_DEFAULT_CLASS):
 #            target.msg("%s gives you %s." % (caller.key, to_give.key))
 #            # Call the object script's at_give() method.
 #            to_give.at_give(caller, target)
+#testing
 
 class CmdGive(COMMAND_DEFAULT_CLASS):
     """

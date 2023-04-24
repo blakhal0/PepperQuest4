@@ -13,6 +13,14 @@ class npc(DefaultObject):
 		self.locks.add("get:false()")
 		self.db.get_err_msg = "|/|r%s|n" % (random.choice(geterrors))
 
+class chickenlocator(DefaultObject):
+	def at_object_creation(self):
+		self.tags.add("talkative", category="npc")
+		self.tags.add("chickencompass", category="talkative")
+		self.db.desc = "The NPC is wearing a hat resembling the comb of a chicken."
+		self.locks.add("get:false()")
+		self.db.get_err_msg = "|/|r%s|n" % (random.choice(geterrors))
+
 hangdesc = ["The onlooker bobs back and forth trying to get a glimpse of the gallows.", "The onlooker pushes through the crowd for a better spot.", "The onlooker stands there, marveling at the size of the crowd.", "Tears run down their face, quielty weeping."]
 hangmsg = ["HANG THE FILTHY THIEF!!", "HAVE MERCY!!", "BOOOOOO!!!!!", "MAKE SURE THE NOOSE IS TIGHT!!"]
 

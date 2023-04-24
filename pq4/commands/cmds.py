@@ -21,9 +21,7 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		chicken = search_object("Chicken of Doom")
-		self.caller.msg(chicken[0].location.key)
-		self.caller.msg(chicken[0].location.dbid)
+		self.caller.msg(self.caller.typeclass_path)
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"
