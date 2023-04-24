@@ -176,7 +176,7 @@ class loot(default_cmds.MuxCommand):
 				if int(self.caller.db.hp) == 0:
 					self.caller.msg("%s whips out a %s and murders you without remorse." % (target.key, weaponchoice))
 					self.caller.msg("|m%s|n says: And that's how we handle filthy little thieves like you! *spits on your corpse*" % (target.key))
-					self.caller.msg("|/|rWhat tragic fate, you have fallen in battle to %s|n|/You have brought shame to yourself and your family." % (target.key))
+					self.caller.msg("|/|rWhat tragic fate, you have been murdered for thievery by %s|n|/You have brought shame to yourself and your family." % (target.key))
 					self.caller.db.deathcount += 1
 					self.caller.db.hp = int(self.caller.db.maxhp * .5)
 					self.caller.db.mp = int(self.caller.db.maxmp * .5)
@@ -2115,6 +2115,18 @@ class talkNPC(default_cmds.MuxCommand):
 					self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.finishedmsg))
 					return
 			return
+#Chicken Compass
+		elif target.tags.get("chickencompass", category="talkative"):
+			chicken = search_object("Chicken of Doom")
+			self.caller.msg(chicken[0].location.key)
+			self.caller.msg("|/|m%s|n: says: Bawk-buh-cauk? You seek the Chicken of DOOM? Well that's Eggcellent! Let's see if I can tune in to where our savior is currently." % (target.key))
+			self.caller.msg("%s puts their head back and emits a mighty crow!" % (target.key))
+			self.caller.msg("|m%s|n: says: Yes, yes, my comb tingles with chaotic energy..." % (target.key))
+			if chicken[0].location.has_account:
+				self.caller.msg("|/|m%s|n: says: The Chicken of Doom is currently with another member of the cult, spreading DOOOOOM!!!!!!" % (target.key))
+			else:
+				self.caller.msg("|/|m%s|n: says: Our savior of chaos is currently somewhere in %s." % (target.key, chicken[0].location.key))
+			self.caller.msg("|m%s|n: says:I have great eggs-pectations from you. Good luck!!" % (target.key))
 #catchall
 		else:
 			self.caller.msg("Hal0 fucked something up with an NPC, tell him to fix it.")

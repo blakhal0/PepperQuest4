@@ -17,7 +17,7 @@ class chickenlocator(DefaultObject):
 	def at_object_creation(self):
 		self.tags.add("talkative", category="npc")
 		self.tags.add("chickencompass", category="talkative")
-		self.db.desc = "The NPC is wearing a hat resembling the comb of a chicken."
+		self.db.desc = "A strange character wearing a hat resembling the comb and wattles of a chicken and a shirt that simply says 'DOOM!!!!'."
 		self.locks.add("get:false()")
 		self.db.get_err_msg = "|/|r%s|n" % (random.choice(geterrors))
 
