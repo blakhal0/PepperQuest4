@@ -1625,6 +1625,14 @@ class orthanwinterforest(autofight):
 		self.db.fight = "yes"
 		self.tags.add("autofight")
 
+class thedepthsofknowledge(autofight):
+	def at_object_creation(self):
+		self.db.desc = "You are somewhere under the library in a twisting turning hallway. An eerie and foreboding atmosphere swirls in the air. Bookcases are lit by flickering torches set into the walls."
+		self.db.fight = "yes"
+		self.db.zone = "depthsofknowledge"
+		self.tags.add("notravel")
+		self.tags.add("autofight")
+
 class varkenwastelf(autofightlow):
 	def at_object_creation(self):
 		self.db.desc = "A barren expanse battered by cold winds unfolds before you.|/The Wastes of Varken, a no-mans-land covered in a blanket deep snow.|/Best to keep moving before you freeze to death."

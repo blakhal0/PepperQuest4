@@ -293,12 +293,12 @@ class hurt:
 class death:
 	name = "Death"
 	price = 1000
-	cost = 12
+	cost = 30
 	base = 1000
 	group = "aggressive"
 	kind = "d"
-	phrase = "You summon the spirits of the underworld in an attempt to drag the enemy to the afterworld."
-	enemyphrase = "The enemy summons the spirits of the underworld in an attempt to drag you to the afterworld."
+	phrase = "You summon a demon of the underworld in an attempt to drag the enemy to the afterworld."
+	enemyphrase = "The enemy summons a demon of the underworld in an attempt to drag you to the afterworld."
 
 #enemyspecific
 class pyre:
@@ -310,6 +310,16 @@ class pyre:
 	kind = "f"
 	phrase = ""
 	enemyphrase = "The enemy blasts you with funeral fire!"
+
+class bat:
+	name = "Bat"
+	price = 13
+	cost = 9
+	base = 20
+	group = "aggressive"
+	kind = "w"
+	phrase = "Ba-AAAAAAAAAT!!!!|/A flurry of bats swarms the enemy biting and scratching."
+	enemyphrase = "'Ba-AAAAAAT!!'|/Laszlo transforms into a bat and attacks!"
 
 class emotionaldamage:
 	name = "Emotional Damage"

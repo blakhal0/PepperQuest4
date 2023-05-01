@@ -255,6 +255,17 @@ class book(DefaultObject):
 		self.db.desc = "It's a book, you might want to try and Read it."
 		self.db.get_err_msg = "|rLeave the book alone or we will sic the librarians on you.|n"
 
+class spellbook(DefaultObject):
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("spellbook", category="isreadable")
+		self.db.story = "Book Contents"
+		self.db.spelldisplay = ""
+		self.db.spell = ""
+		self.locks.add("get:false()")
+		self.db.desc = "It's a book, you might want to try and Read it."
+		self.db.get_err_msg = "|rLeave the book alone or we will sic the librarians on you.|n"
+
 class monsterjournal(DefaultObject):
 	def at_object_creation(self):
 		self.tags.add("readable", category="isreadable")

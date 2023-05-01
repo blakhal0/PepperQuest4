@@ -123,6 +123,14 @@ class altarofenigma:
 	monsters = ["malashai"]
 	rare = ["malashai"]
 
+class depthsofknowledge:
+	monsters = ["bookwyrm", "inkling", "vellumvamp"]
+	rare = ["codexlurker"]
+
+class laszlocravensworth:
+	monsters = ["laszlocravensworth"]
+	rare = ["laszlocravensworth"]
+
 #Titan Arena
 #------------------------------------------------
 class arenaone:

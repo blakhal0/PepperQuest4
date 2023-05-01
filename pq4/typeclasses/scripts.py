@@ -178,6 +178,15 @@ class cod(DefaultScript):
 		if not target:
 			return
 		if not target[0].has_account:
+			chicken = search_object("Chicken of Doom")
+			if chicken[0].db.idlecount <= 15:
+				chicken[0].db.idlecount += 1
+			if chicken[0].db.idlecount > 15:
+				respawn = search_object(random.choice(chicken[0].db.spawnlocations))
+				chicken[0].location.msg_contents("|/|rThe Chicken of Doom glows with an evil aura, crows loudly, and disappears.|n")
+				log_file("Chicken moved to %s" % str(respawn[0]), filename="chicken.log")
+				chicken[0].move_to(respawn[0], quiet=True, move_hooks=False)
+				chicken[0].db.idlecount = 0
 			return
 		if target[0].tags.get("battle"):
 			return
@@ -208,6 +217,7 @@ class cod(DefaultScript):
 					respawn = search_object(random.choice(chicken[0].db.spawnlocations))
 					log_file("Chicken moved to %s" % str(respawn[0]), filename="chicken.log")
 					chicken[0].move_to(respawn[0], quiet=True, move_hooks=False)
+					chicken[0].db.idlecount = 0
 					target[0].msg("|/The Chicken of Doom wipes its blood covered beak on your armor, crows in victory, takes a last peck at your eyeball, and vanishes.|/You no longer hold the Chicken of Doom.")
 					return
 			else:

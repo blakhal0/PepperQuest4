@@ -389,7 +389,105 @@ class itembook(DefaultObject):
 		self.db.story = "Book Contents"
 		self.locks.add("drop:false()")
 		self.db.desc = "It's a book, you might want to try and Read it."
-		
+
+class batspellbook(DefaultObject):
+	name = "Bat!"
+	price = 0
+	desc = "A thick book bound in the skin of bats."
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("spellbook", category="isreadable")
+		self.db.story = """The ancient spell of Bat!|/|540|/     =/\                 /\=|/     / \'._    (\_/)   _.'/ \|/    / .''._'--(o.o)--'_.''. \|/   /.' _/ |`'=/ |500"|540 \='`| \_ `.\|/  /` .' `\;-,'\___/',-;/` '. '\|/ /.-'       `\(-V-)/`       `-.\|/ `            "   "            `|n"""
+		self.db.spelldisplay = "Bat"
+		self.db.spell = "bat"
+		self.locks.add("get:false()")
+		self.db.desc = "A thick book bound in the skin of bats."
+		self.locks.add("drop:false()")
+
+class raijinspellbook(DefaultObject):
+	name = "Raijin"
+	price = 0
+	desc = "A thick book bound in copper, crackling with electricity."
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("spellbook", category="isreadable")
+		self.db.story = """The ancient spell of Raijin calls upon the spirit of the lightning god to destroy your enemies.|/|003                      dZZZZZ,|/                     dZZZZ  ZZ,|/             ,AZZZZZZZZZZZ  `ZZ,_|/        ,ZZZZZZV'      ZZZZ   `Z,`\|/|004      ,ZZZ    ZZ   .    ZZZZ   `V|/   ZZZZV'     ZZ         ZZZZ    \_|/   V   l   .   ZZ        ZZZZZZ|/   l    \       ZZ,     ZZZ  ZZZZZZ,|/  /            ZZ l    ZZZ    ZZZ `Z,|/              ZZ  l   ZZZ     Z Z, `Z,|/|005             ZZ      ZZZ      Z  Z, `l|/             Z        ZZ      V  `Z   \|/             V        ZZC     l   V|/|025             l        V ZR        l|/               \       l  ZA|/                \         C          |/|015                      \   K   /    /|/                   \   \  |  /  /|135|/                        \\||/ /  /|455|/                         \||/|n"""
+		self.db.spelldisplay = "Raijin"
+		self.db.spell = "raijin"
+		self.locks.add("get:false()")
+		self.db.desc = "A thick book bound in copper, crackling with electricity."
+		self.locks.add("drop:false()")
+
+class pyrettablazespellbook(DefaultObject):
+	name = "PyrettaBlaze"
+	price = 0
+	desc = ""
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("spellbook", category="isreadable")
+		self.db.story = ""
+		self.db.spelldisplay = "pyrettablaze"
+		self.db.spell = "pyrettablaze"
+		self.locks.add("get:false()")
+		self.db.desc = ""
+		self.locks.add("drop:false()")
+
+class khionekissspellbook(DefaultObject):
+	name = "KhioneKiss"
+	price = 0
+	desc = "A book of solid ice with ancient runes glowing light blue on the cover."
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("spellbook", category="isreadable")
+		self.db.story = """The ancient spell of Khione Kiss calls upon the winter goddess as wicked and cold as a mountain storm, and just as deadly.|/|005                    ,;ssssssss;,|/|235        .|005         .;ssSSSSSSSSSs;,|/|235        :|005      .;ssSSSSSSSSSSSSSSSs|/|235  '.___/*\___.'|005ssSSSSSSSSSSSSSSSSSSs|n |510~~~~~~~~~|/|235    \* \ / */ |005ssSSSSSSSSSSSS'|511     ||///(((~~~~~~~|/|235     >--X--< |005ssSSSSSSSS(@)S' ====|n/=_ |512'))))~~~~~~|/|235    /*_/ \_*\|005SSSSSSSSSS()     ~=|n||_  ~  |513((((~~~~~~|/|235  .'   \*/ |005ss|235'|005SSSSSS'         | |n      |514(((((((((((|/|235        : |005sSSSSSS'         _/~'|n        |515)))))))))))|/|235        ' |005sSSSSS'   \      (|500x|n)         |415(((((((((((|/|005          /          ~-_   /|n~           |414)))))))))))|/|005         |            / ~~~|n\______--~  |413(((((((((((|/|005         |           | |n        /       |412)))))))))))|/|005        |   _-----__ | |n        /       |411((((((((((("""
+		self.db.spelldisplay = "KhioneKiss"
+		self.db.spell = "khionekiss"
+		self.locks.add("get:false()")
+		self.db.desc = "A book of solid ice with ancient runes glowing light blue on the cover.."
+		self.locks.add("drop:false()")
+
+class horrorcanespellbook(DefaultObject):
+	name = "Horrorcane"
+	price = 0
+	desc = "A translucent tome, swirling with clouds and demonic forces."
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("spellbook", category="isreadable")
+		self.db.story = """The ancient spell of Horrorcane calls upon the wind demon Fuzuzu to unleash a hurricane of tormented souls.|/|=n               . '@(@@@@@@@)@. (@@)|/     .  @@'((@@@@@@@@@@@)@@@@@)@@@@@@@)@|/     @@(@@@@@@@@@@))@@@@@@@@@@@@@@@@)@@`|/  @.((@@@@@@@)(@@@@|500.-.|=n@@@@@@@))@\@@@@@)@@@|/ (@@@@@@@@@@@@@@@@|500(o o)|=n@@@@@\\@@)@@@@@@@@)|/(@@@@@@@@)@@@@@@@|500| O \|=n@@@@@@@@//@@@@@@@)|/ .@(@@@@)##&&&&&(@@|500\   \|=n@)(@\\@@@@)@@|/   @@`(@@)###&&&&&&&|500`~~~'|=n_=@@\\@)@`@|/   `   @@(@###&&&&!!;;;;-=_=@.@\\@@|/      `  @.#####&&&!;::=-_= .@  \\|/|500   .-.|=n      ####&&&!!;;::=_-     `|/|500  (o o)|=n       ###&&!!;;:-_=|/|500  | O \|=n        ##&&!;::_=|/|500   \   \|=n      ##&&!;:=|/|500    `~~~'|=n    ##&&!:-|/           #&!;:-    |500.-.|=n|/          #&!;=     |500(o o)|=n|/          #&!-      |500| O \|=n|/           #&=       |500\   \|=n|/            #&-       |500`~~~'|=n|/            \\#/'|n"""
+		self.db.spelldisplay = "Horrorcane"
+		self.db.spell = "horrorcane"
+		self.locks.add("get:false()")
+		self.db.desc = "A translucent tome, swirling with clouds and demonic forces."
+		self.locks.add("drop:false()")
+
+class hecatombspellbook(DefaultObject):
+	name = "Hecatomb"
+	price = 0
+	desc = "."
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("spellbook", category="isreadable")
+		self.db.story = ""
+		self.db.spelldisplay = "Hecatomb"
+		self.db.spell = "hecatomb"
+		self.locks.add("get:false()")
+		self.db.desc = "."
+		self.locks.add("drop:false()")
+
+class deathspellbook(DefaultObject):
+	name = "Death"
+	price = 0
+	desc = "A black book, dripping red ink."
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("spellbook", category="isreadable")
+		self.db.story = """An dark magic spell that creates a pact with a demon to instantly kill your enemy. But will the demon hold up their end of the bargain?|/                            ,-.|/       ___,|500---.__          |n/'|`\          |500__,---|n,___|/    ,-'    \|500`    `-.____,-|n'  |  `|500-.____,-'    |n//    `-.|/  ,'        | |500           ~'|n\     /|500`~          |n |        `.|/ /      ___//|500              |n`. ,'|500          ,  ,|n \___      \|/|    ,-'   |500`-.__   _        |        ,    __,-'|n   `-.    | |/|   /      |500    /\_  `   .   |    ,      _/\|n          \   | |/\  |       |500    \ \`-.___ \  |   / ___,-'/ /|n           |  /|/ \  \      |500     | `._   `\\  |  //'   _,' | |n           /  /|/  `-.\     |500    /'  _ `---'' , . ``---' _  `\|n         /,-'|/     ``   |500    /     \    ,='/ \`=.    /     \|n       ''|/          |500   ||__   /|\_,--.,-.--,--._/|\   __| |/          |n   /  `.|500/  \\`\ |  |  | /,//' \|n,'  \|/            /   /|500    ||-\--+--||--+--/-| |n    \   \|/           |   | |500    /'\_\_\  | /_/_/`\  |n   |   | |/            \   \__,|500 \_     `~'     _/|n .__/   /|/             `-._,-' |500  `-._______,-' |n   `-._,-'"""
+		self.db.spelldisplay = "Death"
+		self.db.spell = "death"
+		self.locks.add("get:false()")
+		self.db.desc = "A black book, dripping red ink."
+		self.locks.add("drop:false()")
+
 class ardtreaskey(DefaultObject):
 	def at_object_creation(self):
 		self.locks.add("drop:false()")

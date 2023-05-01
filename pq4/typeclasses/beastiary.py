@@ -983,6 +983,152 @@ class battlepenguin:
 	drop = "no"
 	dropitem = ""
 
+#Library Dungeon
+class bookwyrm:
+	name = "Bookwyrm"
+	desc = "A monstrous creature with the head of a dragon and the body of a giant book. Its pages are razor-sharp and it can breathe fire, making it a fearsome opponent."
+	phrases = [""]
+	hp = 62
+	mp = 35
+	spells = ["charbq", "heal"]
+	attack = 50
+	defense = 48
+	gold = 90
+	exp = 21
+	actions = ["a", "a", "s", "a", "m", "m", "a"]
+	noflee = "no"
+	weakness = ["a"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "money"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class inkling:
+	name = "Inkling"
+	desc = "A small, vampire creature that takes the form of a drop of ink. It can move quickly and quietly, slipping into the pages of a book to lie in wait for its next victim."
+	phrases = [""]
+	hp = 45
+	mp = 0
+	spells = [""]
+	attack = 61
+	defense = 58
+	gold = 110
+	exp = 25
+	actions = ["a", "i", "a", "a", "a"]
+	noflee = "no"
+	weakness = ["w"]
+	incapatt = "The Inkling spins, flinging droplets of bloody ink."
+	incapsuc = "You are blinded and cannot see to attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class vellumvamp:
+	name = "Vellumvamp"
+	desc = "A vampire creature that takes the form of a piece of parchment, hiding expertly in the library."
+	phrases = [""]
+	hp = 38
+	mp = 36
+	spells = ["whoosh", "swoosh", "moreheal"]
+	attack = 50
+	defense = 41
+	gold = 90
+	exp = 20
+	actions = ["a", "m", "m", "m", "a", "m", "a"]
+	noflee = "no"
+	weakness = ["f"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class codexlurker:
+	name = "Codexlurker"
+	desc = "A monster that takes the form of a large, leather-bound book. It can absorb the knowledge of any book it comes into contact with, making it incredibly intelligent and powerful."
+	phrases = [""]
+	hp = 48
+	mp = 45
+	spells = ["moreheal", "volt", "drown", "charbq", "swoosh", "death"]
+	attack = 65
+	defense = 56
+	gold = 120
+	exp = 28
+	actions = ["a", "d", "a", "m", "m", "m", "s"]
+	noflee = "no"
+	weakness = ["e"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "magic"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class laszlocravensworth:
+	name = "Laszlo Cravensworth"
+	desc = "The undisputed vampire ruler of Staten Island."
+	phrases = ["Do you smell werewolf piss?", "Look! A ghost!!", "I'm going to rip your head off like that Jeff chap.", "Where the fuck is Nandor, he usually handles this crap."]
+	hp = 72
+	mp = 200
+	spells = ["bat", "hurt", "fullheal", "insinerate"]
+	attack = 50
+	defense = 47
+	gold = 180
+	exp = 32
+	actions = ["a", "m", "i", "a", "d", "m", "m", "i", "i", "a"]
+	noflee = "yes"
+	weakness = ["n"]
+	incapatt = "attempts to hypnotize you."
+	incapsuc = "You have the brain scramblies and cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	droptype = "items"
+	dropitem = "batspellbook"
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
 #varken hp 50-70, att 65-86, def 57-80, exp 34-50, gold 110-160
 class mentholmage:
 	name = "Menthol Mage"
