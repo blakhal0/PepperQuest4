@@ -433,6 +433,15 @@ class read(default_cmds.MuxCommand):
 			self.caller.msg("|/You've defeated %d unique monsters and a total of %d monsters." % (unique, deadmonsters))
 			self.caller.msg(monlist)
 			return
+		elif target.tags.get("spellbook", category="isreadable"):
+			if not target.db.spell in self.caller.db.battlespells:
+				self.caller.msg("|/|g%s|n|/ |/%s" % (target.key, target.db.story))
+				self.caller.msg("|/An arcane mist surrounds you! The book begins to melt, runes merging into your skin, you learn the %s spell!" % (target.db.spelldisplay))
+				self.caller.db.battlespells.append(target.db.spell)
+			else:
+				self.caller.msg("|/|g%s|n|/ |/%s" % (target.key, target.db.story))
+				self.caller.msg("|/You already know the spell contained in this book. The book bursts into flame and disintegrates.")
+			target.delete()
 		#regularbook
 		elif target.tags.get("single", category="isreadable"):
 			self.desc = target.db.story
@@ -1108,15 +1117,18 @@ class fight(default_cmds.MuxCommand):
 										herodamage = beasthp + beastdef
 									else:
 										herodamage = 0
-										magicphrase = "You summon the spirits of the underworld, but none appear."
+										magicphrase = "You summon a demon from the underworld, but none appear."
 								#light
 								if magicname == "hecatomb":
-									if randint(1,10) == 7:
-										herodamage = beasthp + beastdef
+									if herohp == 1:
+										magicphrase = "Your hp is too low to attempt this spell."
+									if herohp > 1:
 										herohp = int(herohp * .5)
-									else:
-										herodamage = 0
-										magicphrase = "You open a vein, but the light does not shine upon you."
+										if randint(1,10) == 7:
+											herodamage = beasthp + beastdef
+										else:
+											herodamage = 0
+											magicphrase = "You open a vein, but the light does not shine upon you."
 								if magictype in beastweakness:
 									herodamage = magicbase * 2
 								else:
@@ -2126,7 +2138,7 @@ class talkNPC(default_cmds.MuxCommand):
 				self.caller.msg("|/|m%s|n: says: The Chicken of Doom is currently with another member of the cult, spreading DOOOOOM!!!!!!" % (target.key))
 			else:
 				self.caller.msg("|/|m%s|n: says: Our savior of chaos is currently somewhere in %s." % (target.key, chicken[0].location.key))
-			self.caller.msg("|m%s|n: says:I have great eggs-pectations from you. Good luck!!" % (target.key))
+			self.caller.msg("|m%s|n: says: I have great eggs-pectations from you. Good luck!!" % (target.key))
 #catchall
 		else:
 			self.caller.msg("Hal0 fucked something up with an NPC, tell him to fix it.")

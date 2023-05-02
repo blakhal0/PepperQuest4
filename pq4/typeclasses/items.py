@@ -421,15 +421,15 @@ class raijinspellbook(DefaultObject):
 class pyrettablazespellbook(DefaultObject):
 	name = "PyrettaBlaze"
 	price = 0
-	desc = ""
+	desc = "A burning and charred book, red letters glow on the cover as it smokes."
 	def at_object_creation(self):
 		self.tags.add("readable", category="isreadable")
 		self.tags.add("spellbook", category="isreadable")
-		self.db.story = ""
+		self.db.story = """The ancient spell of PyrettaBlaze calls upon the demon goddess of the funeral fire, Pyretta and her napalm tears.|/|300                       , ,                  |/                      /( )\                 |/                     ( \-/ )                |/            /\       )v  ))/        /\      |/           / \\'._    \_  /(      _.'/ \     |/          / .''._'--.--'   `-.--'_.''. \    |/         /.' _/ |`'=        , ='`| \_ `.\   |/        /` .' `\;-,' `(  (  ; ',-;/` '. '\  |/       /.-'       `\/  )   / \/`       `-.\ |/       `             .' .  |              ` |/                    /      |                |/                   |   ||/  |                |/                   |   |  /                 |/                   |   |.'                  |/                __/'  /                     |/            _ .'  _.-`                      |/          _.` `.-;`/   |550 (                   |/|550  ) |300       /_.-'` / |550/     )\ )      )    ) |/|550 /( ( |300         | / |550(   (()/(   ( /( ( /( ( |/|510(_)))\ ) |300     ( / |510))\   /(_))  )\()))\()))\ |/|500())(()/(  ) |300 /_/ |500/((_) (_))  )(_))/((_)\((_) |/|500 _| )(_))((_)_  (_))   / __|  | |_ | |(_)(_)|n"""
 		self.db.spelldisplay = "pyrettablaze"
 		self.db.spell = "pyrettablaze"
 		self.locks.add("get:false()")
-		self.db.desc = ""
+		self.db.desc = "A burning and charred book, red letters glow on the cover as it smokes."
 		self.locks.add("drop:false()")
 
 class khionekissspellbook(DefaultObject):

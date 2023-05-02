@@ -272,7 +272,7 @@ class holyaura:
 class hecatomb:
 	name = "Hecatomb"
 	price = 1000
-	cost = 2
+	cost = 5
 	base = 1000
 	group = "aggressive"
 	kind = "l"
