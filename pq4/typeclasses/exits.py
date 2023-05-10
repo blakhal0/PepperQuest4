@@ -297,6 +297,24 @@ class remtagexit(DefaultExit):
 		if traversing_object.move_to(target_location):
 			self.at_after_traverse(traversing_object, source_location)
 
+class remtagmsgexit(DefaultExit):
+	def at_object_creation(self):
+		self.db.tagname = "tagnametoremove"
+		self.db.message = "|/Test|/"
+		self.db.err_traverse = "|/You cannot go that way|/"
+	def at_traverse(self, traversing_object, target_location):
+		traversing_object.msg(self.db.message)
+		if traversing_object.tags.get(self.db.tagname):
+			traversing_object.tags.remove(self.db.tagname)
+		source_location = traversing_object.location
+		if traversing_object.move_to(target_location):
+			self.at_after_traverse(traversing_object, source_location)
+		else:
+			if self.db.err_traverse:
+				traversing_object.msg(self.db.err_traverse)
+			else:
+				self.at_failed_traverse(traversing_object)
+
 class cityentrance(DefaultExit):
 	def at_object_creation(self):
 		self.db.city = "#"

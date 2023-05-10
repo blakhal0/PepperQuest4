@@ -338,3 +338,33 @@ class poisonroomslow(DefaultScript):
 				else:
 					x.msg("|/|r%s, you lose %d hp.|n" % (results[0].db.damagemsg, results[0].db.poisondamage))
 					continue
+
+
+class libvamp(DefaultScript):
+	def at_script_creation(self):
+		self.key = "libvamp"
+		self.interval = 30
+		self.persistent = True
+	def at_repeat(self):
+		libraryrooms = ["#9730", "#9725", "#9722", "#9719", "#9716"]
+		vampsays = ["1024 vampires all bite you, it's a MegaBite.", "A frozen vampire attacks, it's a frostbite.", "Be at ease, I'm a Doctor. Dr. Acula!", "I need your blood for my cold, I've really been coffin."]
+		for i in libraryrooms:
+			results = search_object(i)
+			if not results[0].contents:
+				continue
+			for x in results[0].contents:
+			#define players and make sure they're connected
+				if x.permissions.get("player") and x.has_account:
+					x.db.hp -= 6
+					if x.db.hp <= 0:
+						x.msg("|/|rWhat tragic fate, you are dead.|n|/You have brought shame to yourself and your family.")
+						x.db.deathcount += 1
+						x.db.hp = int(x.db.maxhp * .5)
+						x.db.mp = int(x.db.maxmp * .5)
+						x.db.gold -= int(x.db.gold * .2)
+						results = search_object(x.db.lastcity)
+						x.move_to(results[0], quiet=True, move_hooks=False)
+						continue
+					else:
+						x.msg("|/|rYou hear soft steps, feel an eerie presence behind you, and a light breath on your neck.|/%s You feel light headed. You lose 6 hp.|n" % (random.choice(vampsays)))
+						continue

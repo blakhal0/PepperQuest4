@@ -151,7 +151,7 @@ class pyrettablaze:
 	base = 64
 	group = "aggressive"
 	kind = "f"
-	phrase = "Distant bells toll summoning the heartbroken pyre demon, Pyretta. Napalm tears cover the enemy, busting to flame as she wails in agony."
+	phrase = "Distant bells toll summoning the heartbroken pyre demon, Pyretta. Napalm tears cover the enemy, bursting to flame as she wails in agony."
 	enemyphrase = ""
 
 #aqua
@@ -262,8 +262,8 @@ class horrorcane:
 class holyaura:
 	name = "HolyAura"
 	price = 50
-	cost = 2
-	base = 4
+	cost = 9
+	base = 20
 	group = "aggressive"
 	kind = "l"
 	phrase = "An ethereal light emanates from you, burning the enemy."
@@ -276,14 +276,14 @@ class hecatomb:
 	base = 1000
 	group = "aggressive"
 	kind = "l"
-	phrase = "You open a vein, the light shines upon you. 'Half my life, for all of yours!'"
+	phrase = "You open a vein, in hopes that the light shines upon you. 'Half my life, for all of yours!'"
 	enemyphrase = ""
 
 #dark
 class hurt:
 	name = "Hurt"
 	price = 50
-	cost = 3
+	cost = 9
 	base = 20
 	group = "aggressive"
 	kind = "d"

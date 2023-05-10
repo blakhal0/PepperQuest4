@@ -183,6 +183,23 @@ class addtagobj(DefaultObject):
 			looker.tags.add(self.db.tagname)
 		return desc
 
+class remtagobj(DefaultObject):
+	def at_object_creation(self):
+		self.locks.add("get:false()")
+		self.db.desc = ""
+		self.db.tagname = "tagnametoremove"
+		self.db.tagremovemsg = ""
+		self.db.get_err_msg = "|r%s|n" % random.choice(donttake)
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		desc = str(self.db.desc)
+		if looker.tags.get(self.db.tagname):
+			looker.tags.remove(self.db.tagname)
+			if self.db.tagremovemsg:
+				desc = desc + "|/" + self.db.tagremovemsg
+		return desc
+
 class torch(DefaultObject):
 	def at_object_creation(self):
 		self.locks.add("drop:false()")

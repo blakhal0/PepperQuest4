@@ -36,3 +36,12 @@ class ladronenote(DefaultObject):
 		self.db.story = "You've been had. I've added the Enigma Shield to my stash. So long suckers!|/Signed,|/The world famous thief|/Ladrone"
 		self.locks.add("drop:false()")
 		self.db.desc = "A handwritten note."
+
+class cryptexultima(DefaultObject):
+	name = "Cryptex Ultima"
+	def at_object_creation(self):
+		self.tags.add("readable", category="isreadable")
+		self.tags.add("single", category="isreadable")
+		self.db.story = "Your eyes hurt immediately upon gazing at the pages.|/Strange glowing glyphs seem to shift and transform like fluid creeping across the page causing waves of nausea to wash over you."
+		self.locks.add("drop:false()")
+		self.db.desc = "The Cryptex Ultima."
