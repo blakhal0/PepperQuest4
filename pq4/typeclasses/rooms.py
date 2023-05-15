@@ -1098,7 +1098,7 @@ class arcanumisland(vroom):
 
 class ayerisisland(vroom):
 	def at_object_creation(self):
-		self.db.desc = "The campus of the Celestial College is a complex of buildings, stairways, terraces, and gardens, with winding paths leading through lush greenery and bubbling fountains.|/The buildings themselves are ornate and grand, with intricate carvings and stained glass windows depicting scenes from the history of magic."
+		self.db.desc = "The air is perfumed with the scent of flowers and incense, and the light reflects off the crystal surfaces, creating a dazzling and ethereal glow. Walls, ceilings, and floors are covered in intricate patterns of geometric shapes and symbols, which seem to shift and move."
 		self.db.fight = "no"
 
 class serenityisland(vroom):
@@ -1334,6 +1334,12 @@ class pathofsuits(vroom):
 		if things:
 			string += "\n|050Objects:|n " + ", ".join(things)
 		return string
+
+class dragontemple(vroom):
+	def at_object_creation(self):
+		self.db.desc = "The Dragon Temple is a massive open space, with the floor made of polished obsidian that reflects the light of the torches along the walls.|/he ceiling is arched and decorated with intricate carvings of dragons in flight, breathing fire and smoke.|/The Lord Dragon's tomb, a massive stone sarcophagus covered in ornate carvings of dragons, flames, and other ancient creatures, is placed on a raised platform, with stairs leading up to it.|/The platform is surrounded by flickering torches that cast eerie shadows on the walls. Along the sides of the temple, there are alcoves that contain various relics and artifacts related to the Lord Dragon and the ancient dragon civilization."
+		self.db.fight = "no"
+		self.tags.add("notravel")
 
 #arena
 class titanarena(DefaultRoom):

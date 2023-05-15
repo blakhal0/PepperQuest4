@@ -21,7 +21,9 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		self.caller.msg(self.caller.typeclass_path)
+		for i in self.caller.contents:
+			if i.typeclass_path == "typeclasses.objects.glassflower":
+				self.caller.msg(i.key)
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"

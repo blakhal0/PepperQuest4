@@ -4,12 +4,12 @@ import random
 
 class enterayerisdoor(default_cmds.MuxCommand):
 	key = "temple door"
-	aliases = ["Temple Door", "Temple", "Door", "door", "temple"]
+	aliases = ["Temple Door", "Temple", "Door", "door", "temple", "grand doorway", "Grand Doorway", "Grand doorway", "grand Doorway"]
 	auto_help = False
 	def func(self):
 		def dothemove():
 			self.caller.msg("|/You are both wise and knowledgeable. Your request to enter has been granted.")
-			results = search_object("#9570")
+			results = search_object("#9897")
 			self.caller.move_to(results[0], quiet=True, move_hooks=True)
 			return
 		def wronganswer():
