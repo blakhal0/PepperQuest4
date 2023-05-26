@@ -347,7 +347,7 @@ class enigmaweapon(weapon):
 	name = "Enigma Weapon"
 	price = 10
 	attack = 0
-	desc = "."
+	desc = "Enigma Weapon."
 	def at_object_creation(self):
 		self.tags.add("equipable", category="weapon")
 		self.locks.add("drop:false()")

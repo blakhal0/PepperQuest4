@@ -1335,9 +1335,11 @@ class pathofsuits(vroom):
 			string += "\n|050Objects:|n " + ", ".join(things)
 		return string
 
-class dragontemple(vroom):
+class dragontemple(iftagviewnf):
 	def at_object_creation(self):
-		self.db.desc = "The Dragon Temple is a massive open space, with the floor made of polished obsidian that reflects the light of the torches along the walls.|/he ceiling is arched and decorated with intricate carvings of dragons in flight, breathing fire and smoke.|/The Lord Dragon's tomb, a massive stone sarcophagus covered in ornate carvings of dragons, flames, and other ancient creatures, is placed on a raised platform, with stairs leading up to it.|/The platform is surrounded by flickering torches that cast eerie shadows on the walls. Along the sides of the temple, there are alcoves that contain various relics and artifacts related to the Lord Dragon and the ancient dragon civilization."
+		self.db.desc = "No tag"
+		self.db.tagdesc = "Tag"
+		self.db.tagname = "orthanpass"
 		self.db.fight = "no"
 		self.tags.add("notravel")
 
