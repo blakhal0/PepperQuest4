@@ -61,3 +61,11 @@ class carvercity:
 class lumakesiisland:
 	name = "lumakesi island"
 	location = "#9533"
+
+class boarssnout:
+	name = "boars snout"
+	location = "#9932"
+
+class magmamadness:
+	name = "magmamadness"
+	location = "#5840"

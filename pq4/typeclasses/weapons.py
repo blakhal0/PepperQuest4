@@ -313,7 +313,7 @@ class angrygoose(weapon):
 class shamshirofspice(weapon):
 	name = "Shamshir of Spice"
 	price = 300000
-	attack = 40
+	attack = 50
 	desc = "Legendary sword forged of pure spice."
 	def at_object_creation(self):
 		self.tags.add("equipable", category="weapon")
@@ -331,7 +331,7 @@ class diamondhands(weapon):
 	name = "Diamond Hands"
 	tokens = 42069000
 	price = 420690
-	attack = 50
+	attack = 40
 	desc = "Diamond spiked gauntlets of the Ape King."
 	def at_object_creation(self):
 		self.tags.add("equipable", category="weapon")

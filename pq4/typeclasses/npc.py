@@ -282,6 +282,18 @@ class accoladenpc(DefaultObject):
 			desc = self.db.desc
 		return desc
 
+class varkenpc(accoladenpc):
+	def at_object_creation(self):
+		self.tags.add("talkative", category="npc")
+		self.tags.add("accoladenpc", category="talkative")
+		self.db.accolade = "Finder of the Song"
+		self.db.desc = ""
+		self.db.accoladedesc = ""
+		self.db.msg = ""
+		self.db.accolademsg = ""
+		self.locks.add("get:false()")
+		self.db.get_err_msg = "|/|r%s|n" % (random.choice(geterrors))
+
 soldharadead = ["A rotting corpse lays there, swarming with flies.", "A pile of blood and viscera that used to be a villager is splattered on the ground.", "Little more than a crushed skull remains identifiable.", "A corpse with arms and legs lay bent at very unnatural angles.", "An unidentifiable pile of meat rots in the sun."]
 class soldharanpc(tagviewnpc):
 	def at_object_creation(self):

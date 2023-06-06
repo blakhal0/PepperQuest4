@@ -21,9 +21,10 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		for i in self.caller.contents:
-			if i.typeclass_path == "typeclasses.objects.glassflower":
-				self.caller.msg(i.key)
+		if any("Enigma Weapon" in i.key for i in self.caller.contents):
+			self.caller.msg("Item in inventory")
+		else:
+			self.caller.msg("Item not found")
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"
@@ -142,6 +143,24 @@ class remtag(default_cmds.MuxCommand):
 			return
 		else:
 			self.caller.msg("|rYou don't have a tag named %s|n" % (self.tagname))
+
+class slowdeath(default_cmds.MuxCommand):
+	key = "slowdeath"
+	auto_help = False
+	def func(self):
+		if not self.caller.tags.get("cursedbones"):
+			return
+		yield 10
+		self.caller.tags.remove("cursedbones")
+		self.caller.msg("|/|rYou suddenly do not feel well. Your stumble and fall, unable to support yourself, your limbs bend like a wet noodle. YOUR BONES!!! THEY LACK CALCIUM!!! YOU SHOULD HAVE ACCEPTED THE NECROMANCERS OFFER OF DELICIOUS CALCIUM FOR STRONG BONES!!")
+		self.caller.msg("|/|rWhat tragic fate, you have died from lack of calcium and bad bones.|n|/You have brought shame to yourself, your bones, and your family. Doot Doot.|n")
+		self.caller.db.deathcount += 1
+		self.caller.db.hp = int(self.caller.db.maxhp * .5)
+		self.caller.db.mp = int(self.caller.db.maxmp * .5)
+		self.caller.db.gold -= int(self.caller.db.gold * .3)
+		results = search_object(self.caller.db.lastcity)
+		self.caller.move_to(results[0], quiet=True, move_hooks=False)
+		return
 
 class loot(default_cmds.MuxCommand):
 	key = "Loot"
@@ -1009,19 +1028,19 @@ class fight(default_cmds.MuxCommand):
 				darklist = darklist + mname + " - " + mcost + ". "
 #		for i in (heallist, firelist, aqualist, eleclist, windlist, lightlist, darklist):
 		if not heallist == "":
-			spelllist = spelllist + "Heal: " + heallist + "|/"
+			spelllist = spelllist + "Heal:|/|-" + heallist + "|/"
 		if not firelist == "":
-			spelllist = spelllist + "Fire: " + firelist + "|/"
+			spelllist = spelllist + "Fire:|/|-" + firelist + "|/"
 		if not aqualist == "":
-				spelllist = spelllist + "Water: " + aqualist + "|/"
+				spelllist = spelllist + "Water:|/|-" + aqualist + "|/"
 		if not eleclist == "":
-				spelllist = spelllist + "Electric: " + eleclist + "|/"
+				spelllist = spelllist + "Electric:|/|-" + eleclist + "|/"
 		if not windlist == "":
-				spelllist = spelllist + "Wind: " + windlist + "|/"
+				spelllist = spelllist + "Wind:|/|-" + windlist + "|/"
 		if not lightlist == "":
-				spelllist = spelllist + "Light: " + lightlist + "|/"
+				spelllist = spelllist + "Light:|/|-" + lightlist + "|/"
 		if not darklist == "":
-				spelllist = spelllist + "Dark: " + darklist + "|/"
+				spelllist = spelllist + "Dark:|/|-" + darklist + "|/"
 #			spelllist = spelllist + i + "|/"
 		if spelllist == "":
 			spelllist = "You do not know any spells."

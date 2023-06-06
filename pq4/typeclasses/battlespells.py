@@ -193,7 +193,7 @@ class frostflower:
 	group = "aggressive"
 	kind = "a"
 	phrase = "Frost flowers bloom from the enemy as their blood freezes."
-	enemyphrase = "You are hit with a spine chilling spell and freeze solid."
+	enemyphrase = "You are hit with a spine chilling spell and freezing you to the bone."
 
 class khionekiss:
 #Legendary

@@ -37,7 +37,7 @@ class chatcaptain(default_cmds.MuxCommand):
 		#Tell the player their options
 			else:
 				self.caller.msg("|/|m%s|n says: Aye, ye do be wanting to sail the seas? Well, let's take a look at your maps." % (target.key))
-				self.caller.msg("|m%s|n says: Ahhh yes, it do look like I can take you to:" % (target.key))
+				self.caller.msg("|m%s|n says: Ahhh yes, it looks like you've got some maps, humm, let's see here, you've got maps for:" % (target.key))
 				for i in islands:
 					self.caller.msg(i.title())
 				answer = yield("|m%s|n says: Where do you want to be going?" % (target.key))
@@ -47,7 +47,7 @@ class chatcaptain(default_cmds.MuxCommand):
 					return
 			#Check if the captain sails there
 				elif answer.replace(" ", "").lower() not in target.db.locations:
-					self.caller.msg("|/|m%s|n says: My apologies, but I do no sail those seas. You be needing a different captain at a different port for this adventure." % (target.key))
+					self.caller.msg("|/|m%s|n says: My apologies, but I do no sail those seas. You be needing a different captain at a different port for that adventure." % (target.key))
 					return
 			#Collect money and travel
 				else:

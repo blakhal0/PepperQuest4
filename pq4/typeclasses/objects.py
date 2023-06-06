@@ -261,7 +261,14 @@ class madmap(DefaultObject):
 		self.locks.add("drop:false()")
 		self.tags.add("map")
 		self.db.desc = "Map to the Island of the Mad."
-		self.db.locationname = "island of the mad"
+		self.db.locationname = "islandofthemad"
+
+class valaharranmap(DefaultObject):
+	def at_object_creation(self):
+		self.locks.add("drop:false()")
+		self.tags.add("map")
+		self.db.desc = "Valaharran Pirate Map."
+		self.db.locationname = "magmamadness"
 
 class book(DefaultObject):
 	def at_object_creation(self):

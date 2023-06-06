@@ -131,6 +131,10 @@ class laszlocravensworth:
 	monsters = ["laszlocravensworth"]
 	rare = ["laszlocravensworth"]
 
+class boareaus:
+	monsters = ["boareaus"]
+	rare = ["boareaus"]
+
 #Titan Arena
 #------------------------------------------------
 class arenaone:

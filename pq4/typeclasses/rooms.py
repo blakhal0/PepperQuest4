@@ -1151,6 +1151,17 @@ class celestialcollege(vroom):
 		self.db.desc = "The campus of the Celestial College is a complex of buildings, stairways, terraces, and gardens, with winding paths leading through lush greenery and bubbling fountains.|/The buildings themselves are ornate and grand, with intricate carvings and stained glass windows depicting scenes from the history of magic."
 		self.db.fight = "no"
 
+class boarssnout(vroom):
+	def at_object_creation(self):
+		self.db.desc = "The docks stretch out like frozen fingers into the icy waters, where the frigid ocean meets the jagged shoreline.|/Built with solid craftsmanship, the wooden planks creak underfoot, evidence of years of enduring harsh winters and relentless sea winds.|/The scent of saltwater mingles with the sharp tang of freshly caught fish, carried by the bracing sea breeze that whips through the harbor.|/Boats of all sizes and shapes bob gently in the frigid waters, tied to wooden posts and anchored securely. Icebreaker ships, specially designed with reinforced hulls and sturdy bows, dominate the scene. These vessels, essential for navigating the treacherous frozen oceans, stand as a testament to the resourcefulness and innovation of the city's shipbuilders."
+		self.db.fight = "no"
+
+class boarssnoutifacc(ifaccolade):
+	def at_object_creation(self):
+		self.db.desc = "The streets are filled with a strange silence where you would expect the sounds of a port city carrying over the icy air. In its place, a dull thrum of thick boots, moving cargo, and the occasional shouted instruction.|/Small rows of houses are fit snugly between large warehouses, all made of the native stone. The aroma of hearth fires and hot spiced beverages and food wafts through the air, offering warmth and comfort to those braving the cold."
+		self.db.hasaccoladedesc = "The streets echo with song. Bards and minstrels crow from every corner, music bursts out as a door opens from a building then slowly returns to a muffled rhythm as the door swings shut.|/Small rows of houses are fit snugly between large warehouses, all made of the native stone. The aroma of hot spiced beverages and food wafts through the air, offering warmth and comfort to those braving the cold."
+		self.db.accolade = "Finder of the Song"
+		self.db.fight = "no"
 
 #temple overworld
 class templeofsmallgods(vroom):

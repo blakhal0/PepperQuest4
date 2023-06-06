@@ -151,6 +151,36 @@ class thegoldengodofgreedmammoo:
 	accoladetoadd = "Fortunate One"
 	sendto = ""
 
+class boareaus:
+	name = "Boareaus The Consuming North Wind"
+	desc = "A swirling wind, hungering for the souls of everyone."
+	phrases = []
+	hp = 115
+	mp = 75
+	spells = ["horrorcane", "galeforce", "fullheal", "frostflower"]
+	attack = 60
+	defense = 50
+	gold = 2000
+	exp = 120
+	actions = ["a", "m", "a", "i", "m", "i"]
+	noflee = "yes"
+	weakness = []
+	incapatt = "summons a freezing wind, your breath catches as you are picked up into a swirling cyclone"
+	incapsuc = "You are frozen solid, suspended in mid air."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	dropitem = "magicalpepper"
+	droptype = "items"
+	god = "yes"
+	successmsg = "|/The wind increases blowing with an incredible force, howling, screaming dissonant shouts of anger.|/|mBoareaus|n shouts: NO! NO! I WILL NOT GO HUNGRY AGAIN!! NEVER AGAIN!!|/The wind somehow increases again threatening to rip the meat from your bones.. then a loud clap and the wind stops.|/Before you stands a tall woman with braided yellow hair dressed in furs. Large antlers protrude from the back of her head, a deer skin drum hangs at her side.|/|mSkaahde|n says: Thank you for freeing me. Long ago I was foolish and trusted Boareaus. He betrayed me and imprisoned me, stole my lands, fed on my people. Now that I am free, music will return to my lands.|/You snort and shake your head.|/Your land? Yours??!?! I am the one that freed it. I AM the one that saved your people. Why should they worship you? YOU WHO WERE FOOLED, DEFEATED, WHO ARE YOU TO CLAIM TO PROTECT THEM!!|/You feel your skin heating, a painful rumble in your chest.|/|mSkaahde|n says: How did I not recognize you?|/A bright light flashes."
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = "Finder of the Song"
+	sendto = "#10009"
+
+
 #Mini Bosses
 class guardcaptain:
 	name = "Guard Captain"
