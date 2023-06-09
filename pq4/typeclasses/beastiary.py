@@ -145,26 +145,26 @@ class thegoldengodofgreedmammoo:
 	droptype = "items"
 	god = "yes"
 	successmsg = "|/Mammoo cries out in defeat and slumps to the ground.|/The golden statues begin to crack and shatter, Nemesis and Tyche step forward."
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = "Fortunate One"
 	sendto = ""
 
 class boareaus:
 	name = "Boareaus The Consuming North Wind"
 	desc = "A swirling wind, hungering for the souls of everyone."
-	phrases = []
+	phrases = [""]
 	hp = 115
 	mp = 75
 	spells = ["horrorcane", "galeforce", "fullheal", "frostflower"]
-	attack = 60
-	defense = 50
+	attack = 87
+	defense = 52
 	gold = 2000
 	exp = 120
 	actions = ["a", "m", "a", "i", "m", "i"]
 	noflee = "yes"
-	weakness = []
+	weakness = [""]
 	incapatt = "summons a freezing wind, your breath catches as you are picked up into a swirling cyclone"
 	incapsuc = "You are frozen solid, suspended in mid air."
 	lazymsg = ""
@@ -174,14 +174,100 @@ class boareaus:
 	droptype = "items"
 	god = "yes"
 	successmsg = "|/The wind increases blowing with an incredible force, howling, screaming dissonant shouts of anger.|/|mBoareaus|n shouts: NO! NO! I WILL NOT GO HUNGRY AGAIN!! NEVER AGAIN!!|/The wind somehow increases again threatening to rip the meat from your bones.. then a loud clap and the wind stops.|/Before you stands a tall woman with braided yellow hair dressed in furs. Large antlers protrude from the back of her head, a deer skin drum hangs at her side.|/|mSkaahde|n says: Thank you for freeing me. Long ago I was foolish and trusted Boareaus. He betrayed me and imprisoned me, stole my lands, fed on my people. Now that I am free, music will return to my lands.|/You snort and shake your head.|/Your land? Yours??!?! I am the one that freed it. I AM the one that saved your people. Why should they worship you? YOU WHO WERE FOOLED, DEFEATED, WHO ARE YOU TO CLAIM TO PROTECT THEM!!|/You feel your skin heating, a painful rumble in your chest.|/|mSkaahde|n says: How did I not recognize you?|/A bright light flashes."
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = "Finder of the Song"
 	sendto = "#10009"
 
+#minibosses
+class mlanchrus:
+	name = "M'lanchrus"
+	desc = "The Harbinger of Sorrow. He will play your funeral song on his white violin while he puts you in the grave."
+	phrases = ["M'lanchrus plucks the violin strings.", "A sad song flows from the violin."]
+	hp = 85
+	mp = 65
+	spells = ['fullheal', 'sirenslament']
+	attack = 78
+	defense = 60
+	gold = 200
+	exp = 50
+	actions = ['a', 'a', 'm', 'a', 'a', 'd']
+	noflee = "yes"
+	weakness = ['a']
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	dropitem = ""
+	droptype = ""
+	god = "yes"
+	successmsg = "As M'lanchrus dies you hear a brief part of an ancient song: 'Boreas, ancient gusts, heed my plea,'"
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
+	accoladetoadd = ""
+	sendto = "#5093"
 
-#Mini Bosses
+#class seraphin:
+#	name = "Seraphin"
+#	desc = "The Enchantress of Chaos. Her sorrowful songs will leave you hanging."
+#	phrases = ["The hanging strings from the lute shoot out wrapping around your neck.", "Seraphin swings the lute from the noose strings."]
+#	hp = 79
+#	mp = 170
+#	spells = ['moreheal', 'harmonicchains', 'rhythmofruin']
+#	attack = 80
+#	defense = 50
+#	gold = 200
+#	exp = 50
+#	actions = ['m', 'a', 'm', 'm', 'a']
+#	noflee = "yes"
+#	weakness = ['e']
+#	incapatt = ""
+#	incapsuc = ""
+#	lazymsg = ""
+#	stealtype = "none"
+#	drop = "no"
+#	dropitem = ""
+#	droptype = ""
+#	god = "yes"
+#	successmsg = "As Seraphin dies you hear a brief part of an ancient song: 'unleash your howling tempest,'"
+#	tagstoadd = [""]
+#	tagstoremove = [""]
+#	itemstoremove = [""]
+#	accoladetoadd = ""
+#	sendto = "#"
+#
+#class discordia:
+#	name = "Discordia"
+#	desc = "The Master of Dissonance. The physical manifestation of nails on a chalkboard."
+#	phrases = [""]
+#	hp = 90
+#	mp = 0
+#	spells = [""]
+#	attack = 70
+#	defense = 80
+#	gold = 200
+#	exp = 50
+#	actions = ['a', 'd', 'i', 'a', 'a', 'd', 'i']
+#	noflee = "yes"
+#	weakness = ['f']
+#	incapatt = "emits dissonant chords from the syrinx striking your ears with a horrific noise."
+#	incapsuc = "You are dazed and confused, barely able to stand."
+#	lazymsg = ""
+#	stealtype = "none"
+#	drop = "no"
+#	dropitem = ""
+#	droptype = ""
+#	god = "yes"
+#	successmsg = "As Discordia dies you hear a brief part of an ancient song: 'bend the world to its knees.'"
+#	tagstoadd = [""]
+#	tagstoremove = [""]
+#	itemstoremove = [""]
+#	accoladetoadd = ""
+#	sendto = "#"
+
 class guardcaptain:
 	name = "Guard Captain"
 	desc = "A large and bulky guard in heavy armor. Captain of the Ardismouf Castle Guards."

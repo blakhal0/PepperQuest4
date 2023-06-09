@@ -381,3 +381,30 @@ class titansfury:
 	kind = "a"
 	phrase = "."
 	enemyphrase = "The Titan reaches raises an arm to the sky. An asteroid plummets towards you and impacts."
+
+class sirenslament:
+	name = "Siren's Lament"
+	price = 0
+	cost = 12
+	base = 60
+	group = "aggressive"
+	kind = "d"
+	enemyphrase = "The demon minstrel sings a hauntingly beautiful melody that enthralls you, causing you pain."
+	
+class harmonicchains:
+	name = "Harmonic Chains"
+	price = 0
+	cost = 12
+	base = 60
+	group = "aggressive"
+	kind = "d"
+	enemyphrase = "Ethereal nooses of sound ensnare you and resonate with the enemy's power, causing mental anguish and disarray."
+	
+class rhythmofruin:
+	name = "Rhythm of Ruin"
+	price = 0
+	cost = 12
+	base = 60
+	group = "aggressive"
+	kind = "d"
+	enemyphrase = "The demon minstrel taps into the primal beat of music, unleashing a rhythmic assault that pulses through the battlefield."

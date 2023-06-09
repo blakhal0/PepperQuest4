@@ -14,7 +14,24 @@ class chatvanya(default_cmds.MuxCommand):
 	#Player has not completed Varken Area
 			self.caller.msg("|/|mUncle Vanya|n says: Welcome welcome to Uncle Vanya's! The greatest never ending show ever!")
 			answer = yield("|mUncle Vanya|n says: How does Uncle Vanya help you today?|/Uncle Vanya leans over the bar swirling his mustaches waiting to hear what you want.")
-			if "drink" in answer.lower():
+			if answer.lower() in ["boareaus, ancient gusts, heed my plea, unleash your howling tempest, bend the world to its knees.", "boareaus ancient gusts heed my plea unleash your howling tempest bend the world to its knees"]:
+				if all(["Discordia", "Seraphin", "M'lanchrus"]) in self.caller.db.monsterstats.keys():
+					self.caller.msg("|/|/Uncle Vanya turns and looks at you with a wicked stare through completely blue eyes. His head tips back, smile widening until the mouth splits his face in two and a great deafening freezing wind is exhaled. A swirling form appears before you.")
+					self.caller.msg("|mBoareaus|n says: So, you survived and figured out my ruse. Unfortunate for you, I was quite content just feeding on the people of this city. Listening to that gullible idiot Skaahde scream in pain as I torment her followers is just as delicious as their souls. Now your soul will feed the consuming north wind as well.")
+					self.caller.msg("You are suddenly suspended in a freezing swirling wind...")
+					yield 4
+					results = search_object("#10014")
+					self.caller.move_to(results[0], quiet=True, move_hooks=False)
+					self.caller.tags.add("letsfight")
+					self.caller.execute_cmd('fight')
+				else:
+					self.caller.msg("|/|/Uncle Vanya shivers violently, cracks their neck, then turns to you with a large smile.")
+					self.caller.msg("|mUncle Vanya|n says: That's a very old song you know. How odd that you would know it without having met those that guard the words.")
+					self.caller.db.hp -= int(self.caller.db.hp * .5)
+					self.caller.db.gold -= int(self.caller.db.gold * .5)
+					self.caller.msg("You feel a spine shivering chill... you lose half your hp.")
+					self.caller.msg("And half your gold.")
+			elif "drink" in answer.lower():
 				self.caller.msg("|/Uncle Vanya smiles wide, almost seeming to split his face in two.")
 				self.caller.msg("|mUncle Vanya|n says: Back for another eh?? HAHAHAHAHA NO ONE CAN STAY AWAY!! Is very good, keep you warm and happy in so much cold and sad.")
 				self.caller.msg("Uncle Vanya sets glasses in front of both of you and pours the odd brown black liquid.")
@@ -43,15 +60,6 @@ class chatvanya(default_cmds.MuxCommand):
 			elif any(word in answer.lower() for word in ["mirror"]):
 				self.caller.msg("|/|mUncle Vanya|n says: Yes yes, this is how Vanya find land after ship sink! I see shiny light on shore and swim run swim over and through ice. Then Vanya find Boars Snout. Unusual place for big mirror, but Vanya is thankful. Maybe you go see it.")
 				self.caller.msg("Vanya goes back to entertaining and serving the guests.")
-			elif answer.lower() == "summon northern wind":
-				self.caller.msg("|/|/Uncle Vanya turns and looks at you with a wicked stare through completely blue eyes. His head tips back, smile widening until the mouth splits his face in two and a great deafening freezing wind is exhaled. A swirling form appears before you.")
-				self.caller.msg("|mBoareaus|n says: So, you survived and figured out my ruse. Unfortunate for you, I was quite content just feeding on the people of this city. Listening to that gullible idiot Skaahde scream in pain as I torment her followers is just as delicious as their souls. Now your soul will feed the consuming north wind as well.")
-				self.caller.msg("You are suddenly suspended in a freezing swirling wind...")
-				yield 4
-				results = search_object("#10014")
-				self.caller.move_to(results[0], quiet=True, move_hooks=False)
-				self.caller.tags.add("letsfight")
-				self.caller.execute_cmd('fight')
 			else:
 				self.caller.msg("|/Uncle Vanya looks at you with a slight confusion in their eyes.")
 				self.caller.msg("|mUncle Vanya|n says: You make no sense... YOU NEED DRINK!!! Good drink make you make sense.")
