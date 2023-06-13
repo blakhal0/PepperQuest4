@@ -21,10 +21,12 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		if any("Enigma Weapon" in i.key for i in self.caller.contents):
-			self.caller.msg("Item in inventory")
-		else:
-			self.caller.msg("Item not found")
+		secretmessage = ""
+		CODE = {'A':'=E', 'B':'^E', 'C':'_F', 'D':'=F', 'E':'^F', 'F':'_G', 'G':'=G', 'H':'^G', 'I':'_A', 'J':'=A', 'K':'^A', 'L':'_B', 'M':'=B', 'N':'^B', 'O':'_c', 'P':'=c', 'Q':'^c', 'R':'_d', 'S':'=d', 'T':'^d', 'U':'_e', 'V':'=e', 'W':'^e', 'X':'_f', 'Y':'=f', 'Z':'^f', ' ':'||'}
+		answer = yield("Message to encode? ")
+		for letter in answer.upper():
+			secretmessage += CODE[letter]
+		self.caller.msg(secretmessage)
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"

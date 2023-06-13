@@ -135,6 +135,18 @@ class boareaus:
 	monsters = ["boareaus"]
 	rare = ["boareaus"]
 
+class mlanchrus:
+	monsters = ["mlanchrus"]
+	rare = ["mlanchrus"]
+
+class seraphin:
+	monsters = ["seraphin"]
+	rare = ["seraphin"]
+
+class discordia:
+	monsters = ["discordia"]
+	rare = ["discordia"]
+
 #Titan Arena
 #------------------------------------------------
 class arenaone:

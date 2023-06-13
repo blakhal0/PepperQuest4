@@ -210,39 +210,39 @@ class mlanchrus:
 	accoladetoadd = ""
 	sendto = "#5093"
 
-#class seraphin:
-#	name = "Seraphin"
-#	desc = "The Enchantress of Chaos. Her sorrowful songs will leave you hanging."
-#	phrases = ["The hanging strings from the lute shoot out wrapping around your neck.", "Seraphin swings the lute from the noose strings."]
-#	hp = 79
-#	mp = 170
-#	spells = ['moreheal', 'harmonicchains', 'rhythmofruin']
-#	attack = 80
-#	defense = 50
-#	gold = 200
-#	exp = 50
-#	actions = ['m', 'a', 'm', 'm', 'a']
-#	noflee = "yes"
-#	weakness = ['e']
-#	incapatt = ""
-#	incapsuc = ""
-#	lazymsg = ""
-#	stealtype = "none"
-#	drop = "no"
-#	dropitem = ""
-#	droptype = ""
-#	god = "yes"
-#	successmsg = "As Seraphin dies you hear a brief part of an ancient song: 'unleash your howling tempest,'"
-#	tagstoadd = [""]
-#	tagstoremove = [""]
-#	itemstoremove = [""]
-#	accoladetoadd = ""
-#	sendto = "#"
-#
+class seraphin:
+	name = "Seraphin"
+	desc = "The Enchantress of Chaos. Her sorrowful songs will leave you hanging."
+	phrases = ["The hanging strings from the lute shoot out wrapping around your neck.", "Seraphin swings the lute from the noose strings."]
+	hp = 79
+	mp = 170
+	spells = ['moreheal', 'harmonicchains', 'rhythmofruin']
+	attack = 80
+	defense = 50
+	gold = 200
+	exp = 50
+	actions = ['m', 'a', 'm', 'm', 'a']
+	noflee = "yes"
+	weakness = ['e']
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	dropitem = ""
+	droptype = ""
+	god = "yes"
+	successmsg = "As Seraphin dies you hear a brief part of an ancient song: 'unleash your howling tempest,'"
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
+	accoladetoadd = ""
+	sendto = "#5766"
+
 #class discordia:
 #	name = "Discordia"
 #	desc = "The Master of Dissonance. The physical manifestation of nails on a chalkboard."
-#	phrases = [""]
+#	phrases = ["Dissonant chords strike your ears painfully.", "]
 #	hp = 90
 #	mp = 0
 #	spells = [""]
@@ -266,7 +266,7 @@ class mlanchrus:
 #	tagstoremove = [""]
 #	itemstoremove = [""]
 #	accoladetoadd = ""
-#	sendto = "#"
+#	sendto = "#4561"
 
 class guardcaptain:
 	name = "Guard Captain"
