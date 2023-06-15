@@ -239,34 +239,34 @@ class seraphin:
 	accoladetoadd = ""
 	sendto = "#5766"
 
-#class discordia:
-#	name = "Discordia"
-#	desc = "The Master of Dissonance. The physical manifestation of nails on a chalkboard."
-#	phrases = ["Dissonant chords strike your ears painfully.", "]
-#	hp = 90
-#	mp = 0
-#	spells = [""]
-#	attack = 70
-#	defense = 80
-#	gold = 200
-#	exp = 50
-#	actions = ['a', 'd', 'i', 'a', 'a', 'd', 'i']
-#	noflee = "yes"
-#	weakness = ['f']
-#	incapatt = "emits dissonant chords from the syrinx striking your ears with a horrific noise."
-#	incapsuc = "You are dazed and confused, barely able to stand."
-#	lazymsg = ""
-#	stealtype = "none"
-#	drop = "no"
-#	dropitem = ""
-#	droptype = ""
-#	god = "yes"
-#	successmsg = "As Discordia dies you hear a brief part of an ancient song: 'bend the world to its knees.'"
-#	tagstoadd = [""]
-#	tagstoremove = [""]
-#	itemstoremove = [""]
-#	accoladetoadd = ""
-#	sendto = "#4561"
+class discordia:
+	name = "Discordia"
+	desc = "The Master of Dissonance. The physical manifestation of nails on a chalkboard."
+	phrases = ["Dissonant chords strike your ears painfully."]
+	hp = 90
+	mp = 0
+	spells = [""]
+	attack = 70
+	defense = 80
+	gold = 200
+	exp = 50
+	actions = ['a', 'd', 'i', 'a', 'a', 'd', 'i']
+	noflee = "yes"
+	weakness = ['f']
+	incapatt = "emits dissonant chords from the syrinx striking your ears with a horrific noise."
+	incapsuc = "You are dazed and confused, barely able to stand."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	dropitem = ""
+	droptype = ""
+	god = "yes"
+	successmsg = "As Discordia dies you hear a brief part of an ancient song: 'bend the world to its knees.'"
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
+	accoladetoadd = ""
+	sendto = "#4561"
 
 class guardcaptain:
 	name = "Guard Captain"
