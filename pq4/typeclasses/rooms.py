@@ -70,8 +70,9 @@ class vroom(DefaultRoom):
 
 class mirrorroom(DefaultRoom):
 	def at_object_creation(self):
-		self.db.desc = "This is a big old test test test"
-		self.db.fight = "no"
+		self.db.desc = "You find yourself surrounded by an uncanny symmetry. The paths ahead seem to lead in multiple directions simultaneously, and the reflections of the mirrored walls create an illusion of infinite corridors. Every step you take is met with its mirrored counterpart, causing a disorienting sensation as you try to distinguish between what is real, and what is a reflection. The mirror images create a mesmerizing visual spectacle. The play of light and shadow, the intricate patterns and reflections, create a surreal ambiance. It's as if the very essence of this strange place is alive, shifting and twisting with every movement."
+		self.db.fight = "yes"
+		self.db.zone = "mirrorzone"
 	def return_appearance(self, looker):
 		if not looker:
 			return ""
@@ -79,11 +80,11 @@ class mirrorroom(DefaultRoom):
 		exits, users, npc, things = [], [], [], []
 		for con in visible:
 			key = con.get_display_name(looker, pose=True)
-			if con.destination and not con.tags.get("specialobject"):
+			if con.destination and not con.tags.get("specialobject") and not con.tags.get("specialexit"):
 				if looker.is_superuser:
 					exits.append(key)
 				else:
-					exits.append("".join(reversed(key)))
+					exits.append("rorrim")
 			elif con.tags.get("specialexit"):
 				if looker.is_superuser:
 					exits.append(key)
@@ -123,19 +124,37 @@ class mirrorroom(DefaultRoom):
 					things.append("".join(reversed(key)))
 		string = "|c%s|n\n" % self.get_display_name(looker, pose=True)
 		desc = str()
-		desc = "".join(reversed(self.db.desc))
+		if looker.is_superuser:
+			desc = self.db.desc
+		else:
+			desc = "".join(reversed(self.db.desc))
 		if desc:
 			string += "%s" % desc
 			string += "\n\n"
-			string += "".join(reversed("You cast your gaze upon the area:"))
+			if looker.is_superuser:
+				string += "You cast your gaze upon the area:"
+			else:
+				string += "".join(reversed("You cast your gaze upon the area:"))
 		if exits:
-			string += "\n" + ", ".join(exits) + "|025 :stixE|n"
+			if looker.is_superuser:
+				string += "\n|025Exits|n: " + ", ".join(exits)
+			else:
+				string += "\n" + ", ".join(exits) + "|025 :stixE|n"
 		if users:
-			string += "\n" + ", ".join(users) + "|550 :sreyalP|n"
+			if looker.is_superuser:
+				string += "\n|550Players|n: " + ", ".join(users)
+			else:
+				string += "\n" + ", ".join(users) + "|550 :sreyalP|n"
 		if npc:
-			string += "\n" + ", ".join(npc) + "|520 :s'CPN|n "
+			if looker.is_superuser:
+				string += "\n|520NPC's|n: " + ", ".join(npc)
+			else:
+				string += "\n" + ", ".join(npc) + "|520 :s'CPN|n "
 		if things:
-			string += "\n" + ", ".join(things) + "|050 :stcejbO|n"
+			if looker.is_superuser:
+				string += "\n|050Objects|n: " + ", ".join(things)
+			else:
+				string += "\n" + ", ".join(things) + "|050 :stcejbO|n"
 		return string
 
 class ifholdsview(DefaultRoom):
@@ -1402,7 +1421,7 @@ class titanarena(DefaultRoom):
 			string += "\n|050Objects:|n " + ", ".join(things)
 		return string
 	
-		
+
 
 #Overworld rooms
 class trainingroom(ifnottagviewnf):

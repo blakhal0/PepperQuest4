@@ -257,10 +257,11 @@ class giosemap(DefaultObject):
 		self.db.locationname = "giose"
 
 class madmap(DefaultObject):
+	name = "Map to Madness"
 	def at_object_creation(self):
 		self.locks.add("drop:false()")
 		self.tags.add("map")
-		self.db.desc = "Map to the Island of the Mad."
+		self.db.desc = "A map painted on a fragment of mirror, reflecting distorted images of twisted landscapes and lurking shadows."
 		self.db.locationname = "islandofthemad"
 
 class valaharranmap(DefaultObject):

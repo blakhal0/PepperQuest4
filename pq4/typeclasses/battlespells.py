@@ -399,7 +399,7 @@ class harmonicchains:
 	group = "aggressive"
 	kind = "d"
 	enemyphrase = "Ethereal nooses of sound ensnare you and resonate with the enemy's power, causing mental anguish and disarray."
-	
+
 class rhythmofruin:
 	name = "Rhythm of Ruin"
 	price = 0
@@ -408,3 +408,12 @@ class rhythmofruin:
 	group = "aggressive"
 	kind = "d"
 	enemyphrase = "The demon minstrel taps into the primal beat of music, unleashing a rhythmic assault that pulses through the battlefield."
+
+class dazzlingcolors:
+	name = "Dazzling Colors"
+	price = 0
+	cost = 12
+	base = 60
+	group = "aggressive"
+	kind = "d"
+	enemyphrase = "A multitude of colored beams of light emit from the creature, reflecting off the mirrored walls striking you, burning you."

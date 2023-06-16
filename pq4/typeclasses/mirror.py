@@ -27,7 +27,7 @@ class lookmirror(default_cmds.MuxCommand):
 			self.caller.msg("Looking deeper, you see a doorway.")
 			self.caller.msg("You step forward slowly, passing through the mirror...")
 			yield 1
-			results = search_object("#9570")
+			results = search_object("#10036")
 			self.caller.move_to(results[0], quiet=True, move_hooks=True)
 			return
 		else:

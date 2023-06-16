@@ -8,6 +8,7 @@ for allowing Characters to traverse the exit to its destination.
 """
 from evennia import DefaultExit, search_object
 import random
+from random import randint
 
 
 class Exit(DefaultExit):
@@ -37,6 +38,55 @@ class Exit(DefaultExit):
 	"""
 
 	pass
+
+boop = ["Your progress abruptly halts as you walk face-first into an unyielding mirror.", "You recoil in surprise, startled by the unexpected encounter with your own reflection.", "'Sunoffa...' your nose bleeds a little.", "Confusion washes over you as your face meets the cold surface of the mirror head-on.", "With a thud, you collide with an impenetrable barrier that mimics your every move.", "Stumbling forward, you crash into a mirror, disoriented and questioning your senses.", "The mirror mocks your futile attempts to find the path, leaving you frustrated.", "You rub your forehead, feeling foolish for running into your own mirrored reflection.", "Your hopes shatter, unlike the mirror, as you smack into your reflection.", "Collision with the mirror jolts you back to a frustrating reality.", "You stumble backward, disoriented by the mirror's deceptive presence.", "Your reflection mocks your failed attempts."]
+class mirrorexit(DefaultExit):
+	def at_object_creation(self):
+		self.db.err_traverse = random.choice(boop)
+		self.locks.add("traverse:false()")
+	def at_traverse(self, traversing_object, target_location):
+		source_location = traversing_object.location
+		target_location = traversing_object.location
+		if traversing_object.move_to(target_location):
+			self.at_after_traverse(traversing_object, source_location)
+		if self.db.err_traverse:
+			damage = randint(3,8)
+			traversing_object.msg("|/|r*THUD*|n " + self.db.err_traverse + "|/You take %d damage." % (damage))
+			traversing_object.db.hp -= damage
+			if traversing_object.db.hp <= 0:
+				traversing_object.msg("|/|rWhat tragic fate, you accidentally killed yourself running into mirrors.|n|/You have brought shame to yourself and your family.")
+				traversing_object.db.hp = int(traversing_object.db.maxhp * .5)
+				traversing_object.db.mp = int(traversing_object.db.maxmp * .5)
+				traversing_object.db.gold -= int(traversing_object.db.gold * .2)
+				results = search_object(traversing_object.db.lastcity)
+				traversing_object.move_to(results[0], quiet=True, move_hooks=False)
+		else:
+			self.at_failed_traverse(traversing_object)
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		desc = str()
+		if looker.db.armorequipped in ["None", "none"]:
+			armordesc = "wearing not a single stitch of armor"
+		else:
+			armordesc = "clad in " + looker.db.armorequipped.lower()
+	#Shield Desc
+		if not looker.db.shieldequipped.lower() == "none":
+			armordesc += " and a %s" % (looker.db.shieldequipped.lower())
+	#Weapon Desc
+		if looker.db.weaponequipped in ["none", "None"]:
+			weapondesc = "clenching your bruised and bloody fists"
+		else:
+			weapondesc = "holding a " + looker.db.weaponequipped.lower()
+	#Reversed character self.caller.db.desc
+		desc = "You see yourself, %s, %s.|/As you look closer, you see the reflection twist and warp, darkening. A wicked smile stretches across its face." % (armordesc, weapondesc)
+		luck = randint(1,4)
+		if luck == 2:
+			looker.msg(desc + "|/|rThe eyes of the image begin to glow malevolently. Suddenly the image in the mirror attacks!!|n")
+			looker.tags.add("letsfight")
+			looker.execute_cmd('fight')
+		else:
+			return desc
 
 class casinochaosexit(DefaultExit):
 	def at_object_creation(self):

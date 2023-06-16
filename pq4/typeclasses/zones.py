@@ -102,6 +102,10 @@ class zone7valaharra:
 	monsters = ["granreaper", "thaihothydra", "deathspiraldragon"]
 	rare = ["mourningbelle"]
 
+class mirrorzone:
+	monsters = ["echophantom"]
+	rare = ["prismaldevourer"]
+
 #-------------------------------------------------
 class templeofsmallgods:
 	monsters = ["anansi"]

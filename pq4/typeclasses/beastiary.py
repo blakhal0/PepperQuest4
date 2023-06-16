@@ -1349,6 +1349,65 @@ class goldenslime:
 	dropitem = "diamondring"
 	droptype = "items"
 
+#Mirrorworld
+class echophantom:
+	name = "Echo Phantom"
+	desc = "A malevolent creature that dwells within the mirror, waiting to prey upon those who dare to gaze into its reflective surface."
+	phrases = ["Echo Phantom slashes at you with mirror claws.", "The monster disappears back into the mirrors emerging suddenly from behind you"]
+	hp = 68
+	mp = 0
+	spells = [""]
+	attack = 80
+	defense = 75
+	gold = 30
+	exp = 35
+	actions = ["a"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	droptype = "items"
+	dropitem = "sageelixir"
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class prismaldevourer:
+	name = "Prismal Devourer"
+	desc = "A shimmering, translucent entity composed of iridescent prisms. Its elongated limbs are adorned with sharp, crystalline claws that can slice through solid matter effortlessly."
+	phrases = [""]
+	hp = 90
+	mp = 113
+	spells = ["dazzlingcolors", "moreheal", "dazzlingcolors"]
+	attack = 83
+	defense = 79
+	gold = 75
+	exp = 40
+	actions = ["a", "a", "m", "i", "i", "s"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = "shape shifts into a crystalline version of you, then explodes."
+	incapsuc = "You have glass shards in your eyes, you cannot see to attack."
+	lazymsg = ""
+	stealtype = "magic"
+	drop = "yes"
+	droptype = "items"
+	dropitem = "spicyherb"
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
 #warfront
 class bonesnapper:
 	name = "Bone Snapper"
