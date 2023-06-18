@@ -39,6 +39,11 @@ class Exit(DefaultExit):
 
 	pass
 
+class plantroomexit(DefaultExit):
+	def at_object_creation(self):
+		self.db.err_traverse = "|/|rYou are grappled by vines and cannot move."
+		self.locks.add("traverse:not tag(nomove)")
+
 boop = ["Your progress abruptly halts as you walk face-first into an unyielding mirror.", "You recoil in surprise, startled by the unexpected encounter with your own reflection.", "'Sunoffa...' your nose bleeds a little.", "Confusion washes over you as your face meets the cold surface of the mirror head-on.", "With a thud, you collide with an impenetrable barrier that mimics your every move.", "Stumbling forward, you crash into a mirror, disoriented and questioning your senses.", "The mirror mocks your futile attempts to find the path, leaving you frustrated.", "You rub your forehead, feeling foolish for running into your own mirrored reflection.", "Your hopes shatter, unlike the mirror, as you smack into your reflection.", "Collision with the mirror jolts you back to a frustrating reality.", "You stumble backward, disoriented by the mirror's deceptive presence.", "Your reflection mocks your failed attempts."]
 class mirrorexit(DefaultExit):
 	def at_object_creation(self):
@@ -50,7 +55,7 @@ class mirrorexit(DefaultExit):
 		if traversing_object.move_to(target_location):
 			self.at_after_traverse(traversing_object, source_location)
 		if self.db.err_traverse:
-			damage = randint(3,8)
+			damage = randint(5,13)
 			traversing_object.msg("|/|r*THUD*|n " + self.db.err_traverse + "|/You take %d damage." % (damage))
 			traversing_object.db.hp -= damage
 			if traversing_object.db.hp <= 0:
@@ -80,7 +85,7 @@ class mirrorexit(DefaultExit):
 			weapondesc = "holding a " + looker.db.weaponequipped.lower()
 	#Reversed character self.caller.db.desc
 		desc = "You see yourself, %s, %s.|/As you look closer, you see the reflection twist and warp, darkening. A wicked smile stretches across its face." % (armordesc, weapondesc)
-		luck = randint(1,4)
+		luck = randint(1,3)
 		if luck == 2:
 			looker.msg(desc + "|/|rThe eyes of the image begin to glow malevolently. Suddenly the image in the mirror attacks!!|n")
 			looker.tags.add("letsfight")

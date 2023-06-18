@@ -24,7 +24,7 @@ class giose:
 
 class islandofthemad:
 	name = "island of the mad"
-	location = "#2"
+	location = "#10490"
 
 class paipri:
 	name = "paipri"

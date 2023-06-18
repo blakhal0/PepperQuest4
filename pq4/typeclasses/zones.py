@@ -106,6 +106,19 @@ class mirrorzone:
 	monsters = ["echophantom"]
 	rare = ["prismaldevourer"]
 
+class madforestlow:
+	monsters = ["echophantom"]
+	rare = ["prismaldevourer"]
+
+class madforestdangerous:
+	monsters = ["echophantom"]
+	rare = ["prismaldevourer"]
+
+class vtu:
+	monsters = ["echophantom"]
+	rare = ["prismaldevourer"]
+
+
 #-------------------------------------------------
 class templeofsmallgods:
 	monsters = ["anansi"]

@@ -830,6 +830,39 @@ class moveroom(vroom):
 				obj.msg(self.db.movemsg)
 				obj.move_to(destination[0], quiet=False, move_hooks=True)
 
+class killerplantroom(vroom):
+	def at_object_creation(self):
+		self.db.desc = "The air carries a pungent scent of sweet flowers and rotting meat. Grotesque flora sprawls in tangled masses, their vibrant hues distorted into sickly shades of deep green and darkly vibrant violet. Thorned vines snake through the undergrowth, their serpentine embrace serving as both warning and entrapment. Clumps of glowing eyes stare at you from the forest, not just sets of eyes, but clustered multitudes."
+		self.db.entangled = "|/|rThorned vines snake around your legs, entangling you.|n|/The vines constrict and twist, digging into your skin, feeding on your blood."
+		self.db.fight = "no"
+		self.tags.add("notravel")
+	def at_object_receive(self, obj, source):
+		obj.tags.add("nomove")
+		utils.delay(1, self.sendmsg, obj)
+	def sendmsg(self, obj):
+		for i in self.contents:
+			if i.has_account and i.key == obj.key:
+				obj.msg(self.db.entangled)
+				quantity = randint(1,6)
+				damage = 0
+				while 0 < quantity:
+					damage += randint(5,10)
+					quantity -= 1
+				obj.db.hp -= damage
+				if obj.db.hp <= 0:
+					obj.msg("|/You take %d damage" % damage)
+					obj.tags.remove("nomove")
+					obj.msg("|/|rWhat tragic fate, you have been consumed by the maddening jungle.|n|/You have brought shame to yourself and your family.|n")
+					obj.db.deathcount += 1
+					obj.db.hp = int(obj.db.maxhp * .5)
+					obj.db.mp = int(obj.db.maxmp * .5)
+					obj.db.gold -= int(obj.db.gold * .3)
+					results = search_object(obj.db.lastcity)
+					obj.move_to(results[0], quiet=True, move_hooks=False)
+				else:
+					obj.tags.remove("nomove")
+					obj.msg("|/You take %d damage before finally breaking free." % damage)
+
 #Islands
 class giose(vroom):
 	def at_object_creation(self):
@@ -1778,6 +1811,44 @@ class valaharra(autofight):
 		self.db.zone = "zone7valaharra"
 		self.db.fight = "yes"
 		self.tags.add("autofight")
+
+class madnessearlyruins(vroom):
+	def at_object_creation(self):
+		self.db.desc = "The architectural design, if such a term can be applied, defies all conventional notions of symmetry and rationality. Walls built at unnatural angles, their jagged edges corroded by the passage of centuries and covered in a strange silky moss. Where the stone has resisted the elements, the moss, and plants, it still gleams a dark but vibrant green in the strange light of day. Surfaces appearing perfectly straight yet curved, smooth and perfectly flat, yet seems to writhe and wriggle just beneath the glassy surface."
+		self.db.fight = "no"
+		self.tags.add("notravel")
+
+class madnessforest(autofight):
+	def at_object_creation(self):
+		self.db.desc = "You are surrounded by a sprawling expanse of twisted vegetation. Grotesque flora sprawls in tangled masses, their vibrant hues distorted into sickly shades of green and violet. Thorned vines snake through the undergrowth, their serpentine embrace serving as both warning and entrapment. It is a place where nature itself seems to have succumbed to the influence of maddening forces. Partially collapsed walls and structures block your path in varying directions. The stones used, if it is stone, are unnaturally large single pieces. Given their size and shape, your mind struggles to comprehend what possible shape the structures here once took when they were still standing. Whatever this place once was, it has been lost to the world and reclaimed by the island."
+		self.db.zone = "madforestlow"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")
+
+class madnessdangerousforest(autofight):
+	def at_object_creation(self):
+		self.db.desc = "The air carries a pungent scent of sweet flowers and rotting meat. Grotesque flora sprawls in tangled masses, their vibrant hues distorted into sickly shades of deep green and darkly vibrant violet. Thorned vines snake through the undergrowth, their serpentine embrace serving as both warning and entrapment. Clumps of glowing eyes stare at you from the forest, not just sets of eyes, but clustered multitudes."
+		self.db.zone = "madforestdangerous"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")
+
+class nkomererovtu(autofight):
+	def at_object_creation(self):
+		self.db.desc = "While the forest has receded, this ancient city is in a state of desolate ruin, a haunting echo of the once-great civilization that thrived within. Crumbling structures and fractured spires reach towards a sky tainted with perpetual twilight, casting long shadows over the decaying streets below. The air is thick with an otherworldly stillness, broken only by the occasional mournful wail of a twisted creature lurking in the shadows. Vines and ivy, suffused with an otherworldly glow, twist and curl around broken pillars and shattered statues, their vibrant colors stark against the backdrop of decay."
+		self.db.zone = "vtu"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")
+
+class vtu(vroom):
+	def at_object_creation(self):
+		self.db.desc = "Once-majestic spires, now crumbling and overgrown with vines, reach towards the sky like skeletal fingers, casting eerie shadows upon the desolate streets below. The architecture, a blend of arcane artistry and otherworldly aesthetics, hints at a civilization that delved deep into forbidden knowledge and pursued dark arts.|/As you venture through the city's winding alleys and fractured boulevards, you are greeted by an eerie silence broken only by strange whispers on the wind. Are there voices? Is it the wind creating this noise? Is there actually noise or are you hearing this in your head? Time-worn edifices stand as grim reminders of a forgotten past, their intricate carvings and intricate mosaics now faded and weathered. Vines and ivy crawl along the walls, intertwining with the stonework, as nature reclaims what was once man-made."
+		self.tags.add("notravel")
+		self.tags.add("whisper")
+		self.db.fight = "no"
+
 
 #temples
 class templeofsmallgodstunnel(iftagviewnf):

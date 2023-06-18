@@ -22,7 +22,7 @@
 class droptest:
 	name = "Drop Test"
 	desc = "Test for dropping loot"
-	phrases = []
+	phrases = [""]
 	hp = 10
 	mp = 0
 	spells = [""]
@@ -45,7 +45,7 @@ class droptest:
 class trainingdummy:
 	name = "Training Dummy"
 	desc = "A simple training dummy."
-	phrases = []
+	phrases = [""]
 	hp = 6
 	mp = 0
 	spells = [""]
@@ -88,7 +88,7 @@ class anansi:
 	god = "yes"
 	successmsg = "|/Om begins to glow, brightening to a blinding light, his one eye blazing a bright red.|/|mOm the Mighty|n says: I AM OM THE MIGHTY, GREATEST OF ALL SMALL GODS, GOD OF THIS TEMPLE.|/A mighty thunderclap shakes the building.|/|mOm the Mighty|n says: I thank you for your belief in me. There are things I must tend to.|/A blinding flash of light emits from Om the Mighty."
 	tagstoadd = ["omthemighty"]
-	tagstoremove = []
+	tagstoremove = [""]
 	itemstoremove = ["Om the Mighty"]
 	accoladetoadd = ""
 	sendto = "#7529"
@@ -117,8 +117,8 @@ class thegoddessmorrighan:
 	god = "yes"
 	successmsg = "|/Morrighan kneels in defeat.|/|mThe Goddess Morrighan|n says: Today I wash no armor. You are truly a warrior of great might. But like all warriors, I will one day lead you from the field of battle. Watch for the day your armor is clean, for that day we will meet again."
 	tagstoadd = ["morrighan"]
-	tagstoremove = []
-	itemstoremove = []
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = ""
 
@@ -135,7 +135,7 @@ class thegoldengodofgreedmammoo:
 	exp = 60
 	actions = ["a", "m", "a", "i", "a", "i"]
 	noflee = "yes"
-	weakness = []
+	weakness = ["n"]
 	incapatt = "flashes golden eyes at you."
 	incapsuc = "You have been turned into a golden statue, unable to move."
 	lazymsg = ""
@@ -164,7 +164,7 @@ class boareaus:
 	exp = 120
 	actions = ["a", "m", "a", "i", "m", "i"]
 	noflee = "yes"
-	weakness = [""]
+	weakness = ["n"]
 	incapatt = "summons a freezing wind, your breath catches as you are picked up into a swirling cyclone"
 	incapsuc = "You are frozen solid, suspended in mid air."
 	lazymsg = ""
@@ -291,8 +291,8 @@ class guardcaptain:
 	dropitem = "armoredpepper"
 	god = "yes"
 	successmsg = "|/|mGuard Captain|n says: You don't fight like a thief. Your face, like from the books, where are you from?|/You cut the Guard Captain off, tossing the Red, Blue, and Green keys for the castle in their face. Wouldn't want anyone to get in trouble for losing the keys again.|/With the Guard Captain safely incapacitated, you can retrieve the Treasury Key without issue."
-	tagstoadd = []
-	tagstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
 	itemstoremove = ["Ardismouf Blue Key", "Ardismouf Red Key", "Ardismouf Green Key"]
 	accoladetoadd = ""
 	sendto = ""
@@ -320,9 +320,9 @@ class honkiamat:
 	dropitem = "armoredpepper"
 	god = "yes"
 	successmsg = "|/|mHonkiamat|n hisses angrily: What have you done, why would you do this??? I was the only thing keeping them contained. You've released them back into the world."
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = "Hellion"
 	sendto = ""
 
@@ -379,8 +379,8 @@ class titanslime:
 	god = "yes"
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 1!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena1"]
-	tagstoremove = []
-	itemstoremove = []
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = "#7875"
 
@@ -408,7 +408,7 @@ class magidraky:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 2!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena2"]
 	tagstoremove = ["arena1"]
-	itemstoremove = []
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = "#7876"
 
@@ -436,7 +436,7 @@ class chromadillo:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 3!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena3"]
 	tagstoremove = ["arena2"]
-	itemstoremove = []
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = "#7877"
 
@@ -465,14 +465,14 @@ class knightowl:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 4!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena4"]
 	tagstoremove = ["arena3"]
-	itemstoremove = []
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = "#7878"
 
 class stealslime:
 	name = "Steal Slime"
 	desc = "The Titan Arena's sneakiest enemy."
-	phrases = []
+	phrases = [""]
 	hp = 15
 	mp = 20
 	spells = ["hurt"]
@@ -494,7 +494,7 @@ class stealslime:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 5!! IT'S GETTING CLOSE LADIES AND GENTLEMEN. LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena5"]
 	tagstoremove = ["arena4"]
-	itemstoremove = []
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = "#7879"
 
@@ -522,7 +522,7 @@ class blothartheberserker:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 6!! ONLY TWO CHALLENGES REMAIN! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena6"]
 	tagstoremove = ["arena5"]
-	itemstoremove = []
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = "#7880"
 
@@ -551,7 +551,7 @@ class megoosea:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 7!! THIS IS IT LADIES AND GENTLEMEN! THE ONE WE'VE ALL BEEN WAITING FOR, A CHALLENGER HAS EARNED THE RIGHT TO FACE THE TITAN!!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena7"]
 	tagstoremove = ["arena6"]
-	itemstoremove = []
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = "#7881"
 
@@ -579,7 +579,7 @@ class titanophion:
 	successmsg = "|/The Titan Ophion bends to a knee and bows their head before you.|/|mTitan|n says: Never before have I witnessed such strength and perseverance. My throne is yours.|/The crowd erupts, shaking the very arena like an earthquake.|/|mAnnouncer|n says: A SIGHT FOR THE AGES!! WE HAVE A NEW TITAN OF THE ARENA!!!! CONGRATULATIONS!|/Please see the Host to collect your reward."
 	tagstoadd = ["titan"]
 	tagstoremove = ["arena7"]
-	itemstoremove = []
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = "#7861"
 
@@ -604,7 +604,7 @@ class slime:
 class ghostpepper:
 	name = "Ghost Pepper"
 	desc = "As spooky as it is spicy. BOOOOO!"
-	phrases = []
+	phrases = [""]
 	hp = 4
 	mp = 0
 	spells = [""]
@@ -693,7 +693,7 @@ class monstrositea:
 class draky:
 	name = "Draky"
 	desc = "A mischievous little fat flying critter."
-	phrases = []
+	phrases = [""]
 	hp = 15
 	mp = 8
 	spells = ["flicker"]
@@ -773,7 +773,7 @@ class battree:
 class chillidog:
 	name = "Chili Dog"
 	desc = "Might act like a hot-dog, but its bite will leave you dead cold."
-	phrases = []
+	phrases = [""]
 	hp = 15
 	mp = 12
 	spells = ["frostbite"]
@@ -817,7 +817,7 @@ class pizzarat:
 class spicypickle:
 	name = "Spicy Pickle"
 	desc = "A proud warrior from the Vinegara region, raised on hot peppers, it's said their very spit is acidic."
-	phrases = []
+	phrases = [""]
 	hp = 20
 	mp = 0
 	attack = 18
@@ -855,7 +855,7 @@ class thegimp:
 class castleguard:
 	name = "Castle Guard"
 	desc = "A Guard of the Castle Ardismouf."
-	phrases = []
+	phrases = [""]
 	hp = 28
 	mp = 0
 	attack = 20
@@ -878,7 +878,7 @@ class castleguard:
 class sandwitch:
 	name = "Sand Witch"
 	desc = "A wrinkly dried out old desert hag, warts and all."
-	phrases = []
+	phrases = [""]
 	hp = 22
 	mp = 20
 	spells = ["gust", "heal"]
@@ -897,7 +897,7 @@ class sandwitch:
 class weremadillo:
 	name = "Weremadillo"
 	desc = "Beware the full moon, for that is when the Weremadillo stalks the night. Scuttle-scuttle-scuttle POUNCE!! Deathly allergic to chrome plated bumpers."
-	phrases = []
+	phrases = [""]
 	hp = 34
 	mp = 0
 	attack = 40
@@ -933,7 +933,7 @@ class fradycat:
 class firewolf:
 	name = "Fire Wolf"
 	desc = "A majestic beast, wreathed in flame. Wherever it goes, destruction is sure to follow."
-	phrases = []
+	phrases = [""]
 	hp = 33
 	mp = 20
 	spells = ["furnace"]
@@ -974,7 +974,7 @@ class robinhood:
 class apeofwrath:
 	name = "Ape of Wrath"
 	desc = "A descendant of those that once ruled, this damned dirty ape seeks revenge for its fallen civilization."
-	phrases = []
+	phrases = [""]
 	hp = 35
 	mp = 0
 	spells = [""]
@@ -1016,7 +1016,7 @@ class swearwolf:
 class beezerker:
 	name = "Beezerker"
 	desc = "A giant, angry, fuzzy bumblebee. WITH A TASTE FOR BLOOD!!!"
-	phrases = []
+	phrases = [""]
 	hp = 45
 	mp = 0
 	spells = [""]
@@ -1038,7 +1038,7 @@ class beezerker:
 class sonarlesssheep:
 	name = "Sonarless Sheep"
 	desc = "It's a sheep, but without sonar. So, I guess a regular sheep? But spicier."
-	phrases = []
+	phrases = [""]
 	hp = 40
 	mp = 0
 	spells = [""]
@@ -1081,7 +1081,7 @@ class brickfrog:
 class battlepenguin:
 	name = "Battle Penguin"
 	desc = "Forced from its home by the destruction of the polar icecaps, this penguin is out for revenge."
-	phrases = []
+	phrases = [""]
 	hp = 46
 	mp = 0
 	spells = [""]
@@ -1123,9 +1123,9 @@ class bookwyrm:
 	dropitem = ""
 	god = "no"
 	successmsg = ""
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1152,9 +1152,9 @@ class inkling:
 	dropitem = ""
 	god = "no"
 	successmsg = ""
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1181,9 +1181,9 @@ class vellumvamp:
 	dropitem = ""
 	god = "no"
 	successmsg = ""
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1210,9 +1210,9 @@ class codexlurker:
 	dropitem = ""
 	god = "no"
 	successmsg = ""
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1239,9 +1239,9 @@ class laszlocravensworth:
 	dropitem = "batspellbook"
 	god = "no"
 	successmsg = ""
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1249,7 +1249,7 @@ class laszlocravensworth:
 class mentholmage:
 	name = "Menthol Mage"
 	desc = "Icy cool spells are this creatures calling card."
-	phrases = []
+	phrases = [""]
 	hp = 50
 	mp = 45
 	spells = ["frostflower", "moreheal"]
@@ -1271,7 +1271,7 @@ class mentholmage:
 class nightdanger:
 	name = "Night Danger"
 	desc = "A moose once bit my sister... No really. Mind you, moose bites can be pretty nasty. All moose appearing in PepperQuest 4: Ever trained by Yutte Hermsgervordenbrotborda. Special moose effects by Olaf Prot. *No moose were harmed during the making of PepperQuest 4: Ever. Not from lack of trying though, they're just bloody tough critters. One 'Ralph the Venezuelan Wonder Llama' got a bit roughed up, but he started it. **PepperQuest, Peppercon, its subsidiaries and franchises, and all persons (and moose) associated with production of this game respect and revere the noble moose. Please take appropriate precautions when dealing with wild animals. This message brought to you by Svenge, an Olso dentist who, like 9 out of 10 Norwegian dentists, thoroughly endorses InterSpace Toothbrushes. ***Do not use sharpened InterSpace Toothbrushes to attempt to carve your initials into a moose. You can get bit that way you know."
-	phrases = []
+	phrases = [""]
 	hp = 58
 	mp = 0
 	spells = [""]
@@ -1292,7 +1292,7 @@ class nightdanger:
 class abdominalsnowman:
 	name = "Abdominal Snowman"
 	desc = "Just because it's chilly won't stop this monster from getting those reps in. Do you even ski-lift bro?"
-	phrases = []
+	phrases = [""]
 	hp = 67
 	mp = 0
 	spells = [""]
@@ -1335,7 +1335,7 @@ class haranguetan:
 class goldenslime:
 	name = "Golden Slime"
 	desc = "A shiny slime, made of gold!"
-	phrases = []
+	phrases = [""]
 	hp = 20
 	mp = 0
 	attack = 60
@@ -1373,9 +1373,9 @@ class echophantom:
 	dropitem = "sageelixir"
 	god = "no"
 	successmsg = ""
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1402,9 +1402,9 @@ class prismaldevourer:
 	dropitem = "spicyherb"
 	god = "no"
 	successmsg = ""
-	tagstoadd = []
-	tagstoremove = []
-	itemstoremove = []
+	tagstoadd = [""]
+	tagstoremove = [""]
+	itemstoremove = [""]
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1412,7 +1412,7 @@ class prismaldevourer:
 class bonesnapper:
 	name = "Bone Snapper"
 	desc = "How many have fallen before you? How many have you sent below? How can you ever show pity? Is that word that you know?"
-	phrases = []
+	phrases = [""]
 	hp = 75
 	mp = 0
 	spells = [""]
@@ -1458,7 +1458,7 @@ class heckromancer:
 	phrases = ["A corpse shaking bass line rattles your teeth.", "Summons the screams of the dead, but with a nice groove.", "Flings spicy queso at you, made from the milk of an undead cow."]
 	hp = 45
 	mp = 60
-	spells = []
+	spells = [""]
 	attack = 30
 	defense = 25
 	gold = 77
@@ -1499,7 +1499,7 @@ class lavalarvae:
 class krakentoa:
 	name = "Krakentoa"
 	desc = "Eight arms, one beak, all living fire."
-	phrases = []
+	phrases = [""]
 	hp = 55
 	mp = 0
 	spells = [""]
@@ -1520,7 +1520,7 @@ class krakentoa:
 class vulcanvillain:
 	name = "Vulcan Villain"
 	desc = "A wizard robed in fire."
-	phrases = []
+	phrases = [""]
 	hp = 59
 	mp = 72
 	spells = ["charbq"]
@@ -1542,7 +1542,7 @@ class vulcanvillain:
 class galeras:
 	name = "Galeras"
 	desc = "A lava slobbering mound of lumbering rock."
-	phrases = []
+	phrases = [""]
 	hp = 70
 	mp = 0
 	spells = [""]
