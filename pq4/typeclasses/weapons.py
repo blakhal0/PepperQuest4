@@ -347,7 +347,7 @@ class enigmaweapon(weapon):
 	name = "Enigma Weapon"
 	price = 10
 	attack = 0
-	desc = "Enigma Weapon."
+	desc = "Light traces across patterned lines covering the weapon. You see the following carved in runes and geometric shapes: IV, 10 Rings, and a rhombicuboctahedron with position 21 illuminated."
 	def at_object_creation(self):
 		self.tags.add("equipable", category="weapon")
 		self.locks.add("drop:false()")

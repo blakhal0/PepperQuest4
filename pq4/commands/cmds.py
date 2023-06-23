@@ -21,12 +21,13 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		secretmessage = ""
-		CODE = {'A':'=E', 'B':'^E', 'C':'_F', 'D':'=F', 'E':'^F', 'F':'_G', 'G':'=G', 'H':'^G', 'I':'_A', 'J':'=A', 'K':'^A', 'L':'_B', 'M':'=B', 'N':'^B', 'O':'_c', 'P':'=c', 'Q':'^c', 'R':'_d', 'S':'=d', 'T':'^d', 'U':'_e', 'V':'=e', 'W':'^e', 'X':'_f', 'Y':'=f', 'Z':'^f', ' ':'||'}
-		answer = yield("Message to encode? ")
-		for letter in answer.upper():
-			secretmessage += CODE[letter]
-		self.caller.msg(secretmessage)
+		contentslist = []
+		for i in self.caller.contents:
+			contentslist.append(i.key)
+		if set(["Enigma Shield", "Enigma Weapon", "Enigma Armor"]).issubset(contentslist):
+			self.caller.msg("You have all the items")
+		else:
+			self.caller.msg("You do not have all the items")
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"

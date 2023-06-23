@@ -391,6 +391,16 @@ class sirenslament:
 	kind = "d"
 	enemyphrase = "The demon minstrel sings a hauntingly beautiful melody that enthralls you, causing you pain."
 	
+class sirenssong:
+	name = "Siren's Song"
+	price = 0
+	cost = 4
+	base = 40
+	group = "aggressive"
+	kind = "d"
+	enemyphrase = "The Siren sings a mesmerizing song that leaves you lost in memories past, wracking you with the pain of loss."
+
+
 class harmonicchains:
 	name = "Harmonic Chains"
 	price = 0

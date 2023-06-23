@@ -1849,7 +1849,55 @@ class vtu(vroom):
 		self.tags.add("whisper")
 		self.db.fight = "no"
 
-
+class enigmaroom(vroom):
+	def at_object_creation(self):
+		self.db.desc = "You do not have enigmas items equipped."
+		self.db.equippeddesc = "You have enigmas items equipped."
+		self.tags.add("notravel")
+		self.db.fight = "no"
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
+		exits, users, npc, things = [], [], [], []
+		for con in visible:
+			key = con.get_display_name(looker, pose=True)
+			if con.destination:
+				exits.append(key)
+			elif con.tags.get("specialexit"):
+				exits.append(key)
+			elif con.tags.get("specialnpc"):
+				npc.append(key)
+			elif con.permissions.get("player"):
+				if con.has_account:
+					users.append(key)
+			elif con.tags.get("talkative", category="npc"):
+				if not con.tags.get("specialobject"):
+					npc.append(key)
+				else:
+					things.append(key)
+			elif con.tags.get("evnpc"):
+				npc.append(key)
+			else:
+				things.append(key)
+		string = "|c%s|n\n" % self.get_display_name(looker, pose=True)
+		desc = str()
+		if looker.db.weaponequipped == "Enigma Weapon" and looker.db.armorequipped == "Enigma Armor" and looker.db.shieldequipped == "Enigma Shield":
+			desc = self.db.equippeddesc
+		else:
+			desc = self.db.desc
+		if desc:
+			string += "%s" % desc
+			string += "\n\nYou cast your gaze upon the area:"
+		if exits:
+			string += "\n|025Exits:|n " + ", ".join(exits)
+		if users:
+			string += "\n|550Players:|n " + ", ".join(users)
+		if npc:
+			string += "\n|520NPC's:|n " + ", ".join(npc)
+		if things:
+			string += "\n|050Objects:|n " + ", ".join(things)
+		return string
 #temples
 class templeofsmallgodstunnel(iftagviewnf):
 	def at_object_creation(self):

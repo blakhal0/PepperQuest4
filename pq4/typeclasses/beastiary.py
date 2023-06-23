@@ -1408,6 +1408,155 @@ class prismaldevourer:
 	accoladetoadd = ""
 	sendto = ""
 
+
+#Island of Madness
+class insanityweaver:
+	name = "Insanity Weaver"
+	desc = "A spider-like creature with shimmering, multifaceted eyes, it spins webs of pure madness that ensnare the minds of its victims."
+	phrases = ["stabs at you with a barbed leg.", "sinks poisoned fangs into your flesh."]
+	hp = 81
+	mp = 0
+	spells = [""]
+	attack = 79
+	defense = 70
+	gold = 76
+	exp = 51
+	actions = ["a", "i", "i", "a", "i", "a", "a"]
+	noflee = "no"
+	weakness = ["f"]
+	incapatt = "weaves a web of shimmering madness and launches it at you!"
+	incapsuc = "Your mind is filled with terror and madness, you cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class fleshmelter:
+	name = "Fleshmelter"
+	desc = "A grotesque creature with a body composed of oozing, acidic flesh, it can dissolve and reshape its form at will."
+	phrases = ["flings acid at you.", "changes its form and attacks."]
+	hp = 75
+	mp = 0
+	spells = [""]
+	attack = 85
+	defense = 76
+	gold = 93
+	exp = 43
+	actions = ["a", "a", "d", "a", "a", "a", "a", "a"]
+	noflee = "no"
+	weakness = ["a"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class spicegauntscreecher:
+	name = "Spicegaunt Screecher"
+	desc = "Winged creature with bat-like features and piercing shrieks. It eats nothing but insanity peppers. AND MINDS!!!"
+	phrases = ["emits a toxic burp of spice.", "screeches a sanity breaking sound.", "slaps you with a bat wing."]
+	hp = 76
+	mp = 0
+	spells = [""]
+	attack = 76
+	defense = 70
+	gold = 80
+	exp = 42
+	actions = ["a", "f", "a", "a", "d", "f"]
+	noflee = "no"
+	weakness = ["w"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class sirenofinsanity:
+	name = "Siren of Insanity"
+	desc = "A seductive and alluring entity that lures unsuspecting victims with its enchanting voice, only to drive them to the brink of madness with its discordant melodies."
+	phrases = ["sings a beautiful song conjuring painful memories."]
+	hp = 83
+	mp = 76
+	spells = ["sirenssong"]
+	attack = 70
+	defense = 80
+	gold = 51
+	exp = 35
+	actions = ["a", "m", "m", "i", "m", "a", "s"]
+	noflee = "no"
+	weakness = ["e"]
+	incapatt = "sings you to sleep."
+	incapsuc = "You are asleep and cannot attack."
+	lazymsg = ""
+	stealtype = "magic"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class helldritchterror:
+	name = "Helldritch Terror"
+	desc = "A shambling mass of writhing tentacles and malformed appendages. Your mind recoils at the thought."
+	phrases = ["slaps you with a tentacle leaving you covered in mucus, you hope.", "flays your mind and causes you to attack yourself.", "tentacles, just tentacles EVERYWHERE."]
+	hp = 99
+	mp = 0
+	spells = [""]
+	attack = 81
+	defense = 81
+	gold = 81
+	exp = 50
+	actions = ["a", "a", "i", "a", "a", "i", "a", "a", "i"]
+	noflee = "yes"
+	weakness = ["n"]
+	incapatt = "surrounds you in writhing tentacles."
+	incapsuc = "You are grappled by tentacles, you cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	droptype = "items"
+	dropitem = "restoringruby"
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+
+
 #warfront
 class bonesnapper:
 	name = "Bone Snapper"

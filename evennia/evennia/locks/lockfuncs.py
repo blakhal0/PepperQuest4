@@ -461,6 +461,22 @@ def monnotdeforlss(accessing_obj, accessed_obj, monstername, defeatedqty):
     else:
         return False
 
+def enigmaequip(accessing_obj, accessed_obj, *args, **kwargs):
+    equipped = []
+    if accessing_obj.db.weaponequipped == "Enigma Weapon" and accessing_obj.db.armorequipped == "Enigma Armor" and accessing_obj.db.shieldequipped == "Enigma Shield":
+        return True
+    else:
+        return False
+
+def enigmahold(accessing_obj, accessed_obj, *args, **kwargs):
+    contentslist = []
+    for i in accessing_obj.contents:
+        contentslist.append(i.key)
+    if set(["Enigma Shield", "Enigma Weapon", "Enigma Armor"]).issubset(contentslist):
+        return True
+    else:
+        return False
+
 def locattr(accessing_obj, accessed_obj, *args, **kwargs):
     """
     Usage:

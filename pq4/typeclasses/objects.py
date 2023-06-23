@@ -200,6 +200,24 @@ class remtagobj(DefaultObject):
 				desc = desc + "|/" + self.db.tagremovemsg
 		return desc
 
+class enigmaobj(DefaultObject):
+	def at_object_creation(self):
+		self.locks.add("get:false()")
+		self.db.desc = ""
+		self.db.enigmadesc = ""
+		self.db.get_err_msg = "|r%s|n" % random.choice(donttake)
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		contentslist = []
+		for i in self.caller.contents:
+			contentslist.append(i.key)
+		if set(["Enigma Shield", "Enigma Weapon", "Enigma Armor"]).issubset(contentslist):
+			desc = self.db.enigmadesc
+		else:
+			desc = self.db.desc
+		return desc
+
 class torch(DefaultObject):
 	def at_object_creation(self):
 		self.locks.add("drop:false()")

@@ -66,7 +66,7 @@ class enigmashield(shield):
 	name = "Enigma Shield"
 	price = 0
 	defense = 0
-	desc = "Placeholder for Enigma Puzzle Later."
+	desc = "Light traces across patterned lines covering the shield. You see the following carved in runes and geometric shapes: II, 11 Rings, and a rhombicuboctahedron with position 5 illuminated."
 	def at_object_creation(self):
 		self.tags.add("equipable", category="shield")
 		self.locks.add("drop:false()")
@@ -153,7 +153,7 @@ class enigmaarmor(armor):
 	name = "Enigma Armor"
 	price = 0
 	defense = 0
-	desc = "Placeholder for Enigma Puzzle Later."
+	desc = "Light traces across patterned lines covering the armor. You see the following carved in runes and geometric shapes: III, 3 Rings, and a rhombicuboctahedron with position 12 illuminated."
 	def at_object_creation(self):
 		self.tags.add("equipable", category="armor")
 		self.locks.add("drop:false()")

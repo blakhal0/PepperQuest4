@@ -101,24 +101,22 @@ class zone7valaharrabeach:
 class zone7valaharra:
 	monsters = ["granreaper", "thaihothydra", "deathspiraldragon"]
 	rare = ["mourningbelle"]
-
+#---------------------------------------------------
 class mirrorzone:
 	monsters = ["echophantom"]
 	rare = ["prismaldevourer"]
-
+#---------------------------------------------------
 class madforestlow:
-	monsters = ["echophantom"]
+	monsters = ["insanityweaver", "spicegauntscreecher"]
 	rare = ["prismaldevourer"]
 
 class madforestdangerous:
-	monsters = ["echophantom"]
-	rare = ["prismaldevourer"]
+	monsters = ["fleshmelter", "sirenofinsanity"]
+	rare = ["helldritchterror"]
 
 class vtu:
-	monsters = ["echophantom"]
-	rare = ["prismaldevourer"]
-
-
+	monsters = ["insanityweaver", "fleshmelter", "sirenofinsanity"]
+	rare = ["helldritchterror"]
 #-------------------------------------------------
 class templeofsmallgods:
 	monsters = ["anansi"]
