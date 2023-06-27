@@ -289,6 +289,13 @@ class valaharranmap(DefaultObject):
 		self.db.desc = "Valaharran Pirate Map."
 		self.db.locationname = "magmamadness"
 
+class panahonmap(DefaultObject):
+	def at_object_creation(self):
+		self.locks.add("drop:false()")
+		self.tags.add("map")
+		self.db.desc = "A small hourglass filled with sand. As you watch the sand flows from one side to the other to change the direction it points."
+		self.db.locationname = "panahon"
+
 class book(DefaultObject):
 	def at_object_creation(self):
 		self.tags.add("readable", category="isreadable")

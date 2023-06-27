@@ -368,3 +368,24 @@ class libvamp(DefaultScript):
 					else:
 						x.msg("|/|rYou hear soft steps, feel an eerie presence behind you, and a light breath on your neck.|/%s You feel light headed. You lose 6 hp.|n" % (random.choice(vampsays)))
 						continue
+
+class madness(DefaultScript):
+	def at_script_creation(self):
+		self.key = "madnessscript"
+		self.interval = 20
+		self.persistent = True
+	def at_repeat(self):
+		whispers = ["The echoes of the void resonate within, consuming the fragments of your sanity.", "|mMadness|n whispers: Do you hear them? The whispers in the dark? They know your deepest fears.", "The boundaries of reality blur, and your grip on sanity slips away.", "Every step you take, the whispers grow louder, urging you to embrace the chaos.", "Your memories are but fragments, distorted by the maddening haze that surrounds you.", "|mMadness|n whispers: What is real? What is illusion? Can you trust your senses in this twisted realm?", "Your thoughts betray you, twisting and warping into grotesque forms of madness.", "They watch you, unseen eyes peering from the darkness, relishing in your spiraling despair.", "Shadows dance in the corner of your vision. Coming for you, reaching, clawing closer.", "|mMadness|n whispers: They're behind you, waiting, waiting for you to not look.", "|mMadness|n whispers: They'll betray you. You know they will. Watch them closely.", "|mMadness|n whispers: You cannot run from the darkness. We are everywhere."]
+		madnessrooms = ["#11191", "#10978", "#10497", "#10567", "#10602", "#10839"]
+		for i in madnessrooms:
+			results = search_object(i)
+			if not results[0].contents:
+				continue
+			for x in results[0].contents:
+				if not x.permissions.get("player") and not x.has_account:
+					continue
+				if x.tags.get("battle"):
+					continue
+				if x.tags.get("sanity"):
+					continue
+				x.msg("|/" + random.choice(whispers))
