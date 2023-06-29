@@ -22,10 +22,6 @@ class giose:
 	name = "giose"
 	location = "#7589"
 
-class islandofthemad:
-	name = "island of the mad"
-	location = "#10490"
-
 class paipri:
 	name = "paipri"
 	location = "#7712"
@@ -45,7 +41,7 @@ class tolvaj:
 class ardismouf:
 	name = "ardismouf"
 	location = "#8748"
-	
+
 class baccami:
 	name = "baccami"
 	location = "#8878"
@@ -65,6 +61,10 @@ class lumakesiisland:
 class boarssnout:
 	name = "boars snout"
 	location = "#9932"
+
+class islandofthemad:
+	name = "island of the mad"
+	location = "#10490"
 
 class magmamadness:
 	name = "magmamadness"

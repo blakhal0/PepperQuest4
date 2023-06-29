@@ -1,4 +1,4 @@
-from evennia import default_cmds, InterruptCommand, search_object, search_tag, utils
+from evennia import default_cmds, InterruptCommand, search_object, search_tag, utils, gametime
 import random
 from random import randint
 from evennia.utils import interactive
@@ -21,13 +21,7 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		contentslist = []
-		for i in self.caller.contents:
-			contentslist.append(i.key)
-		if set(["Enigma Shield", "Enigma Weapon", "Enigma Armor"]).issubset(contentslist):
-			self.caller.msg("You have all the items")
-		else:
-			self.caller.msg("You do not have all the items")
+		self.caller.msg(int(gametime.runtime()))
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"

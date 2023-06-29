@@ -81,77 +81,77 @@ class mirrorroom(DefaultRoom):
 		for con in visible:
 			key = con.get_display_name(looker, pose=True)
 			if con.destination and not con.tags.get("specialobject") and not con.tags.get("specialexit"):
-				if looker.is_superuser:
+				if looker.is_superuser or looker.tags.get("normalview"):
 					exits.append(key)
 				else:
 					exits.append("rorrim")
 			elif con.tags.get("specialexit"):
-				if looker.is_superuser:
+				if looker.is_superuser or looker.tags.get("normalview"):
 					exits.append(key)
 				else:
 					exits.append("".join(reversed(key)))
 			elif con.tags.get("specialnpc"):
-				if looker.is_superuser:
+				if looker.is_superuser or looker.tags.get("normalview"):
 					npc.append(key)
 				else:
 					npc.append("".join(reversed(key)))
 			elif con.permissions.get("player"):
 				if con.has_account:
-					if looker.is_superuser:
+					if looker.is_superuser or looker.tags.get("normalview"):
 						users.append(key)
 					else:
 						users.append("".join(reversed(key)))
 			elif con.tags.get("talkative", category="npc"):
 				if not con.tags.get("specialobject"):
-					if looker.is_superuser:
+					if looker.is_superuser or looker.tags.get("normalview"):
 						npc.append(key)
 					else:
 						npc.append("".join(reversed(key)))
 				else:
-					if looker.is_superuser:
+					if looker.is_superuser or looker.tags.get("normalview"):
 						things.append(key)
 					else:
 						things.append("".join(reversed(key)))
 			elif con.tags.get("evnpc"):
-				if looker.is_superuser:
+				if looker.is_superuser or looker.tags.get("normalview"):
 					npc.append(key)
 				else:
 					npc.append("".join(reversed(key)))
 			else:
-				if looker.is_superuser:
+				if looker.is_superuser or looker.tags.get("normalview"):
 					things.append(key)
 				else:
 					things.append("".join(reversed(key)))
 		string = "|c%s|n\n" % self.get_display_name(looker, pose=True)
 		desc = str()
-		if looker.is_superuser:
+		if looker.is_superuser or looker.tags.get("normalview"):
 			desc = self.db.desc
 		else:
 			desc = "".join(reversed(self.db.desc))
 		if desc:
 			string += "%s" % desc
 			string += "\n\n"
-			if looker.is_superuser:
+			if looker.is_superuser or looker.tags.get("normalview"):
 				string += "You cast your gaze upon the area:"
 			else:
 				string += "".join(reversed("You cast your gaze upon the area:"))
 		if exits:
-			if looker.is_superuser:
+			if looker.is_superuser or looker.tags.get("normalview"):
 				string += "\n|025Exits|n: " + ", ".join(exits)
 			else:
 				string += "\n" + ", ".join(exits) + "|025 :stixE|n"
 		if users:
-			if looker.is_superuser:
+			if looker.is_superuser or looker.tags.get("normalview"):
 				string += "\n|550Players|n: " + ", ".join(users)
 			else:
 				string += "\n" + ", ".join(users) + "|550 :sreyalP|n"
 		if npc:
-			if looker.is_superuser:
+			if looker.is_superuser or looker.tags.get("normalview"):
 				string += "\n|520NPC's|n: " + ", ".join(npc)
 			else:
 				string += "\n" + ", ".join(npc) + "|520 :s'CPN|n "
 		if things:
-			if looker.is_superuser:
+			if looker.is_superuser or looker.tags.get("normalview"):
 				string += "\n|050Objects|n: " + ", ".join(things)
 			else:
 				string += "\n" + ", ".join(things) + "|050 :stcejbO|n"

@@ -88,7 +88,7 @@ class anansi:
 	god = "yes"
 	successmsg = "|/Om begins to glow, brightening to a blinding light, his one eye blazing a bright red.|/|mOm the Mighty|n says: I AM OM THE MIGHTY, GREATEST OF ALL SMALL GODS, GOD OF THIS TEMPLE.|/A mighty thunderclap shakes the building.|/|mOm the Mighty|n says: I thank you for your belief in me. There are things I must tend to.|/A blinding flash of light emits from Om the Mighty."
 	tagstoadd = ["omthemighty"]
-	tagstoremove = [""]
+	tagstoremove = []
 	itemstoremove = ["Om the Mighty"]
 	accoladetoadd = ""
 	sendto = "#7529"
@@ -117,8 +117,8 @@ class thegoddessmorrighan:
 	god = "yes"
 	successmsg = "|/Morrighan kneels in defeat.|/|mThe Goddess Morrighan|n says: Today I wash no armor. You are truly a warrior of great might. But like all warriors, I will one day lead you from the field of battle. Watch for the day your armor is clean, for that day we will meet again."
 	tagstoadd = ["morrighan"]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -145,9 +145,9 @@ class thegoldengodofgreedmammoo:
 	droptype = "items"
 	god = "yes"
 	successmsg = "|/Mammoo cries out in defeat and slumps to the ground.|/The golden statues begin to crack and shatter, Nemesis and Tyche step forward."
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = "Fortunate One"
 	sendto = ""
 
@@ -174,9 +174,9 @@ class boareaus:
 	droptype = "items"
 	god = "yes"
 	successmsg = "|/The wind increases blowing with an incredible force, howling, screaming dissonant shouts of anger.|/|mBoareaus|n shouts: NO! NO! I WILL NOT GO HUNGRY AGAIN!! NEVER AGAIN!!|/The wind somehow increases again threatening to rip the meat from your bones.. then a loud clap and the wind stops.|/Before you stands a tall woman with braided yellow hair dressed in furs. Large antlers protrude from the back of her head, a deer skin drum hangs at her side.|/|mSkaahde|n says: Thank you for freeing me. Long ago I was foolish and trusted Boareaus. He betrayed me and imprisoned me, stole my lands, fed on my people. Now that I am free, music will return to my lands.|/You snort and shake your head.|/Your land? Yours??!?! I am the one that freed it. I AM the one that saved your people. Why should they worship you? YOU WHO WERE FOOLED, DEFEATED, WHO ARE YOU TO CLAIM TO PROTECT THEM!!|/You feel your skin heating, a painful rumble in your chest.|/|mSkaahde|n says: How did I not recognize you?|/A bright light flashes."
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = "Finder of the Song"
 	sendto = "#10009"
 
@@ -204,9 +204,9 @@ class mlanchrus:
 	droptype = ""
 	god = "yes"
 	successmsg = "As M'lanchrus dies you hear a brief part of an ancient song: 'Boreas, ancient gusts, heed my plea,'"
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#5093"
 
@@ -233,9 +233,9 @@ class seraphin:
 	droptype = ""
 	god = "yes"
 	successmsg = "As Seraphin dies you hear a brief part of an ancient song: 'unleash your howling tempest,'"
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#5766"
 
@@ -262,9 +262,9 @@ class discordia:
 	droptype = ""
 	god = "yes"
 	successmsg = "As Discordia dies you hear a brief part of an ancient song: 'bend the world to its knees.'"
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#4561"
 
@@ -291,8 +291,8 @@ class guardcaptain:
 	dropitem = "armoredpepper"
 	god = "yes"
 	successmsg = "|/|mGuard Captain|n says: You don't fight like a thief. Your face, like from the books, where are you from?|/You cut the Guard Captain off, tossing the Red, Blue, and Green keys for the castle in their face. Wouldn't want anyone to get in trouble for losing the keys again.|/With the Guard Captain safely incapacitated, you can retrieve the Treasury Key without issue."
-	tagstoadd = [""]
-	tagstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
 	itemstoremove = ["Ardismouf Blue Key", "Ardismouf Red Key", "Ardismouf Green Key"]
 	accoladetoadd = ""
 	sendto = ""
@@ -320,9 +320,9 @@ class honkiamat:
 	dropitem = "armoredpepper"
 	god = "yes"
 	successmsg = "|/|mHonkiamat|n hisses angrily: What have you done, why would you do this??? I was the only thing keeping them contained. You've released them back into the world."
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = "Hellion"
 	sendto = ""
 
@@ -349,9 +349,9 @@ class malashai:
 	dropitem = ""
 	god = "yes"
 	successmsg = "|/Malashai|n screams: NO! NO! I AM THE MASTER OF TIME!|/Malashai flickers and fades, flipping rapidly between a child, a young man, an adult, the inky miasma, and a rotting skeleton.|/The hourglass drops from his grip, rapidly disintegrating as he disappears into nothingness."
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -379,8 +379,8 @@ class titanslime:
 	god = "yes"
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 1!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena1"]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#7875"
 
@@ -408,7 +408,7 @@ class magidraky:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 2!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena2"]
 	tagstoremove = ["arena1"]
-	itemstoremove = [""]
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#7876"
 
@@ -436,7 +436,7 @@ class chromadillo:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 3!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena3"]
 	tagstoremove = ["arena2"]
-	itemstoremove = [""]
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#7877"
 
@@ -465,7 +465,7 @@ class knightowl:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 4!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena4"]
 	tagstoremove = ["arena3"]
-	itemstoremove = [""]
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#7878"
 
@@ -494,7 +494,7 @@ class stealslime:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 5!! IT'S GETTING CLOSE LADIES AND GENTLEMEN. LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena5"]
 	tagstoremove = ["arena4"]
-	itemstoremove = [""]
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#7879"
 
@@ -522,7 +522,7 @@ class blothartheberserker:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 6!! ONLY TWO CHALLENGES REMAIN! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena6"]
 	tagstoremove = ["arena5"]
-	itemstoremove = [""]
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#7880"
 
@@ -551,7 +551,7 @@ class megoosea:
 	successmsg = "|/|mAnnouncer: AND WE HAVE A WINNER IN ROUND 7!! THIS IS IT LADIES AND GENTLEMEN! THE ONE WE'VE ALL BEEN WAITING FOR, A CHALLENGER HAS EARNED THE RIGHT TO FACE THE TITAN!!! LET'S SEE IF THEY CAN SURVIVE THE CHALLENGE IN THE NEXT FIGHT!"
 	tagstoadd = ["arena7"]
 	tagstoremove = ["arena6"]
-	itemstoremove = [""]
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#7881"
 
@@ -579,7 +579,7 @@ class titanophion:
 	successmsg = "|/The Titan Ophion bends to a knee and bows their head before you.|/|mTitan|n says: Never before have I witnessed such strength and perseverance. My throne is yours.|/The crowd erupts, shaking the very arena like an earthquake.|/|mAnnouncer|n says: A SIGHT FOR THE AGES!! WE HAVE A NEW TITAN OF THE ARENA!!!! CONGRATULATIONS!|/Please see the Host to collect your reward."
 	tagstoadd = ["titan"]
 	tagstoremove = ["arena7"]
-	itemstoremove = [""]
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = "#7861"
 
@@ -1123,9 +1123,9 @@ class bookwyrm:
 	dropitem = ""
 	god = "no"
 	successmsg = ""
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1152,9 +1152,9 @@ class inkling:
 	dropitem = ""
 	god = "no"
 	successmsg = ""
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1181,9 +1181,9 @@ class vellumvamp:
 	dropitem = ""
 	god = "no"
 	successmsg = ""
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1210,9 +1210,9 @@ class codexlurker:
 	dropitem = ""
 	god = "no"
 	successmsg = ""
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1239,9 +1239,9 @@ class laszlocravensworth:
 	dropitem = "batspellbook"
 	god = "no"
 	successmsg = ""
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1373,9 +1373,9 @@ class echophantom:
 	dropitem = "sageelixir"
 	god = "no"
 	successmsg = ""
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1402,9 +1402,9 @@ class prismaldevourer:
 	dropitem = "spicyherb"
 	god = "no"
 	successmsg = ""
-	tagstoadd = [""]
-	tagstoremove = [""]
-	itemstoremove = [""]
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
 
@@ -1554,8 +1554,6 @@ class helldritchterror:
 	itemstoremove = []
 	accoladetoadd = ""
 	sendto = ""
-
-
 
 #warfront
 class bonesnapper:
