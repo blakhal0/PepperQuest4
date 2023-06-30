@@ -1905,3 +1905,14 @@ class templeofsmallgodstunnel(iftagviewnf):
 		self.db.tagdesc = "The temple is blessedly free of, most, of the spider webs. The one's that are there now are of the normal everyday variety.|/Disciples fuss at each nook and cranny of the temple, cleaning, polishing, painting."
 		self.db.tagname = "omthemighty"
 		self.db.fight = "no"
+
+class houseofpirts(autofight):
+	def at_object_creation(self):
+		self.db.desc = "A massive bath with clear and gently steaming water occupies the majority of the room. Sparkling crystal mosaics cover the walls and meet up with the intricate tile patterned floor. Out of the corner of your eye you think you see the figures in the mosaics move and shift.|/An altar of a woman washing a small child stands semi submerged in the water on the north side of the room."
+		#self.db.desc = "The architecture morphs before your eyes. The walls take on an organic quality, resembling the sinuous curves of serpents and twisted vines. Marble statues, once elegant and lifelike, contort into grotesque forms, their eyes seemingly following your every move."
+		#self.db.desc = "The warm and inviting atmosphere quickly reveals its sinister undertones. The pools and baths, once peaceful and inviting, now appear murky and ominous. Steam rises from the darkened waters, concealing hidden perils lurking beneath the surface. The gentle trickling of water becomes an unsettling susurration, and the scent of fragrant oils transforms into a sickly sweet aroma that hints at treachery."
+		#self.db.desc = "The familiar sights of a bathhouse surround you, but an eerie ambiance hangs in the air. The winding corridors are lined with ornate tiles, adorned with intricate patterns reminiscent of flowing water, and the soft echoes of distant splashes reach your ears."
+		self.db.zone = "bathhouse"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")

@@ -162,6 +162,10 @@ class discordia:
 	monsters = ["discordia"]
 	rare = ["discordia"]
 
+class bathhouse:
+	monsters = [""]
+	rare = [""]
+
 #Titan Arena
 #------------------------------------------------
 class arenaone:

@@ -110,6 +110,22 @@ class casinochaosexit(DefaultExit):
 			else:
 				self.at_failed_traverse(traversing_object)
 
+class healingexit(DefaultExit):
+	def at_object_creation(self):
+		self.db.message = "|/|gYou leave the bath feeling completely restored.|n"
+	def at_traverse(self, traversing_object, target_location):
+		traversing_object.msg(self.db.message)
+		source_location = traversing_object.location
+		traversing_object.db.hp = traversing_object.db.maxhp
+		traversing_object.db.mp = traversing_object.db.maxmp
+		if traversing_object.move_to(target_location):
+			self.at_after_traverse(traversing_object, source_location)
+		else:
+			if self.db.err_traverse:
+				traversing_object.msg(self.db.err_traverse)
+			else:
+				self.at_failed_traverse(traversing_object)
+
 class iftagexit(DefaultExit):
 	def at_object_creation(self):
 		self.db.hastaglocation = "#XXXX"
