@@ -1916,3 +1916,14 @@ class houseofpirts(autofight):
 		self.db.fight = "yes"
 		self.tags.add("autofight")
 		self.tags.add("notravel")
+
+class sandsweptshrine(autofight):
+	def at_object_creation(self):
+		#self.db.desc = "You find yourself standing above the abyss, sand pouring off the edges of the platform and the path leading to it. You're not sure how, but you are not falling. You see nothing below or around you."
+		#self.db.desc = "A massive statue of Smilsu, the Mother Goddess of Sands, looms in the center of a platform, her visage stern and unyielding.|/The sand slowly pours over the edges of the platform, never diminishing yet always flowing."
+		#self.db.desc = "The winding corridors of the shrine are carved from sun-baked stone, their surfaces bear weathered etchings with intricate hieroglyphs that depict tales of power and divine intervention."
+		#self.db.desc = "The winding corridors of the shrine are carved from sun-baked stone, their surfaces bear weathered etchings with intricate hieroglyphs that depict tales of power and divine intervention. As you make your way through the shrine you encounter chambers adorned with elaborate carvings of desert creatures and intricate patterns mimicking shifting sands."
+		self.db.zone = "sandshrine"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")

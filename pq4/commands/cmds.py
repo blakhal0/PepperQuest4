@@ -21,7 +21,8 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		self.caller.msg(int(gametime.runtime()))
+		for x in self.caller.location.contents:
+			x.msg("Hello")
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"

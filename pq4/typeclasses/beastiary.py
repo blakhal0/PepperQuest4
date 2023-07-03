@@ -1408,6 +1408,151 @@ class prismaldevourer:
 	accoladetoadd = ""
 	sendto = ""
 
+#Sandswept Shrine
+class sandworm:
+	name = "Sand Worm"
+	desc = "A large worm covered in venomous spines."
+	phrases = [""]
+	hp = 90
+	mp = 0
+	spells = [""]
+	attack = 83
+	defense = 79
+	gold = 75
+	exp = 35
+	actions = ["a"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class perillight:
+	name = "Peril Light"
+	desc = "A small floating light in the sandy air."
+	phrases = [""]
+	hp = 90
+	mp = 68
+	spells = ["insinerate"]
+	attack = 83
+	defense = 79
+	gold = 64
+	exp = 38
+	actions = ["a", "m", "a", "a", "m", "m", "s", "s"]
+	noflee = "no"
+	weakness = ["a"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "magic"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class cactuar:
+	name = "Cactuar"
+	desc = "A small cacti, having stiff arms and legs at ninety degree angles, three black holes for their face, and three reddish quills at the top of their head. Much similar to the kind you would find in northern Mexico and parts of Arizona. But not Texas."
+	phrases = [""]
+	hp = 36
+	mp = 70
+	spells = ["needle"]
+	attack = 90
+	defense = 85
+	gold = 200
+	exp = 500
+	actions = ["a", "m", "a", "f", "f", "m", "a", "a", "f"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	droptype = "items"
+	dropitem = "magicalpepper"
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class siroccore:
+	name = "Siroccore"
+	desc = "A serpentine creature with scales as golden as desert sands."
+	phrases = ["slithers below the sands then leaps out from behind you."]
+	hp = 65
+	mp = 72
+	spells = ["galeforce"]
+	attack = 70
+	defense = 57
+	gold = 130
+	exp = 36
+	actions = ["a", "m", "a", "m", "m", "a", "a", "a", "m"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class desiccatedwarden:
+	name = "Desiccated Warden"
+	desc = "A monstrous mummy-like creature. Its desiccated body is wrapped in tattered linen bandages stained with time and decay. The flesh clinging to its bones is withered and shriveled."
+	phrases = ["mmmMMMMmmmMmmMmm"]
+	hp = 78
+	mp = 87
+	spells = ["insinerate", "highboltage"]
+	attack = 81
+	defense = 70
+	gold = 50
+	exp = 53
+	actions = ["a", "m", "a", "a", "m", "m", "a", "d", "d"]
+	noflee = "yes"
+	weakness = ["a"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
 
 #Island of Madness
 class insanityweaver:

@@ -129,6 +129,34 @@ class casinomover(DefaultScript):
 			target[0].move_to(exit.destination)
 #			target[0].move_to(exit.destination, quiet=True, move_hooks = False)
 
+
+class sandworms(DefaultScript):
+	def at_script_creation(self):
+		self.key = "sandworms"
+		self.interval = 15
+		self.persistent = True
+	def at_repeat(self):
+		wormlist = ["#11897", "#11898", "#11899", "#11900"]
+		for i in wormlist:
+			target = search_object(i)
+			exits = [exi for exi in target[0].location.exits if not exi.tags.get("barred")]
+			exit = random.choice(exits)
+			target[0].move_to(exit.destination, quiet=True, move_hooks=False)
+		if not target[0].location.contents:
+			return
+		for x in target[0].location.contents:
+			if x.permissions.get("player") and x.has_account:
+				if not x.tags.get("battle"):
+					if randint(1,2) == 1:
+						x.msg("|/A sand worm bursts from the sand.")
+						x.tags.add("letsfight")
+						x.execute_cmd('fight')
+						return
+					else:
+						x.msg("|/A sand worm bursts from the sand, but it does not seem to notice you.")
+						return
+
+
 class spicemerchantcaravan(DefaultScript):
 	def at_script_creation(self):
 		self.key = "spicemerchcarmove"

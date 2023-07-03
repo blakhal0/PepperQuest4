@@ -166,6 +166,14 @@ class bathhouse:
 	monsters = [""]
 	rare = [""]
 
+class sandshrine:
+	monsters = ["perillight", "siroccore", "desiccatedwarden"]
+	rare = ["cactuar"]
+
+class sandwormzone:
+	monsters = ["sandworm"]
+	rare = ["sandworm"]
+
 #Titan Arena
 #------------------------------------------------
 class arenaone:

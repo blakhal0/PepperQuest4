@@ -400,6 +400,14 @@ class sirenssong:
 	kind = "d"
 	enemyphrase = "The Siren sings a mesmerizing song that leaves you lost in memories past, wracking you with the pain of loss."
 
+class needle:
+	name = "10000 Needle Attack"
+	price = 0
+	cost = 10
+	base = 100
+	group = "aggressive"
+	kind = "d"
+	enemyphrase = "Cactuar stiffens oddly, then shakes violently! 10000 Needle Attack!!!!"
 
 class harmonicchains:
 	name = "Harmonic Chains"
