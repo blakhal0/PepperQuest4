@@ -44,10 +44,6 @@ class plantroomexit(DefaultExit):
 		self.db.err_traverse = "|/|rYou are grappled by vines and cannot move."
 		self.locks.add("traverse:not tag(nomove)")
 
-class noviewexit(DefaultExit):
-	def at_object_creation(self):
-		self.locks.add("view:false()")
-
 boop = ["Your progress abruptly halts as you walk face-first into an unyielding mirror.", "You recoil in surprise, startled by the unexpected encounter with your own reflection.", "'Sunoffa...' your nose bleeds a little.", "Confusion washes over you as your face meets the cold surface of the mirror head-on.", "With a thud, you collide with an impenetrable barrier that mimics your every move.", "Stumbling forward, you crash into a mirror, disoriented and questioning your senses.", "The mirror mocks your futile attempts to find the path, leaving you frustrated.", "You rub your forehead, feeling foolish for running into your own mirrored reflection.", "Your hopes shatter, unlike the mirror, as you smack into your reflection.", "Collision with the mirror jolts you back to a frustrating reality.", "You stumble backward, disoriented by the mirror's deceptive presence.", "Your reflection mocks your failed attempts."]
 class mirrorexit(DefaultExit):
 	def at_object_creation(self):
