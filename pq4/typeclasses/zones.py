@@ -174,6 +174,10 @@ class sandwormzone:
 	monsters = ["sandworm"]
 	rare = ["sandworm"]
 
+class forestshrine:
+	monsters = ["booplesnoot", "snek", "hardvark", "booplesnoot"]
+	rare = ["magibadger"]
+
 #Titan Arena
 #------------------------------------------------
 class arenaone:

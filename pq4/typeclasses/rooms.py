@@ -1453,7 +1453,7 @@ class titanarena(DefaultRoom):
 		if things:
 			string += "\n|050Objects:|n " + ", ".join(things)
 		return string
-	
+
 
 
 #Overworld rooms
@@ -1924,6 +1924,14 @@ class sandsweptshrine(autofight):
 		#self.db.desc = "The winding corridors of the shrine are carved from sun-baked stone, their surfaces bear weathered etchings with intricate hieroglyphs that depict tales of power and divine intervention."
 		#self.db.desc = "The winding corridors of the shrine are carved from sun-baked stone, their surfaces bear weathered etchings with intricate hieroglyphs that depict tales of power and divine intervention. As you make your way through the shrine you encounter chambers adorned with elaborate carvings of desert creatures and intricate patterns mimicking shifting sands."
 		self.db.zone = "sandshrine"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")
+
+class whisperingglade(autofight):
+	def at_object_creation(self):
+		self.db.desc = "Nestled within the verdant embrace of nature, is a place of ethereal beauty and untamed wilderness. The canopy of towering trees opens in places to reveal a calm blue sky above you, the forest floor is dappled with sunlight filtering through the lush green foliage above. The air is alive with the melodies of birdsong and the gentle rustling of leaves."
+		self.db.zone = "forestshrine"
 		self.db.fight = "yes"
 		self.tags.add("autofight")
 		self.tags.add("notravel")

@@ -1554,6 +1554,123 @@ class desiccatedwarden:
 	accoladetoadd = ""
 	sendto = ""
 
+#Forest Shrine
+class booplesnoot:
+	name = "Booplesnoot"
+	desc = "A cute little fuzzy mutated nightmare beast with dripping fangs, glowing red eyes, and an adorable little nose.  Beloved creature of Meza, the mother goddess of the forest."
+	phrases = ["wiggles its nose adorably, then leaps at you with fangs bared.", "belches horrifying carrot breath at you.", "thumps its foot mightily shaking the ground."]
+	hp = 5
+	mp = 30
+	spells = ["death"]
+	attack = 90
+	defense = 10
+	gold = 1
+	exp = 1
+	actions = ["a", "f", "m", "f", "a", "f", "f", "m", "f", "a", "f", "f"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "yes"
+	successmsg = "|/|mMeza|n screams: I TOLD YOU NOT TO HURT MY BELOVED BOOPLESNOOTS!!! BE GONE FROM MY DOMAIN!!!!"
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = "#3691"
+
+class snek:
+	name = "Snek"
+	desc = "A fancy danger noodle with fake handlebar mustache and fetching hat."
+	phrases = ["No step on snek!", "print('I am a python')"]
+	hp = 65
+	mp = 0
+	spells = [""]
+	attack = 70
+	defense = 57
+	gold = 5
+	exp = 30
+	actions = ["a", "i", "a", "f", "a", "i", "a"]
+	noflee = "no"
+	weakness = ["e"]
+	incapatt = "wraps itself around you and squeezes tightly."
+	incapsuc = "You are barely able to breath as the snek squeezes tightly."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class magibadger:
+	name = "Magi-Badger"
+	desc = "A small black and white badger, it seems to be unable to stop dancing and singing a repetitive song."
+	phrases = ["Badger badger badger badger badger badger badger.", "mush-ROOM MUSHROOM!!", "Badger throws a snake at you."]
+	hp = 65
+	mp = 83
+	spells = ["treason"]
+	attack = 81
+	defense = 73
+	gold = 140
+	exp = 45
+	actions = ["a", "a", "m", "i", "a", "i"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = "begins dancing and singing."
+	incapsuc = "You are entranced by the song and dance and find yourself caught up in the tune and singing along. Badger badger badger badger badger badger mush-ROOM MUSHROOM badger badger badger badger IT'S A SNAAAAAAKE, OH NO IT'S A SNAAAAAKE!!!!!"
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	droptype = "i"
+	dropitem = "restoringruby"
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class hardvark:
+	name = "Hardvark"
+	desc = "An advark with a very thick shell. Defense is the name of the game for this critter."
+	phrases = [""]
+	hp = 40
+	mp = 0
+	spells = [""]
+	attack = 65
+	defense = 90
+	gold = 160
+	exp = 45
+	actions = ["d", "d", "a", "a", "d", "d", "d", "a", "d", "a", "a", "a", "a", "d"]
+	noflee = "no"
+	weakness = ["f"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
 #Island of Madness
 class insanityweaver:
 	name = "Insanity Weaver"
