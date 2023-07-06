@@ -11,7 +11,6 @@ class smilsucmd(default_cmds.MuxCommand):
 			contentslist.append(i.key)
 		if "Horrorcane" in contentslist or "horrorcane" in self.caller.db.battlespells:
 			self.caller.msg("|/|mThe Mother of Sands|n says: You have already received my gift. Do not be a greedy child.")
-			return
 		else:
 			self.caller.msg("|/|mThe Mother of Sands|n says: Child, you have proven yourself worthy. Receive my gift, use it to drive your enemies to their knees and scatter their very souls to the winds, send them back into my embrace.")
 			tow_proto = {
@@ -21,7 +20,9 @@ class smilsucmd(default_cmds.MuxCommand):
 			}
 			spawn(tow_proto)
 			self.caller.msg("|/You receive a spell book.")
-			return
+		self.caller.msg("|/|mSmilsu|n says: Return to the world and make your mother proud.")
+		results = search_object("#8878")
+		self.caller.move_to(results[0], quiet=True, move_hooks=False)
 
 class SmilsuAltarCmdSet(CmdSet):
 	key = "SmilsuAltarCmdSet"

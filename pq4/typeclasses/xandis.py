@@ -36,7 +36,6 @@ class chatxandis(default_cmds.MuxCommand):
 				answertwo = yield("You sure you wanna go there? |cY|nes, |cN|no.")
 				if answertwo.lower() in ["y", "yes"]:
 					travelto = getattr(locations, answer.replace(" ", "").lower()).location
-					self.caller.db.lastcity = travelto
 					self.caller.msg("|/|mCaptain Xandis|n says: You got it. 'Let's go, boss has a destination!'")
 					self.caller.msg("You climb on board and watch as the crew races back and forth, heaving lines and unfurling canvas. The Silver Sun lurches forward as you head out to sea.")
 					self.caller.msg("|/ ")

@@ -1682,6 +1682,37 @@ class kharrodesert(autofight):
 		self.db.fight = "yes"
 		self.tags.add("autofight")
 
+class sarlaccpit(vroom):
+	def at_object_creation(self):
+		self.db.desc = "Heat shimmers on the sands, creating the illusion of waves sparkling like gemstones.|/A sea of parched death interrupted by scraggly thorn bushes and the occasional pile of bleached bones.|/A large sand sculpture stands tall in the desert, a female form, arms open and welcoming. For some reason the wind and sand does not appear to affect it the sculpture the same way the elements have eroded the rest of the natural landscape."
+		self.db.sendlocation = "#11532"
+		self.db.warning = "|/|rThe sand begins to boil and shift beneath your feet...|n"
+		self.db.death = "|/You look down much too late as the sand beneath you begins to flow, a hot putrid wind gusts from beneath you, the sand runs down pulling you into a giant gaping maw in the sand.|/|/|rWhat tragic fate, you spend the rest of your very short life being digested by a Sarlacc. Enjoy becoming Sarlacc poop.|n|/You have brought shame to yourself and your family."
+		self.db.welcome = "|g|/A warm and welcoming voice fills your head.|/|mMother of Sands|n says: You return to my embrace, this makes your mother happy.|n|/"
+	def at_object_receive(self, obj, source):
+		utils.delay(4, self.sendmsg, obj)
+	def sendmsg(self, obj):
+		for i in self.contents:
+			if i.has_account and i.key == obj.key:
+				obj.msg(self.db.warning)
+				utils.delay(4, self.move, obj)
+	def move(self, obj):
+		for i in self.contents:
+			if i.has_account and i.key == obj.key:
+			#Mothers embrace
+				if obj.tags.get("seekerofknowledge"):
+					destination = search_object(self.db.sendlocation)
+					obj.msg(self.db.welcome)
+			#Death
+				else:
+					obj.db.deathcount += 1
+					destination = search_object(obj.db.lastcity)
+					obj.msg(self.db.death)
+					obj.db.hp = int(obj.db.maxhp * .5)
+					obj.db.mp = int(obj.db.maxmp * .5)
+					obj.db.gold -= int(obj.db.gold * .2)
+				obj.move_to(destination[0], quiet=True, move_hooks=False)
+
 class orthangrove(autofightlow):
 	def at_object_creation(self):
 		self.db.desc = "Thin tall trees with rings of branches are peppered across the area.|/Crystalline rocks jut up from the ground, glowing softly."
@@ -1934,4 +1965,10 @@ class whisperingglade(autofight):
 		self.db.zone = "forestshrine"
 		self.db.fight = "yes"
 		self.tags.add("autofight")
+		self.tags.add("notravel")
+
+class tirgusmarket(vroom):
+	def at_object_creation(self):
+		self.db.desc = "You stand at the entrance of a vibrant bazaar that stretches as far as the eye can see. You turn around expecting to see the alleyway you came down, only to see the bazaar stretch to the horizon in the other direction. The stalls, tents, and booths create a maze of narrow alleys and bustling squares, alive with the constant hum of bartering and the enchanting melodies of street musicians.|/Vibrant fabrics and hanging tapestries create the walls and shade covers of the tents, creating a kaleidoscope of hues that fills the air with an atmosphere of excitement and delight.|/At every turn, there is an array of amazing goods on display. Silks, jewels, baubles, spices, herbs, meats, sweets, artwork, trinkets, exotic critters, rugs, clothes, and every other possible thing you can imagine.|/As you wander through the market, you are immersed in a sensory extravaganza, with the sounds of merchants haggling, the colorful displays of wares, and the tantalizing scents of spices and delicacies."
+		self.db.fight = "no"
 		self.tags.add("notravel")
