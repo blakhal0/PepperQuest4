@@ -341,6 +341,20 @@ class pepperplate(armor):
 		self.db.desc = self.desc
 		self.db.upgraded = "no"
 
+#ultimate
+class mantleofthedragon(armor):
+	name = "Mantle of the Dragon"
+	price = 100
+	defense = 32
+	desc = "Gleaming armor covered in gold and silver dragon scales and a deep blood red cape. Two dragons breath ruby studded fire on the chest."
+	def at_object_creation(self):
+		self.tags.add("equipable", category="armor")
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.defense = int(self.defense)
+		self.db.desc = self.desc
+		self.db.upgraded = "no"
 
 #holy and evil
 class anointedarmor(armor):

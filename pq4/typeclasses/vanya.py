@@ -46,8 +46,9 @@ class chatvanya(default_cmds.MuxCommand):
 				self.caller.msg("|mUncle Vanya|n says: Uncle Vanya is old, but not so that much old. Secret is pickled fish, make you look young!!! Only people born or live here when it happen are no more music and sad. I get here after all the no more music. Now only Vanya performs!")
 				self.caller.msg("Vanya goes back to entertaining and serving the guests.")
 				return
-			elif any(word in answer.lower() for word in ["what happened", "demons", "devils", "boareaus"]):
+			elif any(word in answer.lower() for word in ["what happened", "demon", "demons", "devils", "minstrels", "discordia", "seraphin", "m'lanchrus", "boareaus"]):
 				self.caller.msg("|/|mUncle Vanya|n says: Long time ago performers come to Boars Snout, agents of Boareaus. They play music and steal souls of the people, make everything quiet and sad. Then disappear, never seen again. Many years later Boars Snout is very lucky and Vanya arrive!!")
+				self.caller.msg("|mUncle Vanya|n says: Travelers say they see evil totems in Varken while traveling, some say in north fjords, some say in tundra, some say in the waste, near big dark mountains. But all say very easy to miss if not looking for them. Maybe now you know of them you will find them.")
 				self.caller.msg("Vanya goes back to entertaining and serving the guests.")
 			elif any(word in answer.lower() for word in ["varken"]):
 				self.caller.msg("|/|mUncle Vanya|n says: Varken very very big, lots of cold not much else. Very nice hot springs to south west, but dangerous to get to. You look tough, maybe you get there safe. Warm bones in hot water feel happy. Ehhhhh...is also dead person in hut. Vanya would recommend you avoid dead person. Very kind, but creepy. Makes very tasty chocolate drink. Not as tasty as Vanya's own World Famous Capsaivit Balsam! We should have drink!")

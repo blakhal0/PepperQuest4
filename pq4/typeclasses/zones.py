@@ -178,6 +178,10 @@ class forestshrine:
 	monsters = ["booplesnoot", "snek", "hardvark", "booplesnoot"]
 	rare = ["magibadger"]
 
+class panahon:
+	monsters = [""]
+	rare = [""]
+
 #Titan Arena
 #------------------------------------------------
 class arenaone:

@@ -260,6 +260,11 @@ class tagviewobj(DefaultObject):
 			desc = self.db.desc
 		return desc
 
+class sandsoftime(DefaultObject):
+	def at_object_creation(self):
+		self.locks.add("drop:false()")
+		self.db.desc = "A pile of golden sand."
+
 class map(DefaultObject):
 	def at_object_creation(self):
 		self.locks.add("drop:false()")

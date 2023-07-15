@@ -314,7 +314,7 @@ class shamshirofspice(weapon):
 	name = "Shamshir of Spice"
 	price = 300000
 	attack = 50
-	desc = "Legendary sword forged of pure spice."
+	desc = "Legendary sword forged of pure spice. The blade glows red as spice and fire flicker along the honed edge."
 	def at_object_creation(self):
 		self.tags.add("equipable", category="weapon")
 		self.locks.add("drop:false()")

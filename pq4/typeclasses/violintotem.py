@@ -4,7 +4,7 @@ import random
 
 class violintotemcmd(default_cmds.MuxCommand):
 	key = "use totem"
-	aliases = ["Use Totem", "Use totem", "use Totem"]
+	aliases = ["Use Totem", "Use totem", "use Totem", "use violin totem", "Use Violin Totem"]
 	auto_help = True
 	def func(self):
 		if not "M'lanchrus" in self.caller.db.monsterstats.keys():

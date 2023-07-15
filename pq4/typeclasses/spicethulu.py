@@ -37,9 +37,10 @@ class madnesscmd(default_cmds.MuxCommand):
 			"location": self.caller
 			}
 			spawn(pm_proto)
-			self.caller.msg("|/You recieve a Map to Panahon")
+			self.caller.msg("|/You receive a Map to Panahon")
 			self.caller.tags.remove("sanity")
 			self.caller.msg("Your mind slams back into your body and you find yourself back in the temple.")
+			self.caller.tags.add("pathofthesouleater")
 			return
 		
 

@@ -1929,6 +1929,87 @@ class enigmaroom(vroom):
 		if things:
 			string += "\n|050Objects:|n " + ", ".join(things)
 		return string
+
+class panahon(vroom):
+	ancient = ["The Island of Panahon emanates an aura of enchantment, with sprawling forests teeming with magical creatures and ancient ruins shrouded in mystic secrets.", "Hidden within the ancient woods, mystical rituals unfold as druids commune with nature, channeling the raw power of the land to shape reality.", "Ancient spirits whisper secrets among the towering trees, guiding those who seek wisdom in the heart of the enchanted forest.", "Ethereal creatures of myth roam freely, their majestic presence filling the air with magic.", "Ancient spellcasters harness the ancient energies, their incantations echoing through the moss-covered ruins of forgotten civilizations.", "The air is thick with the scent of ancient herbs and the vibrant colors of exotic flora, creating a tapestry of natural wonder."]
+	primordial = ["The echoes of a time before time resound in the dense jungles of Panahon, colossal insects reign and the air pulses with primal energy.", "The relentless chirping of exotic insects fills the air as you navigate through the dense jungle, marveling at colossal flora and the eerie calls of unseen creatures.", "The primordial jungles pulse with untamed life, the world is untouched by the hands of man.", "The air resonates with the primal calls of primordial creatures unseen, their existence a testament to the raw power of nature.", "Massive vines entwine with ancient stone, the land is uncleared and wild. A place before civilization."]
+	apocalypse = ["The aftermath of cataclysm lingers, leaving scars on the land, as shattered ruins and twisted landscapes serve as haunting reminders of the chaos.", "Amidst the ruins of a shattered city, survivors scavenge for resources, always on guard for the encroaching darkness and the remnants of otherworldly forces.", "Eerie winds carry whispers of lost souls, still smoldering ruins are evidence of the devastation that befell the island.", "Unnatural phenomena manifest in the sky, casting an otherworldly glow upon the desolate landscape. A sickening magic resonance lingers in the air, magical fallout from the fracturing of time.", "The air is heavy with a sense of foreboding, as if the very essence of the island mourns its cataclysmic fate of the tearing of time.", "Shadows dance among the ruins, their ethereal forms a constant reminder of the lingering darkness that engulfs this post-apocalyptic realm."]
+	normal = ["Fleeting moments of temporal stability, where time briefly aligns with the present, offering respite and glimpses of normality amid the ever-shifting nature.", "Amidst the temporal shifts, you find yourself in a moment of tranquility.", "Sunlight filters through the dense canopy, casting dappled patterns on the forest floor, creating an ethereal ambiance.", "Serene waterfalls cascade down moss-covered cliffs, their gentle roar harmonizing with the symphony of nature.", "Wildflowers paint the landscape with bursts of color, their delicate petals swaying in the gentle breeze.", "Ancient ruins, remnants of a forgotten civilization, stand as crumbling testaments to the island's mysterious past.", "The tranquil atmosphere of Panahon invites reflection and contemplation, as if time itself has slowed to a mesmerizing crawl. Perhaps it has."]
+	war = ["Fierce battles rage, factions locked in a relentless struggle for dominance, clashing swords and casting devastating spells amidst the chaos.", "The clash of steel and crackling of arcane spells reverberate through the battlefield, warriors adorned in battle-worn armor fight tooth and nail for their cause.", "The ground trembles beneath the thundering hooves of cavalry, charging forward with a thunderous force, trampling anything in their path.", "Explosions rend the earth as siege weapons rain destruction upon fortifications, crumbling stone and engulfing the air with smoke and debris. You are showered in falling dirt and debris.", "Arrows blot out the sun as they rain down upon the battlefield, finding their mark amidst the chaos, leaving trails of agony and despair in their wake.", "Mages unleash devastating spells, conjuring walls of fire and torrents of lightning, turning the battleground into a maelstrom of elemental fury.", "Healers rush through the chaos, their hands alight with restorative magic, desperately trying to mend the wounded and keep hope alive amidst the carnage.", "Through the haze of battle, fallen heroes lie in eternal slumber, their sacrifices honored by those who fight on, their memory fueling the flames of vengeance and determination.", "A berserker, fueled by rage and wielding a massive axe, cleaves through enemy ranks with reckless abandon, carving a path of destruction.", "Like a shadow, a rogue assassin darts through the chaos, silently dispatching key targets with precise strikes, vanishing into the shadows before anyone can react.", "A seasoned archer, perched on a high vantage point, unleashes a flurry of arrows that find their marks with deadly accuracy, thinning enemy numbers.", "A group of brave knights, their shields locked together, form an impenetrable wall as they push forward, repelling wave after wave of enemy assaults.", "A powerful mage, surrounded by a shimmering aura, unleashes a devastating spell that engulfs foes in searing flames, leaving nothing but charred remnants.", "A cunning tactician, barking orders with authority, directs his troops in a strategic maneuver, outflanking and encircling the enemy forces.", "A group of valiant healers, amidst the chaos, tend to the wounded, mending broken bones and closing grievous wounds, giving their allies a second chance at life.", "A fleet-footed rogue expertly disarms traps and sabotages enemy equipment, creating chaos and confusion within enemy lines.", "A fearless warrior charges headlong into the fray, deflecting incoming blows with a mighty shield and striking back with unmatched strength and precision.", "A mystical druid, in tune with nature's forces, calls forth a violent storm that unleashes torrents of rain and gusts of wind, disrupting enemy formations and sowing chaos."]
+	def at_object_creation(self):
+		self.db.desc = random.choice(self.normal)
+		self.db.ancient = random.choice(self.ancient)
+		self.db.primordial = random.choice(self.primordial)
+		self.db.apocalypse = random.choice(self.apocalypse)
+		self.db.normal = random.choice(self.normal)
+		self.db.war = random.choice(self.war)
+		self.db.warmessages = ["*THUNK* An arrow strikes you in the knee.", "Caught in the midst of the temporal shift, a barrage of arrows pierces your armor, leaving you wounded and disoriented.","The clash of steel resonates through your bones as an enemy's sword finds its mark, slashing across your arm.", "A thunderous explosion engulfs the battlefield, flinging you backward with a shockwave and leaving you with ringing ears.", "From out of nowhere, a hail of fireballs descends upon you, scorching your skin and searing your senses.", "A swift and unexpected blow from a mace crashes into your side, knocking the wind out of you and leaving you gasping for breath.", "As time warps around you, a spectral warrior materializes and delivers a devastating blow, sending you sprawling to the ground.", "The ground beneath your feet trembles as a massive boulder hurtles toward you, crashing into your legs and leaving you pinned momentarily.", "A barrage of arcane bolts lances through the air, finding their mark and leaving you dazed and disoriented.", "A sudden surge of dark energy courses through your body, draining your vitality and leaving you weakened.", "An unseen force slams into you with tremendous strength, flinging you across the battlefield and leaving you bruised and battered."]
+		self.tags.add("notravel")
+		self.db.fight = "no"
+	def at_object_receive(self, obj, source):
+		descriptions = [self.db.ancient, self.db.primordial, self.db.apocalypse, self.db.normal, self.db.war]
+		self.db.desc = random.choice(descriptions)
+		utils.delay(randint(2,8), self.sendmsg, obj)
+	def sendmsg(self, obj):
+		for i in self.contents:
+			if i.key == obj.key:
+				if obj.location.id == self.id:
+					obj.msg("|r|/The air begins to twist and distort, sparking with small arcs of purple electricity. Time is shifting.|/|n")
+					descriptions = [self.db.ancient, self.db.primordial, self.db.apocalypse, self.db.normal, self.db.war]
+					self.db.desc = random.choice(descriptions)
+					if self.db.desc == self.db.ancient:
+						damage = randint(3, 11)
+						obj.msg("|/|rYou are suddenly thrust forward in time, aging you, sapping %s hp." % int((damage)))
+						obj.db.hp -= int(damage)
+						if obj.db.hp <= 0:
+							obj.msg("|/|rWhat tragic fate, you have died in the wild flow of time.|n|/You have brought shame to yourself and your family.")
+							obj.db.deathcount += 1
+							obj.db.hp = int(obj.db.maxhp * .5)
+							obj.db.mp = int(obj.db.maxmp * .5)
+							obj.db.gold -= int(obj.db.gold * .3)
+							results = search_object(obj.db.lastcity)
+							obj.move_to(results[0], quiet=True, move_hooks=False)
+					if self.db.desc == self.db.war:
+						obj.msg("|/|rYou find yourself suddenly in the middle of an ancient battle.|n")
+						chance = randint(1, 3)
+						if chance == 2:
+							obj.msg(random.choice(self.db.warmessages))
+							damage = randint(3, 11)
+							obj.msg("|rYou take %s damage.|n" % str((damage)))
+							obj.db.hp -= int(damage)
+							if obj.db.hp <= 0:
+								obj.msg("|/|rWhat tragic fate, you have fallen in an ancient war.|n|/You have brought shame to yourself and your family.")
+								obj.db.deathcount += 1
+								obj.db.hp = int(obj.db.maxhp * .5)
+								obj.db.mp = int(obj.db.maxmp * .5)
+								obj.db.gold -= int(obj.db.gold * .3)
+								results = search_object(obj.db.lastcity)
+								obj.move_to(results[0], quiet=True, move_hooks=False)
+						else:
+							harm = ["a sword", "a streaking fireball", "an arrow", "a bloodied axe", "a charging cavalry member", "a spear thrust at your head"]
+							obj.msg("|/|gYou deftly dodge %s, avoiding injury.|n" % (random.choice(harm)))
+					obj.execute_cmd('look')
+
+class panahonfight(autofight):
+	ancient = ["The Island of Panahon emanates an aura of enchantment, with sprawling forests teeming with magical creatures and ancient ruins shrouded in mystic secrets.", "Hidden within the ancient woods, mystical rituals unfold as druids commune with nature, channeling the raw power of the land to shape reality.", "Ancient spirits whisper secrets among the towering trees, guiding those who seek wisdom in the heart of the enchanted forest.", "Ethereal creatures of myth roam freely, their majestic presence filling the air with magic.", "Ancient spellcasters harness the ancient energies, their incantations echoing through the moss-covered ruins of forgotten civilizations.", "The air is thick with the scent of ancient herbs and the vibrant colors of exotic flora, creating a tapestry of natural wonder."]
+	primordial = ["The echoes of a time before time resound in the dense jungles of Panahon, colossal insects reign and the air pulses with primal energy.", "The relentless chirping of exotic insects fills the air as you navigate through the dense jungle, marveling at colossal flora and the eerie calls of unseen creatures.", "The primordial jungles pulse with untamed life, the world is untouched by the hands of man.", "The air resonates with the primal calls of primordial creatures unseen, their existence a testament to the raw power of nature.", "Massive vines entwine with ancient stone, the land is uncleared and wild. A place before civilization."]
+	apocalypse = ["The aftermath of cataclysm lingers, leaving scars on the land, as shattered ruins and twisted landscapes serve as haunting reminders of the chaos.", "Amidst the ruins of a shattered city, survivors scavenge for resources, always on guard for the encroaching darkness and the remnants of otherworldly forces.", "Eerie winds carry whispers of lost souls, still smoldering ruins are evidence of the devastation that befell the island.", "Unnatural phenomena manifest in the sky, casting an otherworldly glow upon the desolate landscape. A sickening magic resonance lingers in the air, magical fallout from the fracturing of time.", "The air is heavy with a sense of foreboding, as if the very essence of the island mourns its cataclysmic fate of the tearing of time.", "Shadows dance among the ruins, their ethereal forms a constant reminder of the lingering darkness that engulfs this post-apocalyptic realm."]
+	normal = ["Fleeting moments of temporal stability, where time briefly aligns with the present, offering respite and glimpses of normality amid the ever-shifting nature.", "Amidst the temporal shifts, you find yourself in a moment of tranquility.", "Sunlight filters through the dense canopy, casting dappled patterns on the forest floor, creating an ethereal ambiance.", "Serene waterfalls cascade down moss-covered cliffs, their gentle roar harmonizing with the symphony of nature.", "Wildflowers paint the landscape with bursts of color, their delicate petals swaying in the gentle breeze.", "Ancient ruins, remnants of a forgotten civilization, stand as crumbling testaments to the island's mysterious past.", "The tranquil atmosphere of Panahon invites reflection and contemplation, as if time itself has slowed to a mesmerizing crawl. Perhaps it has."]
+	war = ["Fierce battles rage, factions locked in a relentless struggle for dominance, clashing swords and casting devastating spells amidst the chaos.", "The clash of steel and crackling of arcane spells reverberate through the battlefield, warriors adorned in battle-worn armor fight tooth and nail for their cause.", "The ground trembles beneath the thundering hooves of cavalry, charging forward with a thunderous force, trampling anything in their path.", "Explosions rend the earth as siege weapons rain destruction upon fortifications, crumbling stone and engulfing the air with smoke and debris. You are showered in falling dirt and debris.", "Arrows blot out the sun as they rain down upon the battlefield, finding their mark amidst the chaos, leaving trails of agony and despair in their wake.", "Mages unleash devastating spells, conjuring walls of fire and torrents of lightning, turning the battleground into a maelstrom of elemental fury.", "Healers rush through the chaos, their hands alight with restorative magic, desperately trying to mend the wounded and keep hope alive amidst the carnage.", "Through the haze of battle, fallen heroes lie in eternal slumber, their sacrifices honored by those who fight on, their memory fueling the flames of vengeance and determination.", "A berserker, fueled by rage and wielding a massive axe, cleaves through enemy ranks with reckless abandon, carving a path of destruction.", "Like a shadow, a rogue assassin darts through the chaos, silently dispatching key targets with precise strikes, vanishing into the shadows before anyone can react.", "A seasoned archer, perched on a high vantage point, unleashes a flurry of arrows that find their marks with deadly accuracy, thinning enemy numbers.", "A group of brave knights, their shields locked together, form an impenetrable wall as they push forward, repelling wave after wave of enemy assaults.", "A powerful mage, surrounded by a shimmering aura, unleashes a devastating spell that engulfs foes in searing flames, leaving nothing but charred remnants.", "A cunning tactician, barking orders with authority, directs his troops in a strategic maneuver, outflanking and encircling the enemy forces.", "A group of valiant healers, amidst the chaos, tend to the wounded, mending broken bones and closing grievous wounds, giving their allies a second chance at life.", "A fleet-footed rogue expertly disarms traps and sabotages enemy equipment, creating chaos and confusion within enemy lines.", "A fearless warrior charges headlong into the fray, deflecting incoming blows with a mighty shield and striking back with unmatched strength and precision.", "A mystical druid, in tune with nature's forces, calls forth a violent storm that unleashes torrents of rain and gusts of wind, disrupting enemy formations and sowing chaos."]
+	def at_object_creation(self):
+		descriptions = [self.ancient, self.primordial, self.apocalypse, self.normal, self.war]
+		self.db.desc = random.choice(random.choice(descriptions))
+		self.db.zone = "panahon"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")
+
+class veiloftime(vroom):
+	def at_object_creation(self):
+		self.db.desc = ""
+		self.db.fight = "no"
+		self.tags.add("notravel")
+
 #temples
 class templeofsmallgodstunnel(iftagviewnf):
 	def at_object_creation(self):

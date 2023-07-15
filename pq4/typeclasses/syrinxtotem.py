@@ -4,7 +4,7 @@ import random
 
 class syrinxtotemcmd(default_cmds.MuxCommand):
 	key = "use totem"
-	aliases = ["Use Totem", "Use totem", "use Totem"]
+	aliases = ["Use Totem", "Use totem", "use Totem", "Use Syrinx Totem", "use syrinx totem"]
 	auto_help = True
 	def func(self):
 		if not "Discordia" in self.caller.db.monsterstats.keys():

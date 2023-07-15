@@ -30,7 +30,7 @@ class talknecro(default_cmds.MuxCommand):
 		self.caller.msg("|mNecromancer|n says: Please, sit by my hearth, warm yourself.")
 		self.caller.msg("|m%s|n says: Uh, nice place you have here. Very... umm, yeah." % (self.caller.key))
 		self.caller.msg("|mNecromancer|n says: Thanks, I just got done unboxing some new materials. I've been working really hard to put together a decent place to raise a family. I used to have some zombies around here to help out.... but I worked them to the bone.")
-		if any("Hangmans Rope" in i.key for i in self.caller.contents):
+		if any("Hangmans Rope" in i.key for i in self.caller.contents) and not self.caller.tags.get("enigmaweapon"):
 			for i in self.caller.contents:
 				if i.key == "Hangmans Rope":
 					i.delete()
@@ -42,7 +42,8 @@ class talknecro(default_cmds.MuxCommand):
 			}
 			spawn(ew_proto)
 			self.caller.msg("You receive the Enigma Weapon!")
-		if not any("Enigma Weapon" in i.key for i in self.caller.contents):
+			self.caller.tags.get("enigmaweapon")
+		if not any("Enigma Weapon" in i.key for i in self.caller.contents) and not self.caller.tags.get("enigmaweapon"):
 			self.caller.msg("|mNecromancer|n says: Say, you wouldn't happen to have any Hangmans Rope would you? I want to make some macrame plant holders. No? Well, if you happen to find some, I would greatly reward you if you brought me some.")
 		self.caller.msg("|mNecromancer|n says: If you want, there's a warm bed you could rest in to strengthen your bones before you go back out there.")
 		self.caller.msg("The Necromancer chants a short spell, you hear a now familiar rattling as a skeleton brings out fresh sheets and makes the bed.")

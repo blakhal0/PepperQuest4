@@ -4,7 +4,7 @@ import random
 
 class lutetotemcmd(default_cmds.MuxCommand):
 	key = "use totem"
-	aliases = ["Use Totem", "Use totem", "use Totem"]
+	aliases = ["Use Totem", "Use totem", "use Totem", "use lute totem", "Use Lute Totem"]
 	auto_help = True
 	def func(self):
 		if not "Seraphin" in self.caller.db.monsterstats.keys():
