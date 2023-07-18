@@ -163,8 +163,8 @@ class discordia:
 	rare = ["discordia"]
 
 class bathhouse:
-	monsters = [""]
-	rare = [""]
+	monsters = ["clogghoul", "hairball", "bathasalt"]
+	rare = ["pipedreameater"]
 
 class sandshrine:
 	monsters = ["perillight", "siroccore", "desiccatedwarden"]
@@ -179,8 +179,12 @@ class forestshrine:
 	rare = ["magibadger"]
 
 class panahon:
-	monsters = [""]
-	rare = [""]
+	monsters = ["ancientwarrior", "infernodon", "paradoxhound"]
+	rare = ["primalslime"]
+
+class altaroftime:
+	monsters = ["pendringuardianoftime"]
+	rare = ["pendringuardianoftime"]
 
 #Titan Arena
 #------------------------------------------------

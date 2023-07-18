@@ -2029,6 +2029,226 @@ class houseofpirts(autofight):
 		self.tags.add("autofight")
 		self.tags.add("notravel")
 
+class houseofpirtspump(autofight):
+	def at_object_creation(self):
+		self.db.desc = "Nearly walking off the edge of a sheer drop off, you stand in a dark damp room. What little light is in the room reflects and dances off what must be slightly shifting water far down below.|/A very large main pipe, with dozens of smaller pipes extending from a manifold above, extends down into the water. There is a large wheel attached to the pipe."
+		self.db.zone = "bathhouse"
+		self.db.fight = "yes"
+		self.tags.add("notravel")
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
+		exits, users, npc, things = [], [], [], []
+		for con in visible:
+			key = con.get_display_name(looker, pose=True)
+			if con.destination:
+				exits.append(key)
+			elif con.tags.get("specialexit"):
+				exits.append(key)
+			elif con.tags.get("specialnpc"):
+				npc.append(key)
+			elif con.permissions.get("player"):
+				if con.has_account:
+					users.append(key)
+			elif con.tags.get("talkative", category="npc"):
+				if not con.tags.get("specialobject"):
+					npc.append(key)
+				else:
+					things.append(key)
+			elif con.tags.get("evnpc"):
+				npc.append(key)
+			else:
+				things.append(key)
+		string = "|c%s|n\n" % self.get_display_name(looker, pose=True)
+		desc = str()
+		desc = self.db.desc
+		if looker.db.bathhouse['water'] == "on":
+			desc += "|/The water gurgles and flows in the pit below."
+		if looker.db.bathhouse['water'] == "off":
+			desc += "|/The water below is relatively still and quiet."
+		if desc:
+			string += "%s" % desc
+			string += "\n\nYou cast your gaze upon the area:"
+		if exits:
+			string += "\n|025Exits:|n " + ", ".join(exits)
+		if users:
+			string += "\n|550Players:|n " + ", ".join(users)
+		if npc:
+			string += "\n|520NPC's:|n " + ", ".join(npc)
+		if things:
+			string += "\n|050Objects:|n " + ", ".join(things)
+		return string
+
+class houseofpirtssteam(autofight):
+	def at_object_creation(self):
+		self.db.desc = "Halting in your tracks, you barely avoid stumbling into what appears to be a steam room. A steam room with a gigantic tentacled creature with hundreds of eyes."
+		self.db.steamy = "The path south is obscured by steam, you're not sure how large the room ahead is, if it is a room, or what lays beyond hidden among the steam."
+		self.db.zone = "bathhouse"
+		self.db.fight = "yes"
+		self.tags.add("notravel")
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
+		exits, users, npc, things = [], [], [], []
+		for con in visible:
+			key = con.get_display_name(looker, pose=True)
+			if con.destination:
+				exits.append(key)
+			elif con.tags.get("specialexit"):
+				exits.append(key)
+			elif con.tags.get("specialnpc"):
+				npc.append(key)
+			elif con.permissions.get("player"):
+				if con.has_account:
+					users.append(key)
+			elif con.tags.get("talkative", category="npc"):
+				if not con.tags.get("specialobject"):
+					npc.append(key)
+				else:
+					things.append(key)
+			elif con.tags.get("evnpc"):
+				npc.append(key)
+			else:
+				things.append(key)
+		string = "|c%s|n\n" % self.get_display_name(looker, pose=True)
+		desc = str()
+		if looker.db.bathhouse['water'] == "on" and looker.db.bathhouse['pipe'] == "fixed" and looker.db.bathhouse['temp'] == "hot":
+			desc = self.db.steamy
+		else:
+			desc = self.db.desc
+		if desc:
+			string += "%s" % desc
+			string += "\n\nYou cast your gaze upon the area:"
+		if exits:
+			string += "\n|025Exits:|n " + ", ".join(exits)
+		if users:
+			string += "\n|550Players:|n " + ", ".join(users)
+		if npc:
+			string += "\n|520NPC's:|n " + ", ".join(npc)
+		if things:
+			string += "\n|050Objects:|n " + ", ".join(things)
+		return string
+
+class houseofpirtspipes(autofight):
+	def at_object_creation(self):
+		self.db.brokendesc = "The room is dark, but you make out that it is filled with twisting turning pipes. You hear water dripping."
+		self.db.fixeddesc = "The room is dark, but you make out that it is filled with twisting turning pipes. The water is no longer dripping."
+		self.db.fixedwateron = "The room is dark, but you make out that it is filled with twisting turning pipes. You hear water rushing through the pipes."
+		self.db.desc = "Something has gone wrong, contact Blakhal0"
+		self.db.zone = "bathhouse"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
+		exits, users, npc, things = [], [], [], []
+		for con in visible:
+			key = con.get_display_name(looker, pose=True)
+			if con.destination:
+				exits.append(key)
+			elif con.tags.get("specialexit"):
+				exits.append(key)
+			elif con.tags.get("specialnpc"):
+				npc.append(key)
+			elif con.permissions.get("player"):
+				if con.has_account:
+					users.append(key)
+			elif con.tags.get("talkative", category="npc"):
+				if not con.tags.get("specialobject"):
+					npc.append(key)
+				else:
+					things.append(key)
+			elif con.tags.get("evnpc"):
+				npc.append(key)
+			else:
+				things.append(key)
+		string = "|c%s|n\n" % self.get_display_name(looker, pose=True)
+		desc = str()
+		if looker.db.bathhouse['pipe'] == "fixed" and looker.db.bathhouse['water'] == "on":
+			desc = self.db.fixedwateron
+		elif looker.db.bathhouse['pipe'] == "fixed":
+			desc = self.db.fixeddesc
+		elif looker.db.bathhouse['pipe'] == "broken":
+			desc = self.db.brokendesc
+		else:
+			desc = self.db.desc
+		if desc:
+			string += "%s" % desc
+			string += "\n\nYou cast your gaze upon the area:"
+		if exits:
+			string += "\n|025Exits:|n " + ", ".join(exits)
+		if users:
+			string += "\n|550Players:|n " + ", ".join(users)
+		if npc:
+			string += "\n|520NPC's:|n " + ", ".join(npc)
+		if things:
+			string += "\n|050Objects:|n " + ", ".join(things)
+		return string
+
+class houseofpirtboiler(autofight):
+	def at_object_creation(self):
+		self.db.desc = "The many pipes in the ceiling all lead to a large pot bellied boiler in the center of the room."
+		self.db.wateron = "|/You hear water flowing through some of the pipes, pouring into the boiler."
+		self.db.cold = "|/The boiler is still, the air in the room is damp and cool."
+		self.db.warm = "|/The boiler gives off a mild warmth, not enough to take the slight chill out of the air."
+		self.db.hot = "|/The boiler gives off a radiant heat, warming the air in the chamber."
+		self.db.zone = "bathhouse"
+		self.db.fight = "yes"
+		self.tags.add("autofight")
+		self.tags.add("notravel")
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		visible = (con for con in self.contents if con != looker and con.access(looker, "view"))
+		exits, users, npc, things = [], [], [], []
+		for con in visible:
+			key = con.get_display_name(looker, pose=True)
+			if con.destination:
+				exits.append(key)
+			elif con.tags.get("specialexit"):
+				exits.append(key)
+			elif con.tags.get("specialnpc"):
+				npc.append(key)
+			elif con.permissions.get("player"):
+				if con.has_account:
+					users.append(key)
+			elif con.tags.get("talkative", category="npc"):
+				if not con.tags.get("specialobject"):
+					npc.append(key)
+				else:
+					things.append(key)
+			elif con.tags.get("evnpc"):
+				npc.append(key)
+			else:
+				things.append(key)
+		string = "|c%s|n\n" % self.get_display_name(looker, pose=True)
+		desc = str()
+		desc = self.db.desc
+		if looker.db.bathhouse['water'] == "on":
+			desc += self.db.wateron
+		if looker.db.bathhouse['temp'] == "cold":
+			desc += self.db.cold
+		if looker.db.bathhouse['temp'] == "warm":
+			desc += self.db.warm
+		if looker.db.bathhouse['temp'] == "hot":
+			desc += self.db.hot
+		if desc:
+			string += "%s" % desc
+			string += "\n\nYou cast your gaze upon the area:"
+		if exits:
+			string += "\n|025Exits:|n " + ", ".join(exits)
+		if users:
+			string += "\n|550Players:|n " + ", ".join(users)
+		if npc:
+			string += "\n|520NPC's:|n " + ", ".join(npc)
+		if things:
+			string += "\n|050Objects:|n " + ", ".join(things)
+		return string
+
 class sandsweptshrine(autofight):
 	def at_object_creation(self):
 		#self.db.desc = "You find yourself standing above the abyss, sand pouring off the edges of the platform and the path leading to it. You're not sure how, but you are not falling. You see nothing below or around you."

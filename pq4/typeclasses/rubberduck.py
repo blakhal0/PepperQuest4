@@ -23,6 +23,7 @@ class playduck(default_cmds.MuxCommand):
 		self.caller.db.hp = self.caller.db.maxhp
 		self.caller.db.mp = self.caller.db.maxmp
 		yield 3
+		self.caller.db.bathhouse = {'water':'off', 'pipe':'broken', 'temp':'cold'}
 		results = search_object("#11222")
 		self.caller.move_to(results[0], quiet=True, move_hooks=True)
 

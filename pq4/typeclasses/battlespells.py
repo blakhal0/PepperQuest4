@@ -24,7 +24,7 @@ class moreheal:
 	name = "Moreheal"
 	price = 200
 	cost = 4
-	base = 10
+	base = 12
 	group = "heal"
 	kind = "self"
 	phrase = "A wave of spice flows over you, moderately healing your wounds."
@@ -370,6 +370,16 @@ class timewarp:
 	kind = "d"
 	phrase = ""
 	enemyphrase = "Malashai turns an hourglass in his hand, time freezes. You are suddenly wracked with pain as a series of attacks hit you all at once."
+
+class temporalchaos:
+	name = "Temporal Chaos"
+	price = 20
+	cost = 10
+	base = 60
+	group = "aggressive"
+	kind = "d"
+	phrase = ""
+	enemyphrase = "Pendrin summons the immense power of time, causing a localized temporal collapse."
 
 class titansfury:
 #Legendary

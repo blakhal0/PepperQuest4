@@ -44,6 +44,62 @@ class plantroomexit(DefaultExit):
 		self.db.err_traverse = "|/|rYou are grappled by vines and cannot move."
 		self.locks.add("traverse:not tag(nomove)")
 
+class bathpipeexit(DefaultExit):
+	def at_object_creation(self):
+		self.db.successmoveto = "#11456"
+		self.db.deathmessage = "You open the door.... SNAKES!!! Oh, nope, water. Lots and lots of water. Washed off your feet, you crack your head and drown."
+	def at_traverse(self, traversing_object, target_location):
+		source_location = traversing_object.location
+	 #Player has correct puzzle value
+		if traversing_object.db.bathhouse['water'] == "off":
+			traversing_object.msg("|/You open the door and enter the room.|/")
+		elif traversing_object.db.bathhouse['water'] == "on" and traversing_object.db.bathhouse['pipe'] == "fixed":
+			traversing_object.msg("|/You open the door and enter the room.|/")
+	 #Player does not have correct puzzle value and dies
+		elif traversing_object.db.bathhouse['water'] == "on" and traversing_object.db.bathhouse['pipe'] == "broken":
+			target_location = search_object(traversing_object.db.lastcity)
+			target_location = target_location[0]
+		 #Death Stuff
+			traversing_object.msg("|/|r%s|n|/You have brought shame to yourself and your family." % (self.db.deathmessage))
+			traversing_object.db.deathcount += 1
+			traversing_object.db.hp = int(traversing_object.db.maxhp * .5)
+			traversing_object.db.mp = int(traversing_object.db.maxmp * .5)
+			traversing_object.db.gold -= int(traversing_object.db.gold * .2)
+		if traversing_object.move_to(target_location):
+			self.at_after_traverse(traversing_object, source_location)
+		else:
+			if self.db.err_traverse:
+				traversing_object.msg(self.db.err_traverse)
+			else:
+				self.at_failed_traverse(traversing_object)
+
+class bathsteamexit(DefaultExit):
+	def at_object_creation(self):
+		self.db.successmoveto = "#11345"
+		self.db.deathmessage = "You summon your courage and charge in to face the horrid beast. You slip, fall, and crack your skull. You slowly come to consciousness realizing you are underwater, vision red you kick to free yourself but cannot move your legs. Looking around you see your legs, partially chewed and floating a few feet away."
+	def at_traverse(self, traversing_object, target_location):
+		source_location = traversing_object.location
+	 #Player has completed all tasks
+		if traversing_object.db.bathhouse['water'] == "on" and traversing_object.db.bathhouse['pipe'] == "fixed" and traversing_object.db.bathhouse['temp'] == "hot":
+			traversing_object.msg("|/|gYou carefully step into the room, just managing to step over a wriggling tentacle, hidden from view in the steam.|n|/")
+		else:
+			target_location = search_object(traversing_object.db.lastcity)
+			target_location = target_location[0]
+		 #Death Stuff
+			traversing_object.msg("|/|r%s|n|/You have brought shame to yourself and your family." % (self.db.deathmessage))
+			traversing_object.db.deathcount += 1
+			traversing_object.db.hp = int(traversing_object.db.maxhp * .5)
+			traversing_object.db.mp = int(traversing_object.db.maxmp * .5)
+			traversing_object.db.gold -= int(traversing_object.db.gold * .2)
+		if traversing_object.move_to(target_location):
+			self.at_after_traverse(traversing_object, source_location)
+		else:
+			if self.db.err_traverse:
+				traversing_object.msg(self.db.err_traverse)
+			else:
+				self.at_failed_traverse(traversing_object)
+
+
 boop = ["Your progress abruptly halts as you walk face-first into an unyielding mirror.", "You recoil in surprise, startled by the unexpected encounter with your own reflection.", "'Sunoffa...' your nose bleeds a little.", "Confusion washes over you as your face meets the cold surface of the mirror head-on.", "With a thud, you collide with an impenetrable barrier that mimics your every move.", "Stumbling forward, you crash into a mirror, disoriented and questioning your senses.", "The mirror mocks your futile attempts to find the path, leaving you frustrated.", "You rub your forehead, feeling foolish for running into your own mirrored reflection.", "Your hopes shatter, unlike the mirror, as you smack into your reflection.", "Collision with the mirror jolts you back to a frustrating reality.", "You stumble backward, disoriented by the mirror's deceptive presence.", "Your reflection mocks your failed attempts."]
 class mirrorexit(DefaultExit):
 	def at_object_creation(self):

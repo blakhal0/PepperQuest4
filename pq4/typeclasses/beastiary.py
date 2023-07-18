@@ -355,6 +355,35 @@ class malashai:
 	accoladetoadd = ""
 	sendto = ""
 
+class pendringuardianoftime:
+	name = "Pendrin Guardian of Time"
+	desc = "Cosmic robed Guardian of Time. Fathomless black starry eyes reflecting the wicked silver axe in their hands."
+	phrases = ["Pendrin summons a temporal vortex. Time begins to warp and bend.", "Pendrin distorts the fabric of time, causing temporal anomalies to erupt around you.", "Pendrin hurls a concentrated burst of temporal energy at you.", "Pendrin opens a rift in the fabric of reality, releasing a surge of chaotic temporal energy."]
+	hp = 145
+	mp = 75
+	spells = ["temporalchaos", "fullheal", "frostflower"]
+	attack = 89
+	defense = 61
+	gold = 8
+	exp = 130
+	actions = ["a", "m", "i", "a", "a", "m", "i", "a", "a", "i", "m"]
+	noflee = "yes"
+	weakness = ["n"]
+	incapatt = "turns their axe in the air slowly, turning time backwards. You are a baby."
+	incapsuc = "You are a baby and cannot attack. You cry a little."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
 #Titan Arena Monsters
 class titanslime:
 	name = "Titan Slime"
@@ -1349,6 +1378,123 @@ class goldenslime:
 	dropitem = "diamondring"
 	droptype = "items"
 
+#panahon
+class ancientwarrior:
+	name = "Ancient Warrior"
+	desc = "A warrior of the Dragons Army, clad in gleaming armor, from a time long long ago."
+	phrases = [""]
+	hp = 60
+	mp = 34
+	spells = ["moreheal"]
+	attack = 73
+	defense = 71
+	gold = 130
+	exp = 42
+	actions = ["a", "m", "a", "a", "a", "a", "m"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class infernodon:
+	name = "Infernodon"
+	desc = "A terrible spice lizard from a land before time."
+	phrases = [""]
+	hp = 64
+	mp = 0
+	spells = [""]
+	attack = 69
+	defense = 68
+	gold = 123
+	exp = 39
+	actions = ["a"]
+	noflee = "no"
+	weakness = ["a"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class paradoxhound:
+	name = "Paradox Hound"
+	desc = "If the non-evil head of a Paradox Hound bites you, are they still a good boy?"
+	phrases = ["The hound lifts a leg and pees on you.", "Both heads bark at you, spittle flying."]
+	hp = 50
+	mp = 0
+	spells = [""]
+	attack = 67
+	defense = 58
+	gold = 112
+	exp = 36
+	actions = ["a", "n", "i", "a", "a", "a", "n", "a"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = "rolls over and waits for you to give it a belly rub."
+	incapsuc = "You are completely taken in by the pooch, giving them the belly rubs and scritches because they're such a good pupper!!"
+	lazymsg = "scratches intensly at a flea."
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class primalslime:
+	name = "Primal Slime"
+	desc = "A hairy slime with crooked protruding teeth with a large bone through the top of its slime hairdo."
+	phrases = ["oooga-boooga!!!", "*grunt-grunt* *GRUNT*!!", "OOOG!! Slime best slime, strong slime!!", "The slime pulls the bone from its hair and swings it at you."]
+	hp = 55
+	mp = 60
+	spells = ["moreheal", "death"]
+	attack = 70
+	defense = 66
+	gold = 113
+	exp = 37
+	actions = ["a", "m", "a", "a", "a", "a", "s", "m", "a"]
+	noflee = "no"
+	weakness = ["e"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "m"
+	drop = "yes"
+	droptype = "i"
+	dropitem = "sageelixir"
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
 #Mirrorworld
 class echophantom:
 	name = "Echo Phantom"
@@ -1546,6 +1692,123 @@ class desiccatedwarden:
 	drop = "no"
 	droptype = ""
 	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+#Bathhouse Shrine
+class bathasalt:
+	name = "Bath A Salt"
+	desc = "A crystaline fiend of an undead nature, hungry for flesh."
+	phrases = ["The creature lunges at you, gnashing wicked teeth as your face."]
+	hp = 63
+	mp = 0
+	spells = [""]
+	attack = 70
+	defense = 66
+	gold = 105
+	exp = 37
+	actions = ["a"]
+	noflee = "yes"
+	weakness = ["e"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class hairball:
+	name = "Hair Ball"
+	desc = "A big hairy slimey clump of nastiness. Gonna take a real good plumber to get rid of this fella."
+	phrases = [""]
+	hp = 70
+	mp = 0
+	spells = [""]
+	attack = 82
+	defense = 76
+	gold = 140
+	exp = 45
+	actions = ["a", "i", "a", "a", "i", "a", "a"]
+	noflee = "no"
+	weakness = ["w"]
+	incapatt = "tangles you up in clumps of slimey hair."
+	incapsuc = "You are entagled in drain hair and cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class clogghoul:
+	name = "Clogghoul"
+	desc = "A grotesque amalgamation of slime, discarded soap, and tangled debris. With long, gnarled limbs and jagged teeth."
+	phrases = [""]
+	hp = 56
+	mp = 65
+	spells = ["highboltage", "moreheal", "galeforce"]
+	attack = 69
+	defense = 85
+	gold = 15
+	exp = 45
+	actions = ["a", "m", "a", "a", "m", "a", "a", "s", "a", "m"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = ""
+	incapsuc = ""
+	lazymsg = ""
+	stealtype = "magic"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "no"
+	successmsg = ""
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = ""
+
+class pipedreameater:
+	name = "Pipedreameater"
+	desc = "An elongated body is made of writhing pipes and its jaws are lined with sharp, rusted faucet heads. It slithers through the labyrinthine network of pipes, hunting for dreams and aspirations, which it devours with a voracious appetite."
+	phrases = ["Feel your dreams flow away, down the drain of despair!", "Your dreams, once vibrant and alive, shall be reduced to mere echoes in the pipes!"]
+	hp = 70
+	mp = 65
+	spells = ["moreheal", "hurt", "insinerate"]
+	attack = 83
+	defense = 75
+	gold = 145
+	exp = 46
+	actions = ["a", "a", "m", "a", "a", "i", "m", "i", "a", "a"]
+	noflee = "no"
+	weakness = ["e"]
+	incapatt = "fills your mind with dreams of wealth and power, happiness, and success."
+	incapsuc = "You are daydreaming and forget to attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	droptype = "i"
+	dropitem = "restoringruby"
 	god = "no"
 	successmsg = ""
 	tagstoadd = []

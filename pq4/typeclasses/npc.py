@@ -351,6 +351,19 @@ class mondefnpc(DefaultObject):
 			desc = self.db.mondefdesc
 		return desc
 
+class boarssnoutnpc(mondefnpc):
+	def at_object_creation(self):
+		self.tags.add("talkative", category="npc")
+		self.tags.add("mondefnpc", category="talkative")
+		self.db.desc = "They drudge on, somberly, without joy or expression."
+		self.db.mondefdesc = ""
+		self.db.msg = "Hey, how's it going. Just, you know, working. *SIGH* Yep, just working another day away."
+		self.db.mondefmsg = ""
+		self.db.monstername = "Boareaus The Consuming North Wind"
+		self.db.monsterqty = "1"
+		self.locks.add("get:false()")
+		self.db.get_err_msg = "|/|r%s|n" % (random.choice(geterrors))
+
 class questnpc(DefaultObject):
 	def at_object_creation(self):
 		self.tags.add("talkative", category="npc")
