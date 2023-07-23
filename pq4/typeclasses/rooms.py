@@ -2270,6 +2270,12 @@ class whisperingglade(autofight):
 
 class tirgusmarket(vroom):
 	def at_object_creation(self):
-		self.db.desc = "You stand at the entrance of a vibrant bazaar that stretches as far as the eye can see. You turn around expecting to see the alleyway you came down, only to see the bazaar stretch to the horizon in the other direction. The stalls, tents, and booths create a maze of narrow alleys and bustling squares, alive with the constant hum of bartering and the enchanting melodies of street musicians.|/Vibrant fabrics and hanging tapestries create the walls and shade covers of the tents, creating a kaleidoscope of hues that fills the air with an atmosphere of excitement and delight.|/At every turn, there is an array of amazing goods on display. Silks, jewels, baubles, spices, herbs, meats, sweets, artwork, trinkets, exotic critters, rugs, clothes, and every other possible thing you can imagine.|/As you wander through the market, you are immersed in a sensory extravaganza, with the sounds of merchants haggling, the colorful displays of wares, and the tantalizing scents of spices and delicacies."
+		self.db.desc = "Vibrant fabrics and hanging tapestries create the walls and shade covers of the tents, a kaleidoscope of hues that fills the air with an atmosphere of excitement and delight.|/At every turn, there is an array of amazing goods on display. Silks, jewels, baubles, spices, herbs, meats, sweets, artwork, trinkets, exotic critters, rugs, clothes, and every other possible thing you can imagine.|/As you wander through the market, you are immersed in a sensory extravaganza, with the sounds of merchants haggling, the colorful displays of wares, and the tantalizing scents of spices and delicacies."
+		self.db.fight = "no"
+		self.tags.add("notravel")
+
+class tirgusmarketstall(vroom):
+	def at_object_creation(self):
+		self.db.desc = "The merchant stall displays the many wares they offer."
 		self.db.fight = "no"
 		self.tags.add("notravel")

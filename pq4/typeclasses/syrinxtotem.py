@@ -8,7 +8,7 @@ class syrinxtotemcmd(default_cmds.MuxCommand):
 	auto_help = True
 	def func(self):
 		if not "Discordia" in self.caller.db.monsterstats.keys():
-			self.caller.msg("|/GfG fBg_ EC fF^a_ Gd_C fEd_ EC fBe_ fEd_ Gc_f EC GBC^ Ga_g_ EC fCf EC fGd_ fEG GBb_ GBC^ fF^D EC Gb_c_ fEd_ EC fCf fF^D fEd_ EC fF^a_ Gd_C fEd_ EC fGc_ fBg_ fEd_ fg_A EC Gb_a_ Gd_C fEG fF^a_ EC GCe_ Gg_B Gg_E")
+			self.caller.msg("|/K:?|/GfG fBg_ EC fF^a_ Gd_C fEd_ EC fBe_ fEd_ Gc_f EC GBC^ Ga_g_ EC fCf EC fGd_ fEG GBb_ GBC^ fF^D EC Gb_c_ fEd_ EC fCf fF^D fEd_ EC fF^a_ Gd_C fEd_ EC fGc_ fBg_ fEd_ fg_A EC Gb_a_ Gd_C fEG fF^a_ EC GCe_ Gg_B Gg_E")
 			answer = yield("|/How do you respond?")
 			if any(x in answer.lower() for x in ["fcg", "f c g", "f,c,g", "f, c, g", "f c and g", "f, c, and g"]):
 				self.caller.msg("|XWell smiley day to ya!|n|/The pipes emit consonant chords. A portal opens and you hear chiming as a cloaked figure steps out.")

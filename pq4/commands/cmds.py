@@ -21,8 +21,11 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		for x in self.caller.location.contents:
-			x.msg("Hello")
+		answer = yield("What to check for?")
+		if answer.lower() in self.caller.db.tirgusmarket.keys():
+			self.caller.msg("answer in tirgus market keys.")
+		else:
+			self.caller.msg("answer not in tirgus market keys.")
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"
