@@ -24,7 +24,7 @@ class leavemarket(default_cmds.MuxCommand):
 			if i.key == "Fanny Pack":
 				i.delete()
 		self.caller.msg("|/You take off your wicked sweet kickin fanny pack and, with a tear in your eye, reluctantly turn it in and take your leave of the Eternal Bazaar.")
-		results = search_object("#11211")
+		results = search_object("#12877")
 		self.caller.move_to(results[0], quiet=True, move_hooks=False)
 
 

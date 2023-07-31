@@ -62,6 +62,20 @@ class shield(DefaultObject):
 		return desc
 
 #shields
+class soulguard(shield):
+	name = "Soul Guard"
+	price = 0
+	defense = 25
+	desc = "A tall wide shield, jagged and rusty, dripping with blood."
+	def at_object_creation(self):
+		self.tags.add("equipable", category="shield")
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.defense = int(self.defense)
+		self.db.desc = self.desc
+		self.db.upgraded = "no"
+
 class enigmashield(shield):
 	name = "Enigma Shield"
 	price = 0
@@ -389,6 +403,23 @@ class ominousarmor(armor):
 		self.db.name = self.name
 		self.db.price = int(self.price)
 		self.db.defense = int(self.defense)
+		self.db.desc = self.desc
+		self.db.upgraded = "no"
+	
+class souleaterarmor(armor):
+	name = "Soul Eater Armor"
+	price = 0
+	defense = 36
+	unheal = 10
+	desc = "Thick red steel armor with a skeletal face on the breastplate, cavernous mouth open wide ready to devour. Blood drips from the eyes and mouth."
+	def at_object_creation(self):
+		self.tags.add("equipable", category="armor")
+		self.tags.add("cursed")
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.defense = int(self.defense)
+		self.db.unheal = int(self.unheal)
 		self.db.desc = self.desc
 		self.db.upgraded = "no"
 

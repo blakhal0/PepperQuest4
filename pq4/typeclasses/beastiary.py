@@ -180,6 +180,65 @@ class boareaus:
 	accoladetoadd = "Finder of the Song"
 	sendto = "#10009"
 
+class spicethulu:
+	name = "Spicethulu"
+	desc = "The eldritch god of spice and madness. Red pepper tentacles waggle in front of its mouth. When choosing your world ending Eldridge gods, why not Spicethulu?"
+	phrases = ["Whispers of madness fill your head.", "Hooray! I've returned from the void!", "Your stats are bad and you should feel bad!", "Solanacea, what a continent! In Solanacea you enjoy eating a tasty clam. In the eternal void, clams enjoy consuming your sanity!"]
+	hp = 360
+	mp = 300
+	spells = ["fullheal"]
+	attack = 99
+	defense = 98
+	gold = 1
+	exp = 1
+	actions = ["a", "i", "a", "i", "a", "m", "a", "i", "a", "i", "a", "a", "m", "i", "a", "m", "m", "a"]
+	noflee = "yes"
+	weakness = ["n"]
+	incapatt = "emits a wave of sanity destroying 'Whoop! Whoop! Whoop!'"
+	incapsuc = "You are unsure what is real and what is illusion, shadows flicker in every direction. You are terrified and cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "yes"
+	successmsg = "Oh no, I'm dying. What a world, ooooohhhhh what a wooooooorrrrllddd. *BLEH* I'm dead now, go away."
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = "Slayer of Insanity"
+	sendto = ""
+
+class lorddragon:
+	name = "Lord Dragon"
+	desc = "An ancient form of your own being. Twisted with rage and an obsession with power."
+	phrases = [""]
+	hp = 360
+	mp = 300
+	spells = ["dragonblaze", "fullheal"]
+	attack = 99
+	defense = 98
+	gold = 1
+	exp = 1
+	actions = ["a", "m", "a", "a", "m", "i", "i", "m", "a", "a", "m", "m", "i", "i", "m", "a"]
+	noflee = "yes"
+	weakness = ["a"]
+	incapatt = "emits a deafening roar."
+	incapsuc = "You are frozen in fear, you cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "yes"
+	successmsg = "As you strike your final blow, pain grips you followed immediately by a release of weight. You feel as though maybe, just maybe, you've broken free from the yoke of fate and are able to forge your own path."
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = "Dragon of the New Dawn"
+	sendto = ""
+
+
 #minibosses
 class mlanchrus:
 	name = "M'lanchrus"

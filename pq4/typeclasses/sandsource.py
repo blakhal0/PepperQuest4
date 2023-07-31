@@ -9,12 +9,12 @@ class sandsoftimecmd(default_cmds.MuxCommand):
 	auto_help = False
 	def func(self):
 		if self.caller.tags.get("sands of time"):
-			self.caller.msg("You reach your hand into the sands of time, but it passes through. You have already touched the sands of time, you cannot touch them again.")
+			self.caller.msg("|/You reach your hand into the sands of time, but it passes through. You have already touched the sands of time, you cannot touch them again.")
 			return
 		if "Pendrin Guardian of Time" in self.caller.db.monsterstats.keys():
 			sot_proto = {
 			"key": "Sands of Time",
-			"typeclass": "typeclasses.objects.sandsoftime",
+			"typeclass": "typeclasses.sandsoftime.sandsoftime",
 			"location": self.caller
 			}
 			spawn(sot_proto)
@@ -22,7 +22,7 @@ class sandsoftimecmd(default_cmds.MuxCommand):
 				weapondesc = "fist"
 			else:
 				weapondesc = self.caller.db.weaponequipped.lower()
-			self.caller.msg("You approach the sands of time and unleash a furious strike on the black orb with your %s." % (weapondesc))
+			self.caller.msg("You approach the sands of time and unleash a furious strike on the black orb with your %s." % (weapondesc.title()))
 			self.caller.msg("The eerie green light bursts forth from the orb before fading out, the orb shatters. You reach into the flow and take a handful of sand.")
 			self.caller.msg("|/You receive a handful of Sands of Time")
 			self.caller.msg("You hear familiar voices, all of them your own, whispering in your head.")

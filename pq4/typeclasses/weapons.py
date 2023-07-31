@@ -343,6 +343,22 @@ class diamondhands(weapon):
 		self.db.atkphr = ["I just like the stock.", "STONKS"]
 		self.db.upgraded = "no"
 
+class souledge(weapon):
+	name = "Soul Edge"
+	price = 0
+	attack = 50
+	desc = "A massive blade emitting a dark red aura. Twisting dripping flesh interweaving with the jagged iron. A large lidless eye stares at you from the center of the hilt."
+	def at_object_creation(self):
+		self.tags.add("equipable", category="weapon")
+		self.db.removable = "no"
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.attack = int(self.attack)
+		self.db.desc = self.desc
+		self.db.atkphr = []
+		self.db.upgraded = "no"
+
 class enigmaweapon(weapon):
 	name = "Enigma Weapon"
 	price = 10

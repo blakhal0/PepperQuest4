@@ -154,6 +154,17 @@ class pyrettablaze:
 	phrase = "Distant bells toll summoning the heartbroken pyre demon, Pyretta. Napalm tears cover the enemy, bursting to flame as she wails in agony."
 	enemyphrase = ""
 
+class dragonblaze:
+#Legendary
+	name = "DragonBlaze"
+	price = 20000
+	cost = 20
+	base = 70
+	group = "aggressive"
+	kind = "f"
+	phrase = "You bite the inside of your cheek, the blood begins to seep into your mouth as you chomp a pepper. Inhaling a large breath, the blood and pepper ignite as you roar dragon fire."
+	enemyphrase = "Lord Dragon chomps a pepper. Inhaling a large breath, they roar dragon fire."
+
 #aqua
 class sprinkle:
 	name = "Sprinkle"
@@ -259,6 +270,16 @@ class horrorcane:
 	enemyphrase = "Demonic winds swirl and whirl tearing at you."
 
 #light
+class stolenheart:
+	name = "StolenHeart"
+	price = 50
+	cost = 15
+	base = 20
+	group = "aggressive"
+	kind = "l"
+	phrase = "You bat your eyes at the enemy and make a heart shape with your hands. Deftly you employ your thieves skills stealing your enemy's heart and leaving damage in its place."
+	enemyphrase = ""
+
 class holyaura:
 	name = "HolyAura"
 	price = 50
@@ -280,6 +301,16 @@ class hecatomb:
 	enemyphrase = ""
 
 #dark
+class graverobber:
+	name = "GraveRobber"
+	price = 50
+	cost = 9
+	base = 20
+	group = "aggressive"
+	kind = "d"
+	phrase = ""
+	enemyphrase = ""
+
 class hurt:
 	name = "Hurt"
 	price = 50
@@ -400,7 +431,7 @@ class sirenslament:
 	group = "aggressive"
 	kind = "d"
 	enemyphrase = "The demon minstrel sings a hauntingly beautiful melody that enthralls you, causing you pain."
-	
+
 class sirenssong:
 	name = "Siren's Song"
 	price = 0

@@ -10,11 +10,11 @@ class madnesscmd(default_cmds.MuxCommand):
 		contentslist = []
 		for i in self.caller.contents:
 			contentslist.append(i.key)
-		if "Sands of Time" in contentslist:
-			self.caller.msg("You have the sands of time")
+		if "Spicethulu" in self.caller.db.monsterstats.keys():
+			self.caller.msg("|/The gods here are once again dead, by your own hand. Nothing but the whispers of madness remain.")
 			return
-		elif "Map to Panahon" in contentslist:
-			self.caller.msg("|mSpicethulu|n says: " + ''.join(random.choice((str.upper, str.lower))(char) for char in "You have what you've come for. Or is it your wish to stay here in the void with us, to sleep, to wait until we are called upon to return? No? Then be gone."))
+		if "Map to Panahon" in contentslist:
+			self.caller.msg("|/|mSpicethulu|n says: " + ''.join(random.choice((str.upper, str.lower))(char) for char in "You have what you've come for. Or is it your wish to stay here in the void with us, to sleep, to wait until we are called upon to return? No? Then be gone."))
 			self.caller.msg("Your mind slams back into your body and you find yourself back in the temple.")
 			return
 		else:

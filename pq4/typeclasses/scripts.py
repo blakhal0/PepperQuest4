@@ -257,51 +257,46 @@ class armorscript(DefaultScript):
 	def at_script_creation(self):
 		self.key = "armor_script"
 		self.interval = 60
-		#self.persistent = True
+		self.persistent = True
 	def at_repeat(self):
+	  #Healing Armor
 		heallist = search_tag(key="sainted")
-		for i in heallist:
-			target = search_object(i.location)
-			if target[0].has_account:
-				if not target[0].tags.get("battle"):
-					if target[0].db.armorequipped == i.key:
-						if target[0].location.tags.get("cursedlocation"):
-							target[0].msg("|/|gThere is an evil aura in this place.|/The %s's blessing has no effect here.|n" % (i.key))
-							pass
-						elif target[0].db.hp + i.db.heal < target[0].db.maxhp:
-							target[0].db.hp += i.db.heal
-							target[0].msg("|/|gThe %s heals your wounds.|n" % (i.key))
-						else:
-							pass
-					else:
-						pass
-				else:
-					pass
-			else:
-				pass
-		unheallist = search_tag(key="cursed")
-		for i in unheallist:
-			target = search_object(i.location)
-			if target[0].has_account:
-				if not target[0].tags.get("battle"):
-					if target[0].db.armorequipped == i.key:
-						if target[0].location.tags.get("cursedlocation"):
-							if target[0].db.hp + i.db.unheal * 2 < target[0].db.maxhp:
-								target[0].db.hp += i.db.unheal * 2
-								target[0].msg("|/|gThere is an evil aura in this place.|/The %s's curse bolsters your vitality, you gain %d hp.|n" % (i.key, i.db.unheal * 2))
+		for goodarmor in heallist:
+			players = search_object(goodarmor.location)
+			for i in players:
+				if i.has_account:
+					if i.db.armorequipped == goodarmor.key:
+						if not i.tags.get("battle"):
+							if i.db.hp + goodarmor.db.heal < i.db.maxhp:
+								i.db.hp += goodarmor.db.heal
+								i.msg("|/|gThe %s heals your wounds, you gain %d hp.|n" % (goodarmor.key, goodarmor.db.heal))
 							else:
 								pass
-						elif target[0].db.hp - i.db.unheal > 0:
-							target[0].db.hp -= i.db.unheal
-							target[0].msg("|/|rThe %s's curse exacts its toll, you lose %d hp.|n" % (i.key, i.db.unheal))
 						else:
 							pass
 					else:
 						pass
 				else:
 					pass
-			pass
-		return
+	  #Hurting Armor
+		unheallist = search_tag(key="cursed")
+		for badarmor in unheallist:
+			players = search_object(badarmor.location)
+			for i in players:
+				if i.has_account:
+					if i.db.armorequipped == badarmor.key:
+						if not i.tags.get("battle"):
+							if i.db.hp - badarmor.db.unheal > 0:
+								i.db.hp -= badarmor.db.unheal
+								i.msg("|/|rThe %s's curse exacts its toll, you lose %d hp.|n" % (badarmor.key, badarmor.db.unheal))
+							else:
+								pass
+						else:
+							pass
+					else:
+						pass
+				else:
+					pass
 
 class poisonscript(DefaultScript):
 	def at_script_creation(self):

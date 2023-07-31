@@ -186,6 +186,14 @@ class altaroftime:
 	monsters = ["pendringuardianoftime"]
 	rare = ["pendringuardianoftime"]
 
+class spicethuluzone:
+	monsters = ["spicethulu"]
+	rare = ["spicethulu"]
+
+class dragonzone:
+	monsters = ["lorddragon"]
+	rare = ["lorddragon"]
+
 #Titan Arena
 #------------------------------------------------
 class arenaone:

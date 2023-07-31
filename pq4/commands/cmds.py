@@ -21,11 +21,12 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		answer = yield("What to check for?")
-		if answer.lower() in self.caller.db.tirgusmarket.keys():
-			self.caller.msg("answer in tirgus market keys.")
-		else:
-			self.caller.msg("answer not in tirgus market keys.")
+		unheallist = search_tag(key="cursed")
+		for i in unheallist:
+			target = search_object(i.location)
+			for i in target:
+				self.caller.msg(type(i))
+#			self.caller.msg("----------------------")
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"
@@ -1140,6 +1141,10 @@ class fight(default_cmds.MuxCommand):
 									else:
 										herodamage = 0
 										magicphrase = "You summon a demon from the underworld, but none appear."
+								if magicname == "graverobber":
+									coin = randint(10,80)
+									self.caller.db.gold += coin
+									self.caller.msg("You sneak up and steal %d gold during your attack." % (coin))
 								#light
 								if magicname == "hecatomb":
 									if herohp == 1:
@@ -1151,6 +1156,12 @@ class fight(default_cmds.MuxCommand):
 										else:
 											herodamage = 0
 											magicphrase = "You open a vein, but the light does not shine upon you."
+								#Ladrone Special
+								if magicname == "stolenheart":
+									herohp += magicbase + int(self.caller.db.lvl * 2.5)
+									if herohp > self.caller.db.maxhp:
+										herohp = self.caller.db.maxhp
+									self.caller.msg("You regain %d hp." % ((magicbase + int(self.caller.db.lvl * 2.5))))
 								if magictype in beastweakness:
 									herodamage = magicbase * 2
 								else:
@@ -1594,11 +1605,14 @@ class equip(default_cmds.MuxCommand):
 					shieldoptions = shieldoptions + target.key + ": +" + str(target.db.defense) + " defense.|/"
 		self.caller.msg("|/   |005.|015:|025*|035~|nCurrently Equipped|035~|025*|015:|005.|n|/Weapon: %s +%d attack.|/Armor: %s +%d defense.|/Shield: %s +%d defense." % (self.caller.db.weaponequipped, int(cew), self.caller.db.armorequipped, int(cea), self.caller.db.shieldequipped, int(ces)))
 		answer = yield("|/Change? |gW|neapon, |gA|nrmor, |gS|nhield, |gN|none")
-	#change weapon
+		#change weapon
 		if answer.lower() in ["w", "weapon"]:
 			#check if player has any weapons.
 			if not weaponslist:
 				self.caller.msg("You have no weapons to equip, go buy some. Peasant.")
+				return
+			if self.caller.db.weaponequipped == "Soul Edge":
+				self.caller.msg("Tendrils dig into your hand, searing pain shooting up your arm, as your mind considers changing weapons.|/You cannot un-equip this weapon.")
 				return
 			#list weapon options
 			self.caller.msg("|/   |005.|015:|025*|035~|nWeapon Options|035~|025*|015:|005.|n|/%sNone: +0 attack" % (weaponsoptions))
@@ -1629,6 +1643,9 @@ class equip(default_cmds.MuxCommand):
 			if not armorlist:
 				self.caller.msg("You have no armor to equip, go buy some. Peasant.")
 				return
+			if self.caller.db.armorequipped == "Soul Eater Armor":
+				self.caller.msg("Spiked hooks dig into your chest and back, you feel blood trickle down your body before the armor drinks it in.|/You cannot un-equip this armor.")
+				return
 			#list armor options
 			self.caller.msg("|/   |005.|015:|025*|035~|nArmor Options|035~|025*|015:|005.|n|/%sNone: +0 defense" % (armoroptions))
 			answer = yield("|/Armor to Equip?")
@@ -1652,9 +1669,13 @@ class equip(default_cmds.MuxCommand):
 						self.caller.msg("|/You equip the %s.|/Defense: %d" % (target.key, self.caller.db.defense + self.caller.db.equipdef + self.caller.db.shielddef))
 						return
 				return
+		#change shield
 		elif answer.lower() in ["s", "shield"]:
 			if not shieldlist:
 				self.caller.msg("You have no shield to equip, go buy one. Peasant.")
+				return
+			if self.caller.db.shieldequipped == "Soul Guard":
+				self.caller.msg(".|/You cannot un-equip this shield.")
 				return
 			#list shield options
 			self.caller.msg("|/   |005.|015:|025*|035~|nShield Options|035~|025*|015:|005.|n|/%sNone: +0 defense" % (shieldoptions))

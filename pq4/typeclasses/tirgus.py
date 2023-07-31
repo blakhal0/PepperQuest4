@@ -34,7 +34,7 @@ class chattirgus(default_cmds.MuxCommand):
 		for i in self.caller.contents:
 			if i.key == "Fanny Pack":
 				i.delete()
-		results = search_object("#11211")
+		results = search_object("#12877")
 		self.caller.move_to(results[0], quiet=True, move_hooks=False)
 
 
