@@ -358,7 +358,7 @@ class pepperplate(armor):
 #ultimate
 class mantleofthedragon(armor):
 	name = "Mantle of the Dragon"
-	price = 100
+	price = 100000
 	defense = 32
 	desc = "Gleaming armor covered in gold and silver dragon scales and a deep blood red cape. Two dragons breath ruby studded fire on the chest."
 	def at_object_creation(self):

@@ -27,6 +27,6 @@ class ShovelCmdSet(CmdSet):
 
 class spawnshovel(DefaultObject):
 	def at_object_creation(self):
-		self.db.desc = "It's invisible."
+		self.db.desc = "It's a barrel of shovels. You think about it for a second confused then put it together. They're pirates, they're going to need shovels to bury treasures. They probably got a bulk deal buying them by the barrel."
 		self.cmdset.add_default(ShovelCmdSet, permanent=True)
 		self.locks.add("get:false()")

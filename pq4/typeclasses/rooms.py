@@ -2279,3 +2279,15 @@ class tirgusmarketstall(vroom):
 		self.db.desc = "The merchant stall displays the many wares they offer."
 		self.db.fight = "no"
 		self.tags.add("notravel")
+
+class yororvik(vroom):
+	def at_object_creation(self):
+		self.db.desc = "Dozens of streams of smoke rise into the air, the smell of incense and burning flesh fills the air. Funeral pyres everywhere upon which lay the bodies of fallen soldiers, Valaharran and others alike. The air is hot and dry."
+		self.db.fight = "no"
+		self.tags.add("notravel")
+
+class balheim(vroom):
+	def at_object_creation(self):
+		self.db.desc = "Stairs climb up and up the temple a dark fusion of bone and fire. Walls constructed from stacked femurs and skulls, decorated with mosaics of dyed bone depicting funeral fires and demonic planes of existence."
+		self.db.fight = "no"
+		self.tags.add("notravel")

@@ -169,6 +169,12 @@ class nogetobj(DefaultObject):
 		self.db.desc = "."
 		self.db.get_err_msg = "|r%s|n" % random.choice(donttake)
 
+class nodropobj(DefaultObject):
+	def at_object_creation(self):
+		self.locks.add("drop:false()")
+		self.db.desc = ""
+		self.db.get_err_msg = "|r%s|n" % random.choice(donttake)
+
 class addtagobj(DefaultObject):
 	def at_object_creation(self):
 		self.locks.add("get:false()")

@@ -62,6 +62,10 @@ class boarssnout:
 	name = "boars snout"
 	location = "#9932"
 
+class panahon:
+	name = "panahon"
+	location = "#12363"
+
 class islandofthemad:
 	name = "island of the mad"
 	location = "#10490"
