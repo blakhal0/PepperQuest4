@@ -49,4 +49,4 @@ docker run \
     --workdir /usr/src/game/pq4 \
     --network=peppercon \
     --rm \
-    harbor.squid-ink.us/politeauthority/evennia/evennia:v0.9
+    harbor.squid-ink.us/politeauthority/peppercon/pq4:dev
