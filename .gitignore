@@ -1,1 +1,10 @@
-./pq4/logs/*
+# Evennia
+./pq4/server/logs/*
+./pq4/server/*.db3
+./pq4/server/portal.pid
+pq4/server/server.pid
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
