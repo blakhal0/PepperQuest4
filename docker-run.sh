@@ -40,6 +40,7 @@ docker run \
     -p 4000:4000 \
     -p 4001:4001 \
     -p 4002:4002 \
+    --user $UID:$GID \
     -v $PWD:/usr/src/game \
     -e SECRET_KEY=${SECRET_KEY} \
     -e DB_HOST=${DB_HOST} \
