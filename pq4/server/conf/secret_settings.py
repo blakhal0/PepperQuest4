@@ -14,4 +14,17 @@ to override your public, shared settings.
 # Django's cookies and should not be publicly known. It should also
 # generally not be changed once people have registered with the game
 # since it will invalidate their existing sessions.
-SECRET_KEY = 'h_N6!Gk3@PJ?7:Y<9A|g[ojTv^fU1IVXiRbK~"D8'
+import os
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+SECRET_KEY = '-!mJ`ShIj.YcC*T2v_3p/rD[a-$UoE%"&B(]x9G8'
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+		'NAME': os.environ.get('DB_NAME'),
+		'USER': os.environ.get('DB_USER'),
+		'PASSWORD': os.environ.get('DB_PASS'),
+		'HOST': os.environ.get('DB_HOST'),
+		'PORT': ''
+	}}
