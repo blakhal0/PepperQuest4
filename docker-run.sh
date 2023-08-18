@@ -3,10 +3,10 @@
 # This script will create the Docker network, the evennia container and postgres container.
 #
 #
-# CHANGE THESE VARS
-SECRET_KEY="fbjv%nkTidPUKTy*E&zR6a%k#Tgp3KM8NhPKob#r"
-DB_PASS="CWS485zzvfTLLQR4u7Yy"
-LOCAL_POSTGRES_DATA_DIR="/home/kube/data/peppercon/postgres"
+#  Set the following vars
+# SECRET_KEY: Session handling secret - Should be random 40 chars
+# DB_PASS: Postgres database password
+# LOCAL_POSTGRES_DATA_DIR: Dir for postgres data persistence
 
 # MAYBE CHANGE THESE
 DB_HOST="pepper-postgres"
