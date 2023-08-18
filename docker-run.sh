@@ -50,4 +50,4 @@ docker run \
     --workdir /usr/src/game/pq4 \
     --network=peppercon \
     --rm \
-    harbor.squid-ink.us/peppercon/pq4:dev
+    harbor.squid-ink.us/peppercon/pq4:v.01
