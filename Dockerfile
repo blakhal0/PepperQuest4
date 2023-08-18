@@ -13,4 +13,3 @@ ADD pq4 /usr/src/game
 RUN mkdir -p /usr/src/game/server/logs
 
 CMD ./entrypoint.sh
-
