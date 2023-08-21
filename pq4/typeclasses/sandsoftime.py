@@ -52,7 +52,7 @@ class usesand(default_cmds.MuxCommand):
 				self.caller.msg("The bones of the god on the altar begin to rattle. Black tar seeping, stretching, connecting, swelling. The form taking shape, a green skin forming over the top, red pepper tentacles draping from the mouth begin to twitch. The chest rises and the sound of whispering voices roars forth. But the armor holds them at bay protecting your mind.")
 				self.caller.msg("As Spicethulu begins to rise your sword flashes and the soul of the God of Madness is absorbed into the gaping maw of your armor.")
 				self.caller.msg("You have chosen your path on the road of fate.")
-				self.caller.tags.add("souldofthemadgod")
+				self.caller.tags.add("soulofthemadgod")
 				
 			else:
 				self.caller.msg("A tear in space and time appears before you. The black void, violet crystals, and then.... an eye. Writhing tentacles begin to push through the tear, millions of voices fill your head.|/You get the feeling you've made a grave mistake.")

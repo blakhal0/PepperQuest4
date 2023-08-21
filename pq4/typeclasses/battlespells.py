@@ -151,7 +151,7 @@ class pyrettablaze:
 	base = 64
 	group = "aggressive"
 	kind = "f"
-	phrase = "Distant bells toll summoning the heartbroken pyre demon, Pyretta. Napalm tears cover the enemy, bursting to flame as she wails in agony."
+	phrase = "Distant bells toll summoning a servant of the pyre demon, Pyretta. Napalm tears cover the enemy, bursting to flame as it wails in agony."
 	enemyphrase = ""
 
 class dragonblaze:
@@ -332,6 +332,26 @@ class death:
 	enemyphrase = "The enemy summons a demon of the underworld in an attempt to drag you to the afterworld."
 
 #enemyspecific
+class sugarandspice:
+	name = "Sugar and Spice"
+	price = 20
+	cost = 10
+	base = 56
+	group = "aggressive"
+	kind = "f"
+	phrase = ""
+	enemyphrase = "Pyretta throws napalm covered candy peppers at you. They stick. She snaps her fingers igniting the napalm and melting the candy creating a tacky stretchy hellfire charring your flesh."
+
+class requiemvampa:
+	name = "Requiem Vampa"
+	price = 20
+	cost = 10
+	base = 75
+	group = "aggressive"
+	kind = "f"
+	phrase = ""
+	enemyphrase = "Mournful screams give way to funeral bells amidst wordless chanting... a hauntingly beautiful song emerges in the dissonance. The blood from your wounds flickers and ignites. Your screams merge into the song."
+
 class pyre:
 	name = "Pyre"
 	price = 20

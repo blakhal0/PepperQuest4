@@ -193,6 +193,14 @@ class spicethuluzone:
 class dragonzone:
 	monsters = ["lorddragon"]
 	rare = ["lorddragon"]
+	
+class balefoyrzone:
+	monsters = ["balefoyr"]
+	rare = ["balefoyr"]
+
+class pyrettazone:
+	monsters = ["thedemongoddesspyretta"]
+	rare = ["thedemongoddesspyretta"]
 
 #Titan Arena
 #------------------------------------------------

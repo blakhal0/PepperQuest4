@@ -21,12 +21,10 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		unheallist = search_tag(key="cursed")
-		for i in unheallist:
-			target = search_object(i.location)
-			for i in target:
-				self.caller.msg(type(i))
-#			self.caller.msg("----------------------")
+		if not self.caller.tags.get():
+			self.caller.msg("No Tags to Get")
+		else:
+			self.caller.msg(self.caller.tags.get())
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"

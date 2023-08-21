@@ -238,6 +238,64 @@ class lorddragon:
 	accoladetoadd = "Dragon of the New Dawn"
 	sendto = ""
 
+class balefoyr:
+	name = "Balefoyr"
+	desc = "A towering figure, draped in flowing ebony robes that seem to dance with an ethereal flame. Acolyte of Pyretta, servant of the demon goddess of the funeral pyre."
+	phrases = ["Balefoyr slashes as you with burning claws.", "A ball of pyre fire slams into your chest."]
+	hp = 210
+	mp = 200
+	spells = ["fullheal", "insinerate", "pyre", "moreheal"]
+	attack = 89
+	defense = 89
+	gold = 1000
+	exp = 100
+	actions = ["a", "m", "a", "a", "m", "i", "i", "m", "a", "a", "a", "i", "m"]
+	noflee = "yes"
+	weakness = ["n"]
+	incapatt = "summons a circle of pyre flame surrounding you."
+	incapsuc = "You are encircled in pyre fire and cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "yes"
+	successmsg = "|/|/Balefoyr makes a gasping laugh.|/|mBalefoyr|n says: Your bravery was for nothing, hahahahaha, the goddess arrives!|/Reality wavers, rifts open in the air expanding bringing forth the Demon Plane where Pyretta awaits her emergence upon your world."
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = "#12990"
+
+class thedemongoddesspyretta:
+	name = "The Demon Goddess Pyretta"
+	desc = "The demon goddess of the funeral pyre. Skin charred, cracked with flames dancing, dripping with fiery napalm. A horrid beauty."
+	phrases = ["Pyretta laughs, then cries, her napalm tears falling on you and burning.", "Pyretta stomps her foot, a wave of pyroclastic ash washes over you, choking you and burning your eyes.", "Pyretta draws an obsidian scythe across her skin igniting it with napalm and swings."]
+	hp = 500
+	mp = 300
+	spells = ["fullheal", "sugarandspice", "requiemvampa", "moreheal"]
+	attack = 99
+	defense = 99
+	gold = 0
+	exp = 0
+	actions = ["a", "d", "a", "a", "m", "i", "m", "i", "a", "m", "i", "a", "a", "a", "a", "m", "a", "a", "a", "i", "m", "a", "a", "i", "m"]
+	noflee = "yes"
+	weakness = ["n"]
+	incapatt = "wails a mournful song which tears at your soul. You want nothing more than to stop her suffering"
+	incapsuc = "Your heart breaks for Pyretta and her mourning wail. You cannot stand the idea of attacking her."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "yes"
+	successmsg = "|/|/Pyretta wails as your final blow lands, striking her down."
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = "#12986"
+
 
 #minibosses
 class mlanchrus:
@@ -530,7 +588,7 @@ class chromadillo:
 
 class knightowl:
 	name = "Knight Owl"
-	desc = "A knight of the Tital Arena, a real hoot if you're not on the receiving end of their claws."
+	desc = "A knight of the Titan Arena, a real hoot if you're not on the receiving end of their claws."
 	phrases = ["Knight Owl attacks with claws.", "Hucks a pellet at you."]
 	hp = 35
 	mp = 26
