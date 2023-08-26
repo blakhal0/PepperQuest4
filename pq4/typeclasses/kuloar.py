@@ -46,7 +46,9 @@ class chatkuloar(default_cmds.MuxCommand):
 					self.caller.msg("|mAngry Mob|n: *RABBLE-RABBLE-RABBLE-RABBLE*!!")
 					self.caller.msg("You thrust your pitchfork into the air and the angry mob of peasants goes wild, spilling into the streets, quickly overwhelming the guards, and storming the castle.")
 					self.caller.msg("The King and Queen are deposed, and the peasants elect Kuloar as their new king.")
+					self.caller.msg("You join Kuloar, err, King Kuloar in the throne room as the peasants rejoice.")
 					self.caller.tags.add("thekingisdead")
+					self.caller.db.accolades.append("Riot Starter")
 					self.caller.tags.remove("folkhero")
 					for i in self.caller.contents:
 						if i.key == "Riot Sheet":
@@ -65,7 +67,7 @@ class chatkuloar(default_cmds.MuxCommand):
 				self.caller.msg("|mKuloar Slove|n says: Now we need peasants. Luckily we have an entire city of angry overtaxed peasants. I've been all over the city laying the groundwork, sewing the seeds of revolt.")
 				self.caller.msg("|mKuloar Slove|n says: I need you to go sort out who's up for joining.")
 				self.caller.msg("|mKuloar Slove|n says: Keep in mind the King and Queen do still hold loyalty with some, you can't go about asking just anyone if they want to join a revolt to overthrow the monarchy. That's the fast path to becoming a head on a spike.")
-				self.caller.msg("|mKuloar Slove|n says: Take this signup sheet, and for goodness sake don't go flashing it about. Size people up, see if they seem to have a grudge with the current administration. I have a feeling they'll know exactly what you're there for when you talk to them if they're interested.")
+				self.caller.msg("|mKuloar Slove|n says: Take this signup sheet and find five other folks to join us, and for goodness sake don't go flashing it about. Size people up, see if they seem to have a grudge with the current administration. I have a feeling they'll know exactly what you're there for when you talk to them if they're interested.")
 				riotsheet_proto = {
 				"key": "Riot Sheet",
 				"typeclass": "typeclasses.books.riotsheet",

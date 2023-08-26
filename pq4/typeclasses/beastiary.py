@@ -320,7 +320,7 @@ class mlanchrus:
 	dropitem = ""
 	droptype = ""
 	god = "yes"
-	successmsg = "As M'lanchrus dies you hear a brief part of an ancient song: 'Boreas, ancient gusts, heed my plea,'"
+	successmsg = "As M'lanchrus dies you hear a brief part of an ancient song: 'Boareus, ancient gusts, heed my plea,'"
 	tagstoadd = []
 	tagstoremove = []
 	itemstoremove = []
