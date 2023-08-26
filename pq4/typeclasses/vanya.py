@@ -15,7 +15,7 @@ class chatvanya(default_cmds.MuxCommand):
 			self.caller.msg("|/|mUncle Vanya|n says: Welcome welcome to Uncle Vanya's! The greatest never ending show ever!")
 			answer = yield("|mUncle Vanya|n says: How does Uncle Vanya help you today?|/Uncle Vanya leans over the bar swirling his mustaches waiting to hear what you want.")
 			if answer.lower() in ["boareaus, ancient gusts, heed my plea, unleash your howling tempest, bend the world to its knees.", "boareaus ancient gusts heed my plea unleash your howling tempest bend the world to its knees"]:
-				if all(["Discordia", "Seraphin", "M'lanchrus"]) in self.caller.db.monsterstats.keys():
+				if "Discordia" in list(self.caller.db.monsterstats.keys()) and "Seraphin" in list(self.caller.db.monsterstats.keys()) and "M'lanchrus" in list(self.caller.db.monsterstats.keys()):
 					self.caller.msg("|/|/Uncle Vanya turns and looks at you with a wicked stare through completely blue eyes. His head tips back, smile widening until the mouth splits his face in two and a great deafening freezing wind is exhaled. A swirling form appears before you.")
 					self.caller.msg("|mBoareaus|n says: So, you survived and figured out my ruse. Unfortunate for you, I was quite content just feeding on the people of this city. Listening to that gullible idiot Skaahde scream in pain as I torment her followers is just as delicious as their souls. Now your soul will feed the consuming north wind as well.")
 					self.caller.msg("You are suddenly suspended in a freezing swirling wind...")

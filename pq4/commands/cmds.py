@@ -21,10 +21,8 @@ import typeclasses.objects as genericobjects
 class test(default_cmds.MuxCommand):
 	key = "test"
 	def func(self):
-		if not self.caller.tags.get():
-			self.caller.msg("No Tags to Get")
-		else:
-			self.caller.msg(self.caller.tags.get())
+		if "Discordia" in self.caller.db.monsterstats.keys():
+			self.caller.msg("Discordia")
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"
