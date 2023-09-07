@@ -850,9 +850,9 @@ class draky:
 	noflee = "no"
 	weakness = ["w"]
 	actions = ["m", "m", "a"]
-	drop = "no"
-	dropitem = ""
-	droptype = ""
+	drop = "yes"
+	dropitem = "wingofbat"
+	droptype = "items"
 
 class silverslime:
 	name = "Silver Slime"
@@ -912,9 +912,9 @@ class battree:
 	noflee = "no"
 	weakness = ["a"]
 	actions = ["m", "m", "a"]
-	drop = "no"
-	dropitem = ""
-	droptype = ""
+	drop = "yes"
+	dropitem = "spiceflower"
+	droptype = "items"
 #highlands
 class chillidog:
 	name = "Chili Dog"
@@ -934,9 +934,9 @@ class chillidog:
 	incapsuc = ""
 	lazymsg = "scratches lazily at an itch."
 	stealtype = "none"
-	drop = "no"
-	dropitem = ""
-	droptype = ""
+	drop = "yes"
+	dropitem = "icemoss"
+	droptype = "items"
 
 class pizzarat:
 	name = "Pizza Rat"
@@ -1221,8 +1221,9 @@ class brickfrog:
 	incapsuc = "Your vision is blurry from a severe case of brick to the head-itis."
 	lazymsg = ""
 	stealtype = "none"
-	drop = "no"
-	dropitem = ""
+	drop = "yes"
+	dropitem = "stoneheart"
+	droptype = "items"
 
 class battlepenguin:
 	name = "Battle Penguin"
@@ -1242,8 +1243,9 @@ class battlepenguin:
 	incapsuc = ""
 	lazymsg = ""
 	stealtype = "none"
-	drop = "no"
-	dropitem = ""
+	drop = "yes"
+	dropitem = "rubymoss"
+	droptype = "items"
 
 #Library Dungeon
 class bookwyrm:

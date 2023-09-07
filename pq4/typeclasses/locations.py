@@ -73,3 +73,7 @@ class islandofthemad:
 class magmamadness:
 	name = "magmamadness"
 	location = "#5840"
+
+class desertedisland:
+	name = "deserted island"
+	location = "#????"

@@ -1,5 +1,6 @@
 from typeclasses.objects import DefaultObject
 import random
+from random import randint
 
 geterrors = ["Hey hey! Hands off the merchandise!!", "EEEEK!!!! Don't touch me there!!", "MMMMmmm hmmmm, little lower will ya?", "Kidnapping is a crime ya know.", "BACK OFF!!", "You goat kissing pervert! Keep your hands to yourself!", "*SLAP* No touching!!", "Didn't your mother tell you to keep your hands to yourself?", "You do that again, you're going to have one less hand."]
 cowmsg = ["moooOOOOOO!!", "Mooooo", "moo"]
@@ -376,9 +377,95 @@ class questnpc(DefaultObject):
 		self.db.successmsg = ""
 		self.db.finishedmsg = ""
 		self.db.questturneddown = ""
-		self.db.questname = ""
+		self.db.questname = randint(10000000, 99999999)
 		self.db.questtype = "get/kill"
 		self.db.questthingname = "item/monster"
+		self.db.questqty = 0
+		self.db.rewardtype = "gold", "item", "weapon", "armor"
+		self.db.rewardthingname = ""
+		self.db.rewardthingtypeclass = ""
+		self.db.rewardqty = 0
+		self.locks.add("get:false()")
+		self.db.get_err_msg = "|/|r%s|n" % (random.choice(geterrors))
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		desc = str()
+		if self.db.questname in looker.db.quests.keys():
+		#check if they completed the quest
+			if looker.db.quests[self.db.questname]["completed"] == "yes":
+				if not self.db.completeddesc == "":
+					desc = self.db.completeddesc
+				else:
+					desc = self.db.desc
+		#quest is in progress
+			else:
+				if not self.db.inprogdesc == "":
+					desc = self.db.inprogdesc
+				else:
+					desc = self.db.desc
+		else:
+			desc = self.db.desc
+		return desc
+
+class killquestnpc(DefaultObject):
+	def at_object_creation(self):
+		self.tags.add("talkative", category="npc")
+		self.tags.add("questnpc", category="talkative")
+		self.db.desc = "A quest giving NPC."
+		self.db.inprogdesc = ""
+		self.db.completeddesc = ""
+		self.db.msg = "Fill this out"
+		self.db.inprogmsg = ""
+		self.db.successmsg = ""
+		self.db.finishedmsg = ""
+		self.db.questturneddown = ""
+		self.db.questname = randint(10000000, 99999999)
+		self.db.questtype = "kill"
+		self.db.questthingname = "monster classname"
+		self.db.questqty = 0
+		self.db.rewardtype = "gold", "item", "weapon", "armor"
+		self.db.rewardthingname = ""
+		self.db.rewardthingtypeclass = ""
+		self.db.rewardqty = 0
+		self.locks.add("get:false()")
+		self.db.get_err_msg = "|/|r%s|n" % (random.choice(geterrors))
+	def return_appearance(self, looker):
+		if not looker:
+			return ""
+		desc = str()
+		if self.db.questname in looker.db.quests.keys():
+		#check if they completed the quest
+			if looker.db.quests[self.db.questname]["completed"] == "yes":
+				if not self.db.completeddesc == "":
+					desc = self.db.completeddesc
+				else:
+					desc = self.db.desc
+		#quest is in progress
+			else:
+				if not self.db.inprogdesc == "":
+					desc = self.db.inprogdesc
+				else:
+					desc = self.db.desc
+		else:
+			desc = self.db.desc
+		return desc
+
+class getquestnpc(DefaultObject):
+	def at_object_creation(self):
+		self.tags.add("talkative", category="npc")
+		self.tags.add("questnpc", category="talkative")
+		self.db.desc = "A quest giving NPC."
+		self.db.inprogdesc = ""
+		self.db.completeddesc = ""
+		self.db.msg = "Fill this out"
+		self.db.inprogmsg = ""
+		self.db.successmsg = ""
+		self.db.finishedmsg = ""
+		self.db.questturneddown = ""
+		self.db.questname = randint(10000000, 99999999)
+		self.db.questtype = "get"
+		self.db.questthingname = "item classname"
 		self.db.questqty = 0
 		self.db.rewardtype = "gold", "item", "weapon", "armor"
 		self.db.rewardthingname = ""

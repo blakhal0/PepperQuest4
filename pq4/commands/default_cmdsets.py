@@ -15,7 +15,7 @@ own cmdsets by inheriting from them or directly from `evennia.CmdSet`.
 """
 
 from evennia import default_cmds
-from commands.cmds import fight, status, worldmagic, read, reup, equip, talkNPC, useitem, loot, test, givetag, remtag, showtag, mug, slowdeath, popchest, addaccolade, remaccolade, showaccolade, journalentry, removeentry, sethp
+from commands.cmds import fight, status, worldmagic, read, reup, equip, talkNPC, useitem, loot, test, givetag, remtag, showtag, mug, slowdeath, popchest, addaccolade, remaccolade, showaccolade, journalentry, removeentry, sethp, quests
 
 
 class CharacterCmdSet(default_cmds.CharacterCmdSet):
@@ -57,6 +57,7 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
 		self.add(removeentry)
 		self.add(sethp)
 		self.add(slowdeath)
+		self.add(quests)
 
 
 class AccountCmdSet(default_cmds.AccountCmdSet):

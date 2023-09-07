@@ -32,6 +32,66 @@ class goldbar(item):
 		self.db.qty = 0
 		self.db.desc = self.desc
 
+class icemoss(item):
+	name = "Ice Moss"
+	price = 18
+	desc = "Bright blue moss that glitters and sparkles."
+	def at_object_creation(self):
+		self.tags.add("sellableitem")
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.qty = 0
+		self.db.desc = self.desc
+
+class spiceflower(item):
+	name = "Spice Flower"
+	price = 40
+	desc = "A red flower from an ancient pepper plant."
+	def at_object_creation(self):
+		self.tags.add("sellableitem")
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.qty = 0
+		self.db.desc = self.desc
+
+class wingofbat(item):
+	name = "Wing of Bat"
+	price = 40
+	desc = "Probably pretty good fried with some hot sauce."
+	def at_object_creation(self):
+		self.tags.add("sellableitem")
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.qty = 0
+		self.db.desc = self.desc
+
+class stoneheart(item):
+	name = "Stone Heart"
+	price = 65
+	desc = "A crystallized heart-shaped stone."
+	def at_object_creation(self):
+		self.tags.add("sellableitem")
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.qty = 0
+		self.db.desc = self.desc
+
+class rubymoss(item):
+	name = "Ruby Moss"
+	price = 100
+	desc = "A lacy clump of ruby red moss."
+	def at_object_creation(self):
+		self.tags.add("sellableitem")
+		self.locks.add("drop:false()")
+		self.db.name = self.name
+		self.db.price = int(self.price)
+		self.db.qty = 0
+		self.db.desc = self.desc
+
 class diamondring(item):
 	name = "Diamond Ring"
 	price = 5000
@@ -43,6 +103,16 @@ class diamondring(item):
 		self.db.price = int(self.price)
 		self.db.qty = 0
 		self.db.desc = self.desc
+
+class variablemap(DefaultObject):
+	name = "Deserted Island Map"
+	price = 5000
+	desc = "Shimmering starlight makes a map on a large scallop shell marking a deserted island."
+	def at_object_creation(self):
+		self.locks.add("drop:false()")
+		self.tags.add("map")
+		self.db.desc = self.desc
+		self.db.locationname = "desertedisland"
 
 class seashell(item):
 	name = "Sea Shell"
