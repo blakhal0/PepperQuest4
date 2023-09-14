@@ -99,6 +99,80 @@ class credits(default_cmds.MuxCommand):
 		self.caller.msg("Your soul is pulled from this place and sent hurtling back to the world.")
 		results = search_object("#2")
 		yield 5
+		self.caller.msg("Game Written and Directed by: Blakhal0")
+		yield 1
+		self.caller.msg("Produced by: Blakhal0")
+		yield 1
+		self.caller.msg("Best Significant Other: LadySqrrl")
+		yield 1
+		self.caller.msg("Executive Producer: variableLabel")
+		yield 1
+		self.caller.msg("Director of Photography: Blakhal0")
+		yield 1
+		self.caller.msg("Grip: Blakhal0")
+		yield 1
+		self.caller.msg("Foley Artist: Blakhal0")
+		yield 1
+		self.caller.msg("Wardrobe: Blakhal0")
+		yield 1
+		self.caller.msg("Visual Effects: Blakhal0")
+		yield 1
+		self.caller.msg("Casting Director: Blakhal0")
+		yield 1
+		self.caller.msg("Costume Design: Blakhal0")
+		yield 1
+		self.caller.msg("Editors: Blakhal0")
+		yield 1
+		self.caller.msg("Production Designer: Blakhal0")
+		yield 1
+		self.caller.msg("Music Supervisor: Blakhal0")
+		yield 1
+		self.caller.msg("Unit Production Supervisor: Blakhal0")
+		yield 1
+		self.caller.msg("Stunts: Blakhal0, Ralph the Wonder Llama")
+		yield 1
+		self.caller.msg("Craft Services: Blakhal0")
+		yield 1
+		self.caller.msg("Llama Provider: Lay-a-way Llamas of the Midwest - A Venezuelan Concern.")
+		yield 1
+		self.caller.msg("Title Design: Blakhal0")
+		yield 1
+		self.caller.msg("Llama Safety Supervisor: Teddy 'Don't Touch My *&$^#*@ Chicken Fingers' Larough")
+		yield 1
+		self.caller.msg("~=Special Thanks=~")
+		yield 1
+		self.caller.msg("The entire Peppercon Crew")
+		yield 1
+		self.caller.msg("PoliteAuthority and Zappy for doing whatever 'Docker' is and putting this game out on the tubes.")
+		yield 1
+		self.caller.msg("Everyone that sacrificed their time so I could make this game.")
+		yield 1
+		self.caller.msg("Kevin Smith and Jay Mewes")
+		yield 1
+		self.caller.msg("Whoever it was that made the call to give the Platypus a venomous spike.")
+		yield 1
+		self.caller.msg("Griatch")
+		yield 1
+		self.caller.msg("All the folks that helped me in the Evennia Discord")
+		yield 1
+		self.caller.msg("Everyone* on the Peppercon Discord")
+		yield 1
+		self.caller.msg("*probably")
+		yield 1
+		self.caller.msg("**I mean odds are at least one of you is a little sketchy")
+		yield 1
+		self.caller.msg("***so like maybe not that person, but the rest of you are cool.")
+		yield 1
+		self.caller.msg("****I'm not saying like all 'hey forget that chump/chumpette', I'm just saying, you know, Thank you.")
+		yield 1
+		self.caller.msg("The End")
+		yield 3
+		self.caller.msg("Signed: Richard M. Nixon|/Intergalactic Chief Lizard Person Representative to Planet Earth 18-B")
+		yield 2
+		self.caller.msg("Dictated but not read.")
+		yield 4
+		self.caller.msg("You should go watch Rubber if you haven't already. It's a great movie.")
+		yield 1
 		self.caller.move_to(results[0], quiet=True, move_hooks=True)
 		return
 

@@ -496,3 +496,13 @@ class dazzlingcolors:
 	group = "aggressive"
 	kind = "d"
 	enemyphrase = "A multitude of colored beams of light emit from the creature, reflecting off the mirrored walls striking you, burning you."
+
+class offal:
+	name = "Offal"
+	price = 400
+	cost = 4
+	base = 40
+	group = "heal"
+	kind = "enemy"
+	phrase = "You render succor to the enemy, healing their wounds."
+	enemyphrase = "'You look weak, have something to eat!' The Barbarian picks you up with two fingers, squeezes your mouth open and shoves some fish offal down your gullet... It's not bad."

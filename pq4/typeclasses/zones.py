@@ -201,6 +201,10 @@ class balefoyrzone:
 class pyrettazone:
 	monsters = ["thedemongoddesspyretta"]
 	rare = ["thedemongoddesspyretta"]
+	
+class variablezone:
+	monsters = ["variablethebarbarian"]
+	rare = ["variablethebarbarian"]
 
 #Titan Arena
 #------------------------------------------------

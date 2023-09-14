@@ -296,6 +296,35 @@ class thedemongoddesspyretta:
 	accoladetoadd = ""
 	sendto = "#12986"
 
+class variablethebarbarian:
+	name = "Variable the Barbarian"
+	desc = "A colossal, naked barbarian drinking home made alcohol out of a coconut."
+	phrases = ["Heh-heh-he, puny mortal, you cannot hurt me.", "Your attack is like a teeny-tiny fly bite!", "I will make jam from your bones."]
+	hp = 308
+	mp = 292
+	spells = ["moreheal", "offal"]
+	attack = 300
+	defense = 300
+	gold = 1
+	exp = 1
+	actions = ["a", "a", "a", "m", "a", "a", "a", "a", "m", "m", "a", "a", "m"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = "stomps a massive foot on the ground causing the sand beneath you to become quicksand."
+	incapsuc = "You are stuck in quicksand and cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	droptype = "items"
+	dropitem = "powerpepper"
+	god = "yes"
+	successmsg = "Heh-heh-he well, that's a surprise. I haven't been defeated since I was a teeny tiny critter your size. Heh-heh-he!!! I suppose I can share some of my peppers with you. Come on, lets go to the tree."
+	tagstoadd = ["treeworthy"]
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = "Giant Slayer"
+	sendto = ""
+
 
 #minibosses
 class mlanchrus:
@@ -2026,7 +2055,7 @@ class magibadger:
 
 class hardvark:
 	name = "Hardvark"
-	desc = "An advark with a very thick shell. Defense is the name of the game for this critter."
+	desc = "An aadvark with a very thick shell. Defense is the name of the game for this critter."
 	phrases = [""]
 	hp = 40
 	mp = 0

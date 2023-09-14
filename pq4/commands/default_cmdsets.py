@@ -39,16 +39,19 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
 		self.add(status)
 		self.add(worldmagic)
 		self.add(read)
-		self.add(reup)
 		self.add(equip)
 		self.add(talkNPC)
 		self.add(useitem)
-		self.add(test)
 		self.add(loot)
+		self.add(mug)
+		self.add(slowdeath)
+		self.add(quests)
+		
+		self.add(reup)
+		self.add(test)
 		self.add(givetag)
 		self.add(remtag)
 		self.add(showtag)
-		self.add(mug)
 		self.add(popchest)
 		self.add(addaccolade)
 		self.add(remaccolade)
@@ -56,8 +59,6 @@ class CharacterCmdSet(default_cmds.CharacterCmdSet):
 		self.add(journalentry)
 		self.add(removeentry)
 		self.add(sethp)
-		self.add(slowdeath)
-		self.add(quests)
 
 
 class AccountCmdSet(default_cmds.AccountCmdSet):
@@ -78,6 +79,7 @@ class AccountCmdSet(default_cmds.AccountCmdSet):
 		#
 		# any commands you add below will overload the default ones.
 		#
+		
 
 
 class UnloggedinCmdSet(default_cmds.UnloggedinCmdSet):

@@ -76,4 +76,4 @@ class magmamadness:
 
 class desertedisland:
 	name = "deserted island"
-	location = "#????"
+	location = "#13041"

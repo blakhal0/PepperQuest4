@@ -18,13 +18,19 @@ import typeclasses.objects as genericobjects
 
 #self.caller.msg(self.caller.dbid) return database ID number
 
+#=============================
+#==Admin and Testing Commands=
+#=============================
+
 class test(default_cmds.MuxCommand):
 	key = "test"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		self.caller.msg(self.caller.location.key)
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		hp = self.args.strip()
 		if not hp.isnumeric():
@@ -42,6 +48,7 @@ class sethp(default_cmds.MuxCommand):
 
 class journalentry(default_cmds.MuxCommand):
 	key = "addmonster"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.argslist = self.args.split(",")
 	def func(self):
@@ -61,6 +68,7 @@ class journalentry(default_cmds.MuxCommand):
 
 class removeentry(default_cmds.MuxCommand):
 	key = "remmonster"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.monstername = self.args.strip()
 	def func(self):
@@ -73,6 +81,7 @@ class removeentry(default_cmds.MuxCommand):
 
 class addaccolade(default_cmds.MuxCommand):
 	key = "addacc"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.accname = self.args.lstrip()
 	def func(self):
@@ -86,6 +95,7 @@ class addaccolade(default_cmds.MuxCommand):
 
 class remaccolade(default_cmds.MuxCommand):
 	key = "remacc"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.accname = self.args.lstrip()
 	def func(self):
@@ -99,23 +109,27 @@ class remaccolade(default_cmds.MuxCommand):
 
 class showaccolade(default_cmds.MuxCommand):
 	key = "shacc"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		self.caller.msg(self.caller.db.accolades)
 
 class popchest(default_cmds.MuxCommand):
 	key = "popchest"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		self.caller.db.chests.pop()
 		self.caller.msg("You removed the last chest you looted")
 
 class showtag(default_cmds.MuxCommand):
 	key = "shtag"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		self.caller.msg("|/|rYou have the following tags:|n")
 		self.caller.msg(self.caller.tags)
 
 class givetag(default_cmds.MuxCommand):
 	key = "tag"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.tagname = self.args.lstrip()
 	def func(self):
@@ -128,6 +142,7 @@ class givetag(default_cmds.MuxCommand):
 
 class remtag(default_cmds.MuxCommand):
 	key = "untag"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.tagname = self.args.lstrip()
 	def func(self):
@@ -141,6 +156,18 @@ class remtag(default_cmds.MuxCommand):
 		else:
 			self.caller.msg("|rYou don't have a tag named %s|n" % (self.tagname))
 
+class reup(default_cmds.MuxCommand):
+	key = "reup"
+	locks = "cmd:perm(developer)"
+	def func(self):
+		self.caller.db.hp = self.caller.db.maxhp
+		self.caller.db.mp = self.caller.db.maxmp
+		self.caller.msg("Status: HP: %d MP: %d" % (self.caller.db.hp, self.caller.db.mp))
+
+
+#=============================
+#=====Player Commands=========
+#=============================
 class slowdeath(default_cmds.MuxCommand):
 	key = "slowdeath"
 	auto_help = False
@@ -1552,13 +1579,6 @@ class status(default_cmds.MuxCommand):
 		self.caller.msg("|cOverworld Magic|n: %s" % (overspell))
 		self.caller.msg("|cLocations Learned|n: %s" % (locations))
 		return
-
-class reup(default_cmds.MuxCommand):
-	key = "reup"
-	def func(self):
-		self.caller.db.hp = self.caller.db.maxhp
-		self.caller.db.mp = self.caller.db.maxmp
-		self.caller.msg("Status: HP: %d MP: %d" % (self.caller.db.hp, self.caller.db.mp))
 
 class equip(default_cmds.MuxCommand):
 	key = "equip"

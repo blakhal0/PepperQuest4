@@ -14,7 +14,7 @@ class chatxandis(default_cmds.MuxCommand):
 		for i in self.caller.contents:
 			if i.tags.get("map"):
 		#Map location name list
-				islands.append(i.db.locationname)
+				islands.append(getattr(locations, i.db.locationname).name)
 	#Check if the player has no maps
 		if not islands:
 			self.caller.msg("|/|mCaptain Xandis|n says: Oh, uhh, geez, this is a little embarrassing with you being the boss and all. But, ahhh, you've got no maps. I can't take you to a place we don't know how to get to, you know. Maybe if you go get some maps, well we'll set sail right as soon as you've got a destination for us.")
@@ -40,7 +40,8 @@ class chatxandis(default_cmds.MuxCommand):
 					self.caller.msg("You climb on board and watch as the crew races back and forth, heaving lines and unfurling canvas. The Silver Sun lurches forward as you head out to sea.")
 					self.caller.msg("|/ ")
 					yield 2
-					self.caller.msg("|/Days pass, waves crash, and you arrive at your destination.")
+					self.caller.msg("Days pass, waves crash, and you arrive at your destination.")
+					self.caller.msg("|/ ")
 					results = search_object(travelto)
 					self.caller.move_to(results[0], quiet=True, move_hooks=True)
 					return

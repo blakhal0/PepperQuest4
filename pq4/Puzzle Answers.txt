@@ -1,9 +1,25 @@
 Dewey Decimal Puzzle - 5 books.
-Celestial Mechanics 521
-Death Customs 393
-Geography and Travel in Ancient World 913
-Extraterrestrial Worlds 999
-Dreams & mysteries 135
+	Celestial Mechanics 521
+	Death Customs 393
+	Geography and Travel in Ancient World 913
+	Extraterrestrial Worlds 999
+	Dreams & mysteries 135
+	
+	In darkness, eleven candles lit the chambers.
+	Where the fragrance of aged manuscripts lingered,
+	Scholars gathered, drawn by the promise of hidden opportunity,
+	Exploring the annals of time, their quest for enlightenment unfurled.
+	Pages swiftly turned, revealing the secrets of forgotten empires,
+	Illuminated by the soft glow of ancient knowledge,
+	Silent whispers of history echoed through the hallowed halls,
+	As seekers embarked on a timeless journey of discovery.
+	Alive within the script-laden tomes, stories of capsaicin were inked,
+	Inscriptions penned by generations, a testament to humanity's thirst,
+	And as the final chapter unveiled, a profound revelation emerged,
+	A bridge to the past, a connection to the eternal, preserved for all time.
+	Melvil D. Ottendorf
+	
+	Ottendorf Cipher - SPINE
 
 
 Skeleton Puzzle
@@ -23,6 +39,7 @@ Adjust temperature to create steam
 Press button (must be steamy so monster cannot see you)
 bathhouse{water:[off, on], temp:[cold, warm, hot], pipe:[broken, fixed]}
 if bathhouse[water] == "on" and bathhouse[temp] == "hot" and bathhouse[pipe] == "fixed"
+
 
 CODE = {'A':'=E', 'B':'^E', 'C':'_F', 'D':'=F', 'E':'^F', 'F':'_G', 'G':'=G', 'H':'^G', 'I':'_A', 'J':'=A', 'K':'^A', 'L':'_B', 'M':'=B', 'N':'^B', 'O':'_c', 'P':'=c', 'Q':'^c', 'R':'_d', 'S':'=d', 'T':'^d', 'U':'_e', 'V':'=e', 'W':'^e', 'X':'_f', 'Y':'=f', 'Z':'^f'}
 

@@ -18,7 +18,7 @@ class depthsofknowledgedoor(default_cmds.MuxCommand):
 		self.caller.msg("|/You grasp the door and put all your effort into opening it, the door does not budge. Slowly, a wispy blue form begins to envelop the door. The ghost of an ancient scholar emerges.")
 		self.caller.msg("|mScholar|n says: Beyond this door lays immense and dangerous knowledge. What is the password?")
 		answer = yield("How do you answer? ")
-		if answer == "2961":
+		if answer.lower() == "spine":
 			dothemove()
 			return
 		else:
