@@ -412,3 +412,20 @@ class madness(DefaultScript):
 				if x.tags.get("sanity"):
 					continue
 				x.msg("|/" + random.choice(whispers))
+				if randint(1,3) == 2:
+					x.db.hp -= randint(5,15)
+				if x.db.hp <= 0:
+					x.msg("|/|m%s|n says: Yes, yes I hear you... Yes, I understand." % (x.key))
+					x.msg("You get down on your knees and begin to dig your fingers into your eyes.")
+					x.msg("|m%s|n says: I SEE THE GLORY THAT ONLY YOU CAN PROVIDE!!" % (x.key))
+					x.msg("Laughing wildly you gouge your eyes out. With bloody goo covered fingers you feel around for a sharp stone and stab yourself in the neck.")
+					x.msg("Blood gurgles as you laugh, eyeless, fully in rapture until you black out.")
+					x.msg("You have succumbed to the madness that inhabits this place.")
+					x.msg("|rWhat tragic fate, you are dead.|n|/You have brought shame to yourself and your family.")
+					x.db.deathcount += 1
+					x.db.hp = int(x.db.maxhp * .5)
+					x.db.mp = int(x.db.maxmp * .5)
+					x.db.gold -= int(x.db.gold * .2)
+					results = search_object(x.db.lastcity)
+					x.move_to(results[0], quiet=True, move_hooks=False)
+					continue
