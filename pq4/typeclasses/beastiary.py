@@ -1633,7 +1633,7 @@ class primalslime:
 	lazymsg = ""
 	stealtype = "m"
 	drop = "yes"
-	droptype = "i"
+	droptype = "items"
 	dropitem = "sageelixir"
 	god = "no"
 	successmsg = ""
