@@ -18,18 +18,19 @@ import typeclasses.objects as genericobjects
 
 #self.caller.msg(self.caller.dbid) return database ID number
 
+#=============================
+#==Admin and Testing Commands=
+#=============================
+
 class test(default_cmds.MuxCommand):
 	key = "test"
+	locks = "cmd:perm(developer)"
 	def func(self):
-		unheallist = search_tag(key="cursed")
-		for i in unheallist:
-			target = search_object(i.location)
-			for i in target:
-				self.caller.msg(type(i))
-#			self.caller.msg("----------------------")
+		self.caller.msg(self.caller.location.key)
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		hp = self.args.strip()
 		if not hp.isnumeric():
@@ -47,6 +48,7 @@ class sethp(default_cmds.MuxCommand):
 
 class journalentry(default_cmds.MuxCommand):
 	key = "addmonster"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.argslist = self.args.split(",")
 	def func(self):
@@ -66,6 +68,7 @@ class journalentry(default_cmds.MuxCommand):
 
 class removeentry(default_cmds.MuxCommand):
 	key = "remmonster"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.monstername = self.args.strip()
 	def func(self):
@@ -78,6 +81,7 @@ class removeentry(default_cmds.MuxCommand):
 
 class addaccolade(default_cmds.MuxCommand):
 	key = "addacc"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.accname = self.args.lstrip()
 	def func(self):
@@ -91,6 +95,7 @@ class addaccolade(default_cmds.MuxCommand):
 
 class remaccolade(default_cmds.MuxCommand):
 	key = "remacc"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.accname = self.args.lstrip()
 	def func(self):
@@ -104,23 +109,27 @@ class remaccolade(default_cmds.MuxCommand):
 
 class showaccolade(default_cmds.MuxCommand):
 	key = "shacc"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		self.caller.msg(self.caller.db.accolades)
 
 class popchest(default_cmds.MuxCommand):
 	key = "popchest"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		self.caller.db.chests.pop()
 		self.caller.msg("You removed the last chest you looted")
 
 class showtag(default_cmds.MuxCommand):
 	key = "shtag"
+	locks = "cmd:perm(developer)"
 	def func(self):
 		self.caller.msg("|/|rYou have the following tags:|n")
 		self.caller.msg(self.caller.tags)
 
 class givetag(default_cmds.MuxCommand):
 	key = "tag"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.tagname = self.args.lstrip()
 	def func(self):
@@ -133,6 +142,7 @@ class givetag(default_cmds.MuxCommand):
 
 class remtag(default_cmds.MuxCommand):
 	key = "untag"
+	locks = "cmd:perm(developer)"
 	def parse(self):
 		self.tagname = self.args.lstrip()
 	def func(self):
@@ -146,6 +156,18 @@ class remtag(default_cmds.MuxCommand):
 		else:
 			self.caller.msg("|rYou don't have a tag named %s|n" % (self.tagname))
 
+class reup(default_cmds.MuxCommand):
+	key = "reup"
+	locks = "cmd:perm(developer)"
+	def func(self):
+		self.caller.db.hp = self.caller.db.maxhp
+		self.caller.db.mp = self.caller.db.maxmp
+		self.caller.msg("Status: HP: %d MP: %d" % (self.caller.db.hp, self.caller.db.mp))
+
+
+#=============================
+#=====Player Commands=========
+#=============================
 class slowdeath(default_cmds.MuxCommand):
 	key = "slowdeath"
 	auto_help = False
@@ -163,6 +185,46 @@ class slowdeath(default_cmds.MuxCommand):
 		results = search_object(self.caller.db.lastcity)
 		self.caller.move_to(results[0], quiet=True, move_hooks=False)
 		return
+
+class quests(default_cmds.MuxCommand):
+	"""
+	Check your ongoing quests.
+
+	Usage:
+	Quests
+
+	Shows an overview of status of quests.
+	"""
+	key = "quests"
+	auto_help = True
+	def func(self):
+		completed = 0
+		inprogress = 0
+		questdesc = ""
+		for i in self.caller.db.quests:
+			if self.caller.db.quests[i]['completed'] == "yes":
+				completed += 1
+			else:
+				inprogress += 1
+				remainingqty = 0
+				if self.caller.db.quests[i]['type'] == "get":
+					questdesc += self.caller.db.quests[i]['giver'] + " in " + self.caller.db.quests[i]['location'] + ". Quest type: " + self.caller.db.quests[i]['type'].capitalize() + " " + str(self.caller.db.quests[i]['qty']) + " " + getattr(items, self.caller.db.quests[i]['thingname']).name.title() + "\r\n"
+				if self.caller.db.quests[i]['type'] == "kill":
+					if getattr(beastiary, self.caller.db.quests[i]['thingname']).name.title() in self.caller.db.monsterstats.keys():
+						if int(self.caller.db.quests[i]['qty']) - int(self.caller.db.monsterstats[getattr(beastiary, self.caller.db.quests[i]['thingname']).name.title()]["killed"]) > 0:
+							remainingqty = str(int(self.caller.db.quests[i]['qty']) - int(self.caller.db.monsterstats[getattr(beastiary, self.caller.db.quests[i]['thingname']).name.title()]["killed"]))
+						else:
+							remainingqty = "0"
+					else:
+						remainingqty = str(self.caller.db.quests[i]['qty'])
+					questdesc += self.caller.db.quests[i]['giver'] + " in " + self.caller.db.quests[i]['location'] + ". Quest type: " + self.caller.db.quests[i]['type'].capitalize() + " " + remainingqty + " more " + getattr(beastiary, self.caller.db.quests[i]['thingname']).name.title() + "\r\n"
+		self.caller.msg("|/|mQuestella|n says: Hello %s! 'Tis I, Questella, your matron of quests for the hearty adventurer." % (self.caller.key))
+		self.caller.msg("|mQuestella|n says: Hummm, yes, let's take a look.")
+		self.caller.msg("|mQuestella|n says: You've completed %d quests." % (completed))
+		self.caller.msg("|mQuestella|n says: You've got %d quests in progress." % (inprogress))
+		if inprogress > 0:
+			self.caller.msg("|mQuestella|n says: Here's your ongoing quests:")
+			self.caller.msg(questdesc)
 
 class loot(default_cmds.MuxCommand):
 	key = "Loot"
@@ -1518,13 +1580,6 @@ class status(default_cmds.MuxCommand):
 		self.caller.msg("|cLocations Learned|n: %s" % (locations))
 		return
 
-class reup(default_cmds.MuxCommand):
-	key = "reup"
-	def func(self):
-		self.caller.db.hp = self.caller.db.maxhp
-		self.caller.db.mp = self.caller.db.maxmp
-		self.caller.msg("Status: HP: %d MP: %d" % (self.caller.db.hp, self.caller.db.mp))
-
 class equip(default_cmds.MuxCommand):
 	key = "equip"
 	def func(self):
@@ -1975,16 +2030,16 @@ class talkNPC(default_cmds.MuxCommand):
 		#Player does not yet have quest.
 			if not target.db.questname in self.caller.db.quests.keys():
 				self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.msg))
-				answer = yield("|/Will you accept this quest? Y/N")
+				answer = yield("|/Will you accept this quest?|/|cY|nes|n, |cN|no")
 				if answer.lower() in ["y", "yes"]:
 					if target.db.questtype == "kill":
-						if target.db.questthingname in self.caller.db.monsterstats.keys():
-							requiredquantity = int(self.caller.db.monsterstats[target.db.questthingname]["killed"]) + int(target.db.questqty)
+						if getattr(beastiary, target.db.questthingname).name.title() in self.caller.db.monsterstats.keys():
+							requiredquantity = int(self.caller.db.monsterstats[getattr(beastiary, target.db.questthingname).name.title()]["killed"]) + int(target.db.questqty)
 						else:
 							requiredquantity = target.db.questqty
 					if target.db.questtype == "get":
 							requiredquantity = target.db.questqty
-					self.caller.db.quests[target.db.questname] = {"type": target.db.questtype, "thingname": target.db.questthingname, 'qty': requiredquantity, 'completed': 'no'}
+					self.caller.db.quests[target.db.questname] = {"giver": target.key, "location": target.location.key, "type": target.db.questtype, "thingname": target.db.questthingname, 'qty': requiredquantity, 'completed': 'no'}
 					self.caller.msg("|/|m%s|n says: Thanks! Make sure to stop back when you're done." % (target.key))
 					self.caller.msg("|/|gHOORAY! You've accepted a quest!!|n")
 					return
@@ -1998,13 +2053,16 @@ class talkNPC(default_cmds.MuxCommand):
 		#Quest is in progress or needs to be checked for completion
 			elif self.caller.db.quests[target.db.questname]["completed"] == "no":
 				if target.db.questtype == "kill":
-					if not target.db.questthingname in self.caller.db.monsterstats.keys():
-						self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.inprogmsg))
+					if not getattr(beastiary, target.db.questthingname).name.title() in self.caller.db.monsterstats.keys():
+						if target.db.inprogmsg is None or target.db.inprogmsg == "":
+							self.caller.msg("|/|m%s|n says: How's that quest coming along? Done yet? No? Well what are you waiting for?" % (target.key))
+						else:
+							self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.inprogmsg))
 						return
-					elif int(self.caller.db.monsterstats[target.db.questthingname]["killed"]) >= int(self.caller.db.quests[target.db.questname]["qty"]):
+					elif int(self.caller.db.monsterstats[getattr(beastiary, target.db.questthingname).name.title()]["killed"]) >= int(self.caller.db.quests[target.db.questname]["qty"]):
 						self.caller.db.quests[target.db.questname]["completed"] = "yes"
 						if target.db.successmsg is None or target.db.successmsg == "":
-							self.caller.msg("|/|m%s|n says: Thanks!" % (target.key))
+							self.caller.msg("|/|m%s|n says: Thanks for taking care of those %d %s for me." % (target.key, target.db.questqty, getattr(beastiary, target.db.questthingname).name.title()))
 						else:
 							self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.successmsg))
 						self.caller.msg("|/|gHOORAY! You've completed a quest!!|n")
@@ -2068,25 +2126,25 @@ class talkNPC(default_cmds.MuxCommand):
 								return
 						return
 					else:
-						if not target.db.inprogmsg == "":
-							self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.inprogmsg))
+						if target.db.inprogmsg is None or target.db.inprogmsg == "":
+							self.caller.msg("|/|m%s|n says: How's that quest coming along? Done yet? No? Well what are you waiting for?" % (target.key))
 							return
 						else:
-							self.caller.msg("|/|m%s|n says: I'm busy right now, come back when you've finished the job." % (target.key))
+							self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.inprogmsg))
 							return
 				if target.db.questtype == "get":
 					questitemname = getattr(items, target.db.questthingname).name
 					wt = self.caller.search(questitemname, candidates=self.caller.contents, quiet=True)
 					if not wt:
 						if target.db.inprogmsg is None or target.db.inprogmsg == "":
-							self.caller.msg("|/|m%s|n says: I'm busy right now, come back when you've finished the job." % (target.key))
+							self.caller.msg("|/|m%s|n says: How's that quest coming along? Done yet? No? Well what are you waiting for?" % (target.key))
 							return
 						else:
 							self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.inprogmsg))
 							return
 					elif wt[0].db.qty < target.db.questqty:
 						if target.db.inprogmsg is None or target.db.inprogmsg == "":
-							self.caller.msg("|/|m%s|n says: I'm busy right now, come back when you've finished the job." % (target.key))
+							self.caller.msg("|/|m%s|n says: How's that quest coming along? Done yet? No? Well what are you waiting for?" % (target.key))
 							return
 						else:
 							self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.inprogmsg))
@@ -2097,7 +2155,7 @@ class talkNPC(default_cmds.MuxCommand):
 						if wt[0].db.qty <= 0:
 							wt[0].delete()
 						if target.db.successmsg is None or target.db.successmsg == "":
-							self.caller.msg("|/|m%s|n says: Thanks!" % (target.key))
+							self.caller.msg("|/|m%s|n says: Thanks for getting those %d %s for me!" % (target.key, target.db.questqty, getattr(items, target.db.questthingname).name.title()))
 						else:
 							self.caller.msg("|/|m%s|n says: %s" % (target.key, target.db.successmsg))
 						self.caller.msg("|/|gHOORAY! You've completed a quest!!|n")

@@ -238,6 +238,93 @@ class lorddragon:
 	accoladetoadd = "Dragon of the New Dawn"
 	sendto = ""
 
+class balefoyr:
+	name = "Balefoyr"
+	desc = "A towering figure, draped in flowing ebony robes that seem to dance with an ethereal flame. Acolyte of Pyretta, servant of the demon goddess of the funeral pyre."
+	phrases = ["Balefoyr slashes as you with burning claws.", "A ball of pyre fire slams into your chest."]
+	hp = 210
+	mp = 200
+	spells = ["fullheal", "insinerate", "pyre", "moreheal"]
+	attack = 89
+	defense = 89
+	gold = 1000
+	exp = 100
+	actions = ["a", "m", "a", "a", "m", "i", "i", "m", "a", "a", "a", "i", "m"]
+	noflee = "yes"
+	weakness = ["n"]
+	incapatt = "summons a circle of pyre flame surrounding you."
+	incapsuc = "You are encircled in pyre fire and cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "yes"
+	successmsg = "|/|/Balefoyr makes a gasping laugh.|/|mBalefoyr|n says: Your bravery was for nothing, hahahahaha, the goddess arrives!|/Reality wavers, rifts open in the air expanding bringing forth the Demon Plane where Pyretta awaits her emergence upon your world."
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = "#12990"
+
+class thedemongoddesspyretta:
+	name = "The Demon Goddess Pyretta"
+	desc = "The demon goddess of the funeral pyre. Skin charred, cracked with flames dancing, dripping with fiery napalm. A horrid beauty."
+	phrases = ["Pyretta laughs, then cries, her napalm tears falling on you and burning.", "Pyretta stomps her foot, a wave of pyroclastic ash washes over you, choking you and burning your eyes.", "Pyretta draws an obsidian scythe across her skin igniting it with napalm and swings."]
+	hp = 500
+	mp = 300
+	spells = ["fullheal", "sugarandspice", "requiemvampa", "moreheal"]
+	attack = 99
+	defense = 99
+	gold = 0
+	exp = 0
+	actions = ["a", "d", "a", "a", "m", "i", "m", "i", "a", "m", "i", "a", "a", "a", "a", "m", "a", "a", "a", "i", "m", "a", "a", "i", "m"]
+	noflee = "yes"
+	weakness = ["n"]
+	incapatt = "wails a mournful song which tears at your soul. You want nothing more than to stop her suffering"
+	incapsuc = "Your heart breaks for Pyretta and her mourning wail. You cannot stand the idea of attacking her."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "no"
+	droptype = ""
+	dropitem = ""
+	god = "yes"
+	successmsg = "|/|/Pyretta wails as your final blow lands, striking her down."
+	tagstoadd = []
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = ""
+	sendto = "#12986"
+
+class variablethebarbarian:
+	name = "Variable the Barbarian"
+	desc = "A colossal, naked barbarian drinking home made alcohol out of a coconut."
+	phrases = ["Heh-heh-he, puny mortal, you cannot hurt me.", "Your attack is like a teeny-tiny fly bite!", "I will make jam from your bones."]
+	hp = 308
+	mp = 292
+	spells = ["moreheal", "offal"]
+	attack = 300
+	defense = 300
+	gold = 1
+	exp = 1
+	actions = ["a", "a", "a", "m", "a", "a", "a", "a", "m", "m", "a", "a", "m"]
+	noflee = "no"
+	weakness = ["n"]
+	incapatt = "stomps a massive foot on the ground causing the sand beneath you to become quicksand."
+	incapsuc = "You are stuck in quicksand and cannot attack."
+	lazymsg = ""
+	stealtype = "none"
+	drop = "yes"
+	droptype = "items"
+	dropitem = "powerpepper"
+	god = "yes"
+	successmsg = "Heh-heh-he well, that's a surprise. I haven't been defeated since I was a teeny tiny critter your size. Heh-heh-he!!! I suppose I can share some of my peppers with you. Come on, lets go to the tree."
+	tagstoadd = ["treeworthy"]
+	tagstoremove = []
+	itemstoremove = []
+	accoladetoadd = "Giant Slayer"
+	sendto = ""
+
 
 #minibosses
 class mlanchrus:
@@ -262,7 +349,7 @@ class mlanchrus:
 	dropitem = ""
 	droptype = ""
 	god = "yes"
-	successmsg = "As M'lanchrus dies you hear a brief part of an ancient song: 'Boreas, ancient gusts, heed my plea,'"
+	successmsg = "As M'lanchrus dies you hear a brief part of an ancient song: 'Boareus, ancient gusts, heed my plea,'"
 	tagstoadd = []
 	tagstoremove = []
 	itemstoremove = []
@@ -530,7 +617,7 @@ class chromadillo:
 
 class knightowl:
 	name = "Knight Owl"
-	desc = "A knight of the Tital Arena, a real hoot if you're not on the receiving end of their claws."
+	desc = "A knight of the Titan Arena, a real hoot if you're not on the receiving end of their claws."
 	phrases = ["Knight Owl attacks with claws.", "Hucks a pellet at you."]
 	hp = 35
 	mp = 26
@@ -792,9 +879,9 @@ class draky:
 	noflee = "no"
 	weakness = ["w"]
 	actions = ["m", "m", "a"]
-	drop = "no"
-	dropitem = ""
-	droptype = ""
+	drop = "yes"
+	dropitem = "wingofbat"
+	droptype = "items"
 
 class silverslime:
 	name = "Silver Slime"
@@ -854,9 +941,9 @@ class battree:
 	noflee = "no"
 	weakness = ["a"]
 	actions = ["m", "m", "a"]
-	drop = "no"
-	dropitem = ""
-	droptype = ""
+	drop = "yes"
+	dropitem = "spiceflower"
+	droptype = "items"
 #highlands
 class chillidog:
 	name = "Chili Dog"
@@ -876,9 +963,9 @@ class chillidog:
 	incapsuc = ""
 	lazymsg = "scratches lazily at an itch."
 	stealtype = "none"
-	drop = "no"
-	dropitem = ""
-	droptype = ""
+	drop = "yes"
+	dropitem = "icemoss"
+	droptype = "items"
 
 class pizzarat:
 	name = "Pizza Rat"
@@ -1163,8 +1250,9 @@ class brickfrog:
 	incapsuc = "Your vision is blurry from a severe case of brick to the head-itis."
 	lazymsg = ""
 	stealtype = "none"
-	drop = "no"
-	dropitem = ""
+	drop = "yes"
+	dropitem = "stoneheart"
+	droptype = "items"
 
 class battlepenguin:
 	name = "Battle Penguin"
@@ -1184,8 +1272,9 @@ class battlepenguin:
 	incapsuc = ""
 	lazymsg = ""
 	stealtype = "none"
-	drop = "no"
-	dropitem = ""
+	drop = "yes"
+	dropitem = "rubymoss"
+	droptype = "items"
 
 #Library Dungeon
 class bookwyrm:
@@ -1544,7 +1633,7 @@ class primalslime:
 	lazymsg = ""
 	stealtype = "m"
 	drop = "yes"
-	droptype = "i"
+	droptype = "items"
 	dropitem = "sageelixir"
 	god = "no"
 	successmsg = ""
@@ -1966,7 +2055,7 @@ class magibadger:
 
 class hardvark:
 	name = "Hardvark"
-	desc = "An advark with a very thick shell. Defense is the name of the game for this critter."
+	desc = "An aadvark with a very thick shell. Defense is the name of the game for this critter."
 	phrases = [""]
 	hp = 40
 	mp = 0

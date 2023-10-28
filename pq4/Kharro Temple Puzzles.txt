@@ -1,0 +1,14 @@
+Enter the temple [choose/get signed] your sign and stay true to its path: 
+clubs diamonds hearts Spades
+Get tagged with one of them
+Four kinds of exits: club, diamond, heart spade
+
+Society < Wealth < Red Stag < Pike
+Acorn < Bells < Hearts < Leaves
+Sticks < Coins < Cups < Swords
+Oak Fruit < Bells < Roses < Shields
+
+
+
+Basic Strategy Quiz
+A diety of chance stands before you, in their hand is $number of $suit(gems = diamonds, Societies = clubs, Gravediggers Friends = spades, Large Antlered Red Deer= Hearts)

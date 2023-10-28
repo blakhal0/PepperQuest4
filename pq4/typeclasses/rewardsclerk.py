@@ -21,7 +21,6 @@ class chatrewardsclerk(default_cmds.MuxCommand):
 		weaponsavailable = []
 		playerweapons = []
 		itemsavailable = []
-		monsterbellavail = "yes"
 		target = self.caller.search("Rewards Clerk", quiet=True)
 		target = target[0]
 		self.caller.msg("|/|mRewards Clerk|n says: Welcome to The Golden Parliament Casino! We have some absolutely wonderful items you can exchange your tokens for! Of course you can just trade them in for gold, but you only get 1 gold per 2 tokens.|/Have a look at the fantastic items we have!")
@@ -52,7 +51,7 @@ class chatrewardsclerk(default_cmds.MuxCommand):
 		while 1 < 10:
 		#check if nothing left to sell
 			if armoravailable == [] and weaponsavailable == [] and target.db.itemsforsale == []:
-				self.caller.msg("|/|mSpice Merchant|n says: Well, you've bought me out of wares!")
+				self.caller.msg("|/|mRewards Clerk|n says: Well, you've bought me out of wares!")
 				leave()
 				break
 			else:

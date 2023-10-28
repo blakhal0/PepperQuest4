@@ -289,10 +289,11 @@ class madmap(DefaultObject):
 		self.db.locationname = "islandofthemad"
 
 class valaharranmap(DefaultObject):
+	name = "Valaharran Pirate Map"
 	def at_object_creation(self):
 		self.locks.add("drop:false()")
 		self.tags.add("map")
-		self.db.desc = "Valaharran Pirate Map."
+		self.db.desc = "The map shows a short path from Boars Snout to the underground volcano passages."
 		self.db.locationname = "magmamadness"
 
 class panahonmap(DefaultObject):

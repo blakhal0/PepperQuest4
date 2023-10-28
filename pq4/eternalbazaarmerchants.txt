@@ -20,7 +20,7 @@ Gideon the Grocer (Merchant of Fresh Produce)
 
 Balthazar the Bladesmith (Merchant of Forged Weapons)
 		self.db.forsale = {'razors edge dagger': {'name': 'razors edge dagger', 'price': 75}, 'falcon sword': {'name': 'falcon sword', 'price': 135}}
-		self.db.buy = {'music box': {'name': 'music box', 'price': 10}, 'camera obscura': {'name': 'camera obscura', 'price': 40}}
+		self.db.buy = {'music box': {'name': 'music box', 'price': 10}, 'camera obscura': {'name': 'camera obscura', 'price': 40}, 'enchanted ring': {'name': 'enchanted ring', 'price': 165}}
 		self.db.desc = "A burly man with a beard of fire and dark leather apron, surrounded by sparks."
 		self.db.salespitch = "Welcome to the forge of valor! Your weapon awaits."
 		self.db.welcome = "Hail, warrior! Step up and witness the strength of our finest blades."
@@ -49,7 +49,7 @@ Thaddeus the Bookworm (Merchant of Antique Tomes)
 		self.db.bye = "Farewell, dear reader. May the tales within those pages enrich your journey."
 
 Cassandra the Seeress (Merchant of Mystical Divinations)
-		self.db.forsale = {'crystal ball': {'name': 'crystalball', 'price': 50}, 'tarot deck': {'name': 'tarot deck', 'price': 32}}
+		self.db.forsale = {'crystal ball': {'name': 'crystal ball', 'price': 50}, 'tarot deck': {'name': 'tarot deck', 'price': 32}}
 		self.db.buy = {'tea leaves': {'name': 'tea leaves', 'price': 5}, 'stairway to heaven': {'name': 'stairway to heaven', 'price': 3}}
 		self.db.desc = "A mysterious woman with flowing black hair and eyes that seem to see beyond."
 		self.db.salespitch = "Enter the realm of foresight. The future awaits your gaze."
@@ -90,7 +90,7 @@ Mortimer the Master Gardener (Merchant of Exotic Flora)
 
 Casper the Jovial Jester (Merchant of Lighthearted Amusements)
 		self.db.forsale = {'rainbow top': {'name': 'rainbow top', 'price': 6}, 'creepy mask': {'name': 'creepy mask', 'price': 7}}
-		self.db.buy = {'shivering cloak': {'name': 'shivering cloak', 'price': 84}, 'zodiac dial': {'name': 'zodiac dial', 'price': 92}}
+		self.db.buy = {'galaxy opal': {'name': 'galaxy opal', 'price': 450}, 'shivering cloak': {'name': 'shivering cloak', 'price': 84}, 'zodiac dial': {'name': 'zodiac dial', 'price': 92}}
 		self.db.desc = "A cheerful jester with a hat adorned with bells and a mischievous grin."
 		self.db.salespitch = "Welcome to the realm of laughter and mirth. Prepare for jovial delights!"
 		self.db.welcome = "Greetings, merry wanderer. Care to dance to the tunes of joy?"
@@ -99,7 +99,7 @@ Casper the Jovial Jester (Merchant of Lighthearted Amusements)
 		self.db.bye = "Fare thee well, fellow jester of life. May laughter echo in your travels."
 
 Sylvia the Perfumer (Merchant of Enchanting Scents)
-		self.db.forsale = {'incense': {'name': 'incense', 'price': 20}, 'etherial oil': {'name': 'etherial oil', 'price': 47}}
+		self.db.forsale = {'incense': {'name': 'incense', 'price': 20}, 'ethereal oil': {'name': 'ethereal oil', 'price': 47}}
 		self.db.buy = {'love potion 8': {'name': 'love potion 8', 'price': 23}, 'health potion': {'name': 'health potion', 'price': 48}}
 		self.db.desc = "An elegant perfumer with a keen sense of smell and adorned in flowing gowns."
 		self.db.salespitch = "Welcome to my world of olfactory enchantments. Breathe in the essence of beauty."
@@ -110,7 +110,7 @@ Sylvia the Perfumer (Merchant of Enchanting Scents)
 
 Fergus the Fortune Teller (Merchant of Fortunes Foretold)
 		self.db.forsale = {'tea leaves': {'name': 'tea leaves', 'price': 3}, 'divining bones': {'name': 'divining bones', 'price': 6}}
-		self.db.buy = {'crystal ball': {'name': 'crystalball', 'price': 46}, 'tarot deck': {'name': 'tarot deck', 'price': 33}}
+		self.db.buy = {'crystal ball': {'name': 'crystal ball', 'price': 46}, 'tarot deck': {'name': 'tarot deck', 'price': 33}}
 		self.db.desc = "A wise seer with a flowing robe and eyes that seem to pierce the future."
 		self.db.salespitch = "Welcome, seeker of the unknown. Unveil your future through my divination."
 		self.db.welcome = "Greetings, curious soul. Allow me to peer into the threads of fate for you."
@@ -120,7 +120,7 @@ Fergus the Fortune Teller (Merchant of Fortunes Foretold)
 
 Xander the Alchemist (Merchant of Mystical Potions)
 		self.db.forsale = {'health potion': {'name': 'health potion', 'price': 51}, 'liquid luck': {'name': 'liquid luck', 'price': 777}}
-		self.db.buy = {'etherial oil': {'name': 'etherial oil', 'price': 60}, 'vitality goo': {'name': 'vitality goo', 'price': 104}}
+		self.db.buy = {'ethereal oil': {'name': 'ethereal oil', 'price': 60}, 'vitality goo': {'name': 'vitality goo', 'price': 104}}
 		self.db.desc = "A mysterious alchemist with an ancient tome and vials of strange substances."
 		self.db.salespitch = "Welcome to my laboratory of arcane concoctions. Imbibe the elixirs of wonder."
 		self.db.welcome = "Greetings, curious wanderer. Embrace the alchemy of transformation."
@@ -139,7 +139,7 @@ Lucille the Book Collector (Merchant of Lost Tomes)
 		self.db.bye = "Farewell, fellow custodian of ancient wisdom. May your library grow vast."
 
 Quincy the Musician (Merchant of Melodic Wonders)
-		self.db.forsale = {'angel lute': {'name': 'angel lute', 'price': 57}, 'music box': {'name': 'music box', 'price': 14}}
+		self.db.forsale = {'angel lute': {'name': 'angel lute', 'price': 57}, 'music box': {'name': 'music box', 'price': 14}, 'tiger bangle': {'name': 'tiger bangle', 'price': 175}}
 		self.db.buy = {'mechanical owl': {'name': 'mechanical owl', 'price': 21}, 'razors edge dagger': {'name': 'razors edge dagger', 'price': 35}}
 		self.db.desc = "A talented musician with an enchanting voice and an instrument at hand."
 		self.db.salespitch = "Welcome to my realm of musical magic. Let the melodies captivate your soul."
@@ -168,15 +168,7 @@ Silas the Dreamweaver (Merchant of Illusory Wonders)
 		self.db.crazy = "I'm sorry, but that crystal can only be found beneath the light of the moon."
 		self.db.bye = "Farewell, enigmatic voyager. May your dreams forever lead you to wonder."
 
-Elara the Artisan (Merchant of Masterful Crafts)
-	self.db.forsale = {'tiger bangle': {'name': 'tiger bangle', 'price': 175}, 'ruby necklace': {'name': 'ruby necklace', 'price': 267}, 'emerald ring': {'name': 'emerald ring', 'price': 213}}
-	self.db.buy = {'galaxy opal': {'name': 'galaxy opal', 'price': 450}, 'enchanted ring': {'name': 'enchanted ring', 'price': 165}}
-	self.db.desc = "An artistic artisan with skillful hands and a collection of exquisite crafts."
-	self.db.salespitch = "Welcome to my gallery of artistry. Embrace the beauty of finely crafted wonders."
-	self.db.welcome = "Greetings, connoisseur of elegance. Find beauty in the finesse of crafts."
-	self.db.thanks = "May these treasures adorn you with the allure of artistry and grace."
-	self.db.crazy = "Regretfully, crafting such an intricate piece requires time beyond measure."
-	self.db.bye = "Fare thee well, admirer of the aesthetic. May artistry be your constant companion."
+
 
 Caspian the Storyteller (Merchant of Fabled Tales)
 		self.db.forsale = {'grim fairytales': {'name': 'grim fairytales', 'price': 36}, 'tales from the crypt no. 42': {'name': 'tales from the crypt no.42', 'price': 500}}
