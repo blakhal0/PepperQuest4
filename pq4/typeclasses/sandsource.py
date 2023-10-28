@@ -6,7 +6,7 @@ from evennia.prototypes.spawner import spawn
 class sandsoftimecmd(default_cmds.MuxCommand):
 	key = "get sands of time"
 	aliases = ["get sands", "Get Sands of Time", "Get Sands", "get sand", "Get Sand"]
-	auto_help = False
+	auto_help = True
 	def func(self):
 		if self.caller.tags.get("sands of time"):
 			self.caller.msg("|/You reach your hand into the sands of time, but it passes through. You have already touched the sands of time, you cannot touch them again.")
