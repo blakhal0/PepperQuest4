@@ -126,6 +126,9 @@ class playroulette(default_cmds.MuxCommand):
 			if int(wager) < 1:
 				self.caller.msg("|/Don't try that nonsense with me! I'll call the goons if I have to.")
 				continue
+			if int(wager) > int(self.caller.db.tokens):
+				self.caller.msg("|/Sorry, no table markers, you can only wager what you have.")
+				continue
 			self.caller.msg("|/Wagering %s tokens on %s." % (wager, betname))
 		#Determine outcome
 			self.caller.msg("The croupier spins a golden ball.|/No more bets!")
