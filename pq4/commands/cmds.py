@@ -26,7 +26,10 @@ class test(default_cmds.MuxCommand):
 	key = "test"
 	locks = "cmd:perm(developer)"
 	def func(self):
-		self.caller.msg(self.caller.location.key)
+		if not "Finder of the Song" in self.caller.db.accolades:
+			self.caller.msg("Accolade not found")
+		else:
+			self.caller.msg("Accolade found")
 
 class sethp(default_cmds.MuxCommand):
 	key = "sethp"

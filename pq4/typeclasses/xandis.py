@@ -13,11 +13,15 @@ class chatxandis(default_cmds.MuxCommand):
 	#Make a list of the maps player has
 		for i in self.caller.contents:
 			if i.tags.get("map"):
-		#Map location name list
-				islands.append(getattr(locations, i.db.locationname).name)
+			#Speed Run Glitch Patch
+				if i.key == "Valaharran Pirate Map" and not "Finder of the Song" in self.caller.db.accolades:
+					self.caller.msg("|/|mCaptain Xandis|n says: |rWhoa, is that a pirate map? It goes half way around the world!!! I'm sorry, but the ship just isn't outfitted for a voyage that long yet. It'll be a while before we can make that kind of trip.|n")
+				else:
+			#Map location name list
+					islands.append(getattr(locations, i.db.locationname).name)
 	#Check if the player has no maps
 		if not islands:
-			self.caller.msg("|/|mCaptain Xandis|n says: Oh, uhh, geez, this is a little embarrassing with you being the boss and all. But, ahhh, you've got no maps. I can't take you to a place we don't know how to get to, you know. Maybe if you go get some maps, well we'll set sail right as soon as you've got a destination for us.")
+			self.caller.msg("|/|mCaptain Xandis|n says: Oh, uhh, geez, this is a little embarrassing with you being the boss and all. But, ahhh, you've got no maps that we can travel to. I can't take you to a place we don't know how to get to, you know. Maybe if you go get some maps, well we'll set sail right as soon as you've got a destination for us.")
 			return
 	#Tell the player their options
 		else:

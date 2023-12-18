@@ -13,7 +13,8 @@ class credits(default_cmds.MuxCommand):
 		for i in self.caller.db.quests:
 			if self.caller.db.quests[i]['completed'] == "yes":
 				questscomplete += 1
-		target = self.caller.search("#333")
+		target = search_object("#333")
+		target = target[0]
 		allaccolades = ' '.join(self.caller.db.accolades)
 		self.caller.msg("|/|/|004.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:.|n")
 		self.caller.msg("The Deeds and Accomplishments of |m%s|n." % (self.caller.key))
