@@ -34,7 +34,7 @@ class hanging(default_cmds.MuxCommand):
 			self.caller.msg("|m%s|n says: What? I'm no.." % (self.caller.key))
 			self.caller.msg("|mSmall Thief|n says: It's fine, there's no guards around. I'm Friday the Filcher, you can just call me Friday. You must be new to town. And you obviously are one of us, no one has EVER caught me in the act. You, uh, mind letting me go before we draw the wrong eyes?")
 			self.caller.msg("Friday rubs his wrist a bit as the knife disappears down a sleeve.")
-			self.caller.msg("|mFriday|n says: Look, everyone's working the crowd right now hoping to get plump before all the money leaves town but later there's going to be a gathering at the Rat and Cutter, just ask for Vinny O'Neill, they'll sort you out.")
+			self.caller.msg("|mFriday|n says: Look, everyone's working the crowd right now hoping to get plump before all the money leaves town but later there's going to be a gathering at the Rat and Cutter, just ask for Vinnie O'Neill, they'll sort you out.")
 			self.caller.msg("Friday disappears back into the exiting crowd, moving like a viper in the grass. Doubtlessly leaving many a cut purse strings.")
 			self.caller.msg("The undertakers pull up the hanging rope, dump Ladrone's corpse into a box, and begin to carry it away back up to the castle.")
 		else:
