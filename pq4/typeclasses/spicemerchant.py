@@ -126,7 +126,7 @@ class chatspicemerchant(default_cmds.MuxCommand):
 						yield 1
 						continue
 					else:
-						self.caller.msg("|/|mSpice Merchant|n says: The %s? Yes, this is very good. I have used one to defend the caravan many times. All have fallen before it." % (getattr(armor, listanswer).name))
+						self.caller.msg("|/|mSpice Merchant|n says: The %s? Yes, this is very good. I have used one to defend the caravan many times. All have fallen before it." % (getattr(weapons, listanswer).name))
 						#take gold
 						self.caller.db.gold -= int(getattr(weapons, listanswer).price)
 					#spawn weapons to player
